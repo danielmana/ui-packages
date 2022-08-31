@@ -1,6 +1,6 @@
 {
   "name": "@mui/material",
-  "version": "6.0.0-alpha.0",
+  "version": "5.10.3",
   "private": false,
   "author": "MUI Team",
   "description": "React components that implement Google's Material Design.",
