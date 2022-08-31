@@ -38,6 +38,8 @@
       "@mui/material-next/*": ["./packages/mui-material-next/src/*"],
       "@mui/joy": ["./packages/mui-joy/src"],
       "@mui/joy/*": ["./packages/mui-joy/src/*"],
+      "@danielmana/ui-core": ["./packages/ui-core/src"],
+      "@danielmana/ui-core/*": ["./packages/ui-core/src/*"],
       "test/*": ["./test/*"],
       "typescript-to-proptypes": ["./packages/typescript-to-proptypes/src"]
     },
