@@ -2391,6 +2391,24 @@
     react-test-renderer "^18.0.0"
     semver "^5.7.0"
 
+"@mui/material@^5.0.0", "@mui/material@^5.10.3":
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.10.3.tgz#5497128ea7c8de1d40ba9bd95437d46d441fa1d1"
+  integrity sha512-g0lzHcqWHYeOEAxTzcwpM1I7b+wyiRTeXkEdRsspnOpZtb0H/1xg386tMFRGbxBJ4zfVGT+TWublofw7pyQkqw==
+  dependencies:
+    "@babel/runtime" "^7.18.9"
+    "@mui/base" "5.0.0-alpha.95"
+    "@mui/core-downloads-tracker" "^5.10.3"
+    "@mui/system" "^5.10.3"
+    "@mui/types" "^7.2.0"
+    "@mui/utils" "^5.10.3"
+    "@types/react-transition-group" "^4.4.5"
+    clsx "^1.2.1"
+    csstype "^3.1.0"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
+    react-transition-group "^4.4.5"
+
 "@mui/x-data-grid-generator@^5.15.2":
   version "5.15.3"
   resolved "https://registry.yarnpkg.com/@mui/x-data-grid-generator/-/x-data-grid-generator-5.15.3.tgz#7a4f2c1cff7dcdd6bc1f566e09fb4bde7f3bed1a"

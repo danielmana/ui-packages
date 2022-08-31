@@ -1,14 +1,14 @@
 {
   "name": "@mui/monorepo",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "private": true,
   "scripts": {
     "proptypes": "cross-env BABEL_ENV=development babel-node --extensions \".tsx,.ts,.js\" ./scripts/generateProptypes.ts",
     "deduplicate": "node scripts/deduplicate.js",
     "benchmark:browser": "yarn workspace benchmark browser",
-    "build:codesandbox": "lerna run --parallel --scope \"@mui/*\" build",
+    "build:codesandbox": "lerna run --parallel --scope \"@danielmana/*\" build",
     "release:version": "lerna version --no-changelog --no-push --no-git-tag-version --force-publish=@mui/core-downloads-tracker",
-    "release:build": "lerna run --parallel --scope \"@mui/*\" build",
+    "release:build": "lerna run --parallel --scope \"@danielmana/*\" build",
     "release:changelog": "node scripts/releaseChangelog",
     "release:publish": "lerna publish from-package --dist-tag latest --contents build",
     "release:publish:dry-run": "lerna publish from-package --dist-tag latest --contents build --registry=\"http://localhost:4873/\"",
