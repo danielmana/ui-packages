@@ -1,0 +1,19 @@
+{
+  "props": {
+    "color": {
+      "type": {
+        "name": "union",
+        "description": "MuiButtonProps['color']<br>&#124;&nbsp;'tertiary'"
+      },
+      "default": "'primary'"
+    }
+  },
+  "name": "Button",
+  "styles": { "classes": [], "globalClasses": {}, "name": null },
+  "spread": true,
+  "forwardsRefTo": "HTMLButtonElement",
+  "filename": "/packages/ui-core/src/Button/Button.tsx",
+  "inheritance": { "component": "Button", "pathname": "/material-ui/api/button/" },
+  "demos": "<ul><li><a href=\"/ui-core/button/\">Button</a></li></ul>",
+  "cssComponent": false
+}
