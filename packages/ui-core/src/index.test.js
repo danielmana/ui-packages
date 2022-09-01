@@ -4,16 +4,16 @@
  * import the entire lib for coverage reporting
  */
 import { expect } from 'chai';
-import * as joy from './index';
+import * as core from './index';
 
 describe('@danielmana/ui-core', () => {
   it('should have exports', () => {
-    expect(typeof joy).to.equal('object');
+    expect(typeof core).to.equal('object');
   });
 
   it('should not have undefined exports', () => {
-    Object.keys(joy).forEach((exportKey) =>
-      expect(`${exportKey}-${Boolean(joy[exportKey])}`).to.equal(`${exportKey}-true`),
+    Object.keys(core).forEach((exportKey) =>
+      expect(`${exportKey}-${Boolean(core[exportKey])}`).to.equal(`${exportKey}-true`),
     );
   });
 });
