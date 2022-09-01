@@ -10,6 +10,12 @@ export const createColor = (mainColor: string) => augmentColor({ color: { main: 
 
 type ThemeOptionsLegacy = ThemeOptions & { overrides: any; props: any };
 
+/**
+ * Sanitizes theme options to be used with the ui-core ThemeProvider.
+ * Supports options from MUI v3, v4 and v5.
+ * @param options Takes an incomplete theme object, fixes the structure and adds required fields.
+ * @returns A theme options object to be used to create MUI v5 themes
+ */
 export const sanitizeThemeOptions = (options?: ThemeOptionsLegacy): ThemeOptions => ({
   ..._.omit(options, ['overrides', 'props']),
   components: {
@@ -30,6 +36,12 @@ export const sanitizeThemeOptions = (options?: ThemeOptionsLegacy): ThemeOptions
   },
 });
 
+/**
+ * Generate a theme base on the options received.
+ * @param options Takes an incomplete theme object and adds the missing parts. Supports options from MUI v3, v4 and v5.
+ * @param args Deep merge the arguments with the about to be returned theme.
+ * @returns A complete, ready-to-use theme object for MUI v5
+ */
 const createTheme = (options?: ThemeOptionsLegacy, ...args: object[]) =>
   muiCreateTheme(sanitizeThemeOptions(options), args);
 
