@@ -9,7 +9,15 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'classes' | 'className
    * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
    * @default 'primary'
    */
-  color?: MuiButtonProps['color'] | 'tertiary';
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning';
 }
 /**
  *
