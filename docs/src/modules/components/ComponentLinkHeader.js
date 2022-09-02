@@ -41,7 +41,7 @@ export default function ComponentLinkHeader(props) {
   let packageName = props.headers.packageName;
   if (!packageName) {
     const { product } = props.headers;
-    packageName = defaultPackageNames[product] || '@mui/material';
+    packageName = defaultPackageNames[product] || '@danielmana/ui-core';
   }
 
   return (
