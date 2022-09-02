@@ -55,7 +55,7 @@ export default function ComponentLinkHeader(props) {
             size="small"
             variant="outlined"
             rel="nofollow"
-            href={`${process.env.SOURCE_CODE_REPO}/labels/${encodeURIComponent(
+            href={`https://github.com/danielmana/ui-packages/labels/${encodeURIComponent(
               headers.githubLabel,
             )}`}
             icon={<InfoOutlinedIcon />}

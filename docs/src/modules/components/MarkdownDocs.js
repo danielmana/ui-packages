@@ -124,7 +124,7 @@ function MarkdownDocs(props) {
               }}
               disableAd={disableAd}
               demoOptions={renderedMarkdownOrDemo}
-              githubLocation={`${process.env.SOURCE_CODE_REPO}/blob/v${process.env.LIB_VERSION}${fileNameWithLocation}`}
+              githubLocation={`https://github.com/danielmana/ui-packages/blob/master${fileNameWithLocation}`}
             />
           );
         })}

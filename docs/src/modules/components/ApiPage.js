@@ -272,13 +272,10 @@ function ApiDocs(props) {
   let spreadHint = '';
   if (spread) {
     // Any other props supplied will be provided to the root element ({{spreadHintElement}}).
-    const redirectToMui = inheritance.pathname.indexOf('/material-ui') === 0;
     spreadHint = t('api-docs.spreadHint').replace(
       /{{spreadHintElement}}/,
       inheritance
-        ? `<a ${redirectToMui ? 'target="_blank"' : ''} href="${
-            redirectToMui ? 'https://mui.com' : ''
-          }${inheritance.pathname}">${inheritance.component}</a>`
+        ? `<a href="${inheritance.pathname}">${inheritance.component}</a>`
         : t('api-docs.nativeElement'),
     );
   }
