@@ -391,6 +391,9 @@ export default function AppNavDrawer(props) {
               <SvgMuiLogo width={30} />
             </Box>
           </NextLink>
+          {asPathWithoutLang.startsWith('/ui-core/') && (
+            <ProductIdentifier name="UI Core" metadata="MUI Core" />
+          )}
           {asPathWithoutLang.startsWith('/material-ui/') && (
             <ProductIdentifier
               name="Material UI"

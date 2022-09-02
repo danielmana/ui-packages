@@ -58,6 +58,11 @@ function ProductSubMenu(props: ProductSubMenuProp) {
 
 const products = [
   {
+    name: 'UI Core',
+    href: ROUTES.uiCoreDocs,
+    slug: 'ui-core',
+  },
+  {
     name: 'Material UI',
     href: ROUTES.materialDocs,
     slug: 'material-ui',
@@ -101,7 +106,7 @@ export default function MuiProductSelector() {
           role="menuitem"
           icon={<IconImage name="product-core" />}
           name="MUI Core"
-          description="Ready-to-use foundational components, free forever."
+          description="Ready-to-use foundational components."
         />
         <Box sx={{ ml: '36px', pl: 2, pt: 1.5, position: 'relative' }}>
           <Stack

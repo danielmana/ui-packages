@@ -12,6 +12,7 @@ import basePages from 'docs/data/base/pages';
 import materialPages from 'docs/data/material/pages';
 import joyPages from 'docs/data/joy/pages';
 import systemPages from 'docs/data/system/pages';
+import uiCorePages from 'docs/data/ui-core/pages';
 import PageContext from 'docs/src/modules/components/PageContext';
 import GoogleAnalytics from 'docs/src/modules/components/GoogleAnalytics';
 import { CodeCopyProvider } from 'docs/src/modules/utils/CodeCopy';
@@ -196,6 +197,8 @@ function AppWrapper(props) {
     productPages = joyPages;
   } else if (product === 'system') {
     productPages = systemPages;
+  } else if (product === 'ui-core') {
+    productPages = uiCorePages;
   }
 
   const activePage = findActivePage(productPages, router.pathname);
