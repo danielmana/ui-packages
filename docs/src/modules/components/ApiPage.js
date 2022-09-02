@@ -234,6 +234,7 @@ function ApiDocs(props) {
 
   const source = filename
     .replace(/\/packages\/mui(-(.+?))?\/src/, (match, dash, pkg) => `@mui/${pkg}`)
+    .replace(/\/packages\/ui-core\/src/, '@danielmana/ui-core')
     // convert things like `/Table/Table.js` to ``
     .replace(/\/([^/]+)\/\1\.(js|tsx)$/, '');
 
@@ -271,10 +272,13 @@ function ApiDocs(props) {
   let spreadHint = '';
   if (spread) {
     // Any other props supplied will be provided to the root element ({{spreadHintElement}}).
+    const redirectToMui = inheritance.pathname.indexOf('/material-ui') === 0;
     spreadHint = t('api-docs.spreadHint').replace(
       /{{spreadHintElement}}/,
       inheritance
-        ? `<a href="${inheritance.pathname}">${inheritance.component}</a>`
+        ? `<a ${redirectToMui ? 'target="_blank"' : ''} href="${
+            redirectToMui ? 'https://mui.com' : ''
+          }${inheritance.pathname}">${inheritance.component}</a>`
         : t('api-docs.nativeElement'),
     );
   }
@@ -287,7 +291,7 @@ function ApiDocs(props) {
   return (
     <AppLayoutDocs
       description={description}
-      disableAd={false}
+      disableAd
       disableToc={false}
       location={apiSourceLocation}
       title={`${componentName} API`}

@@ -194,6 +194,8 @@ module.exports = {
     // #default-branch-switch
     SOURCE_CODE_ROOT_URL: 'https://github.com/mui/material-ui/blob/master',
     SOURCE_CODE_REPO: 'https://github.com/mui/material-ui',
+    SOURCE_CODE_ROOT_URL_EXT: 'https://github.com/danielmana/ui-packages/blob/master',
+    SOURCE_CODE_REPO_EXT: 'https://github.com/danielmana/ui-packages',
     STAGING: staging,
     BUILD_ONLY_ENGLISH_LOCALE: buildOnlyEnglishLocale,
   },

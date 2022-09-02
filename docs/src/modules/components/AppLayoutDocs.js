@@ -70,7 +70,7 @@ function AppLayoutDocs(props) {
   const {
     children,
     description,
-    disableAd = false,
+    disableAd = true,
     disableToc = false,
     location,
     title,
@@ -97,6 +97,9 @@ function AppLayoutDocs(props) {
   }
   if (asPathWithoutLang.startsWith('/toolpad')) {
     productName = 'MUI Toolpad';
+  }
+  if (asPathWithoutLang.startsWith('/ui-core')) {
+    productName = 'UI Core';
   }
 
   return (

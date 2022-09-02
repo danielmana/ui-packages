@@ -38,7 +38,7 @@ function MarkdownDocs(props) {
   const theme = useTheme();
   const router = useRouter();
   const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
-  const { disableAd = false, disableToc = false, demos = {}, docs, demoComponents } = props;
+  const { disableAd = true, disableToc = false, demos = {}, docs, demoComponents } = props;
 
   const userLanguage = useUserLanguage();
   const t = useTranslate();
@@ -124,7 +124,7 @@ function MarkdownDocs(props) {
               }}
               disableAd={disableAd}
               demoOptions={renderedMarkdownOrDemo}
-              githubLocation={`${process.env.SOURCE_CODE_REPO}/blob/v${process.env.LIB_VERSION}${fileNameWithLocation}`}
+              githubLocation={`${process.env.SOURCE_CODE_REPO_EXT}/blob/master${fileNameWithLocation}`}
             />
           );
         })}

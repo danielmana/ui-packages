@@ -15,7 +15,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
 import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
-import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
+// import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
@@ -478,7 +478,7 @@ export default function AppNavDrawer(props) {
                 : theme.palette.grey[100],
           }}
         />
-        <DiamondSponsors />
+        {/* <DiamondSponsors /> */}
         {navItems}
       </React.Fragment>
     );

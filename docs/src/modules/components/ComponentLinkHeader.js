@@ -41,7 +41,7 @@ export default function ComponentLinkHeader(props) {
   let packageName = props.headers.packageName;
   if (!packageName) {
     const { product } = props.headers;
-    packageName = defaultPackageNames[product] || '@mui/material';
+    packageName = defaultPackageNames[product] || '@danielmana/ui-core';
   }
 
   return (
@@ -55,7 +55,7 @@ export default function ComponentLinkHeader(props) {
             size="small"
             variant="outlined"
             rel="nofollow"
-            href={`${process.env.SOURCE_CODE_REPO}/labels/${encodeURIComponent(
+            href={`${process.env.SOURCE_CODE_REPO_EXT}/labels/${encodeURIComponent(
               headers.githubLabel,
             )}`}
             icon={<InfoOutlinedIcon />}
@@ -124,7 +124,7 @@ export default function ComponentLinkHeader(props) {
           />
         </li>
       ) : null}
-      {options.design !== false ? (
+      {options.design ? (
         <React.Fragment>
           <li>
             <Chip
