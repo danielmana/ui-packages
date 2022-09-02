@@ -67,6 +67,7 @@ export default function SandboxDependencies(
     ): Record<string, string> {
       let newDeps: Record<string, string> = {
         ...deps,
+        lodash: versions.lodash,
         'react-dom': versions['react-dom'],
         react: versions.react,
         '@emotion/react': versions['@emotion/react'],
@@ -91,6 +92,7 @@ export default function SandboxDependencies(
     let deps: Record<string, string> = {};
     let versions: Record<string, string> = {
       react: 'latest',
+      lodash: 'latest',
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
