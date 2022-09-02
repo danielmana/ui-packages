@@ -70,7 +70,7 @@ function AppLayoutDocs(props) {
   const {
     children,
     description,
-    disableAd = false,
+    disableAd = true,
     disableToc = false,
     location,
     title,

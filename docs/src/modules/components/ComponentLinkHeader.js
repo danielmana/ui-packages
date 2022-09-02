@@ -124,7 +124,7 @@ export default function ComponentLinkHeader(props) {
           />
         </li>
       ) : null}
-      {options.design !== false ? (
+      {options.design ? (
         <React.Fragment>
           <li>
             <Chip

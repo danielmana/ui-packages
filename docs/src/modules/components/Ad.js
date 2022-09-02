@@ -34,8 +34,9 @@ function PleaseDisableAdblock(props) {
   );
 }
 
-const disableAd =
-  process.env.NODE_ENV !== 'production' && process.env.ENABLE_AD_IN_DEV_MODE !== 'true';
+const disableAd = true;
+// const disableAd =
+//   process.env.NODE_ENV !== 'production' && process.env.ENABLE_AD_IN_DEV_MODE !== 'true';
 const inHouseAds = [
   {
     name: 'scaffoldhub',
