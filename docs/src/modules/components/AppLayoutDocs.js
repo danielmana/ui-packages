@@ -98,6 +98,9 @@ function AppLayoutDocs(props) {
   if (asPathWithoutLang.startsWith('/toolpad')) {
     productName = 'MUI Toolpad';
   }
+  if (asPathWithoutLang.startsWith('/ui-core')) {
+    productName = 'UI Core';
+  }
 
   return (
     <AppFrame>
