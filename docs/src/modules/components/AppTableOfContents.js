@@ -116,13 +116,14 @@ function flatten(headings) {
 }
 
 const shouldShowJobAd = () => {
-  const date = new Date();
-  const timeZoneOffset = date.getTimezoneOffset();
-  // Hide for time zones UT+5.5 - UTC+14 & UTC-8 - UTC-12
-  if (timeZoneOffset <= -5.5 * 60 || timeZoneOffset >= 8 * 60) {
-    return false;
-  }
-  return true;
+  return false;
+  // const date = new Date();
+  // const timeZoneOffset = date.getTimezoneOffset();
+  // // Hide for time zones UT+5.5 - UTC+14 & UTC-8 - UTC-12
+  // if (timeZoneOffset <= -5.5 * 60 || timeZoneOffset >= 8 * 60) {
+  //   return false;
+  // }
+  // return true;
 };
 
 export default function AppTableOfContents(props) {
