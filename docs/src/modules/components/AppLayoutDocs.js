@@ -99,7 +99,27 @@ function AppLayoutDocs(props) {
     productName = 'MUI Toolpad';
   }
   if (asPathWithoutLang.startsWith('/ui-core')) {
-    productName = 'UI Core';
+    productName = 'ui-core';
+  }
+  if (asPathWithoutLang.startsWith('/ui-icons')) {
+    productName = 'ui-icons';
+  }
+  if (asPathWithoutLang.startsWith('/ui-utils')) {
+    productName = 'ui-utils';
+  }
+  if (asPathWithoutLang.startsWith('/ui-forms')) {
+    productName = 'ui-forms';
+  }
+  if (asPathWithoutLang.startsWith('/ui-components')) {
+    productName = 'ui-components';
+  }
+  if (asPathWithoutLang.startsWith('/ui-widgets')) {
+    productName = 'ui-widgets';
+  }
+  if (asPathWithoutLang.startsWith('/ui-model-legacy')) {
+    productName = 'ui-model-legacy';
+  } else if (asPathWithoutLang.startsWith('/ui-model')) {
+    productName = 'ui-model';
   }
 
   return (

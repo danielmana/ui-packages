@@ -14,7 +14,8 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
-import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
+// import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
+import IconImage from 'docs/src/components/icon/IconImage';
 // import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
@@ -24,6 +25,7 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import DoneRounded from '@mui/icons-material/DoneRounded';
 import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
 import materialPkgJson from '../../../../packages/mui-material/package.json';
+import uiCorePkgJson from '../../../../packages/ui-core/package.json';
 import joyPkgJson from '../../../../packages/mui-joy/package.json';
 import basePkgJson from '../../../../packages/mui-base/package.json';
 import systemPkgJson from '../../../../packages/mui-system/package.json';
@@ -100,7 +102,7 @@ const ProductIdentifier = ({ name, metadata, versionSelector }) => (
         color: theme.palette.grey[600],
         fontSize: theme.typography.pxToRem(11),
         fontWeight: 700,
-        textTransform: 'uppercase',
+        // textTransform: 'uppercase',
         letterSpacing: '.08rem',
       })}
     >
@@ -388,11 +390,33 @@ export default function AppNavDrawer(props) {
                     : theme.palette.grey[200],
               }}
             >
-              <SvgMuiLogo width={30} />
+              <IconImage name="product-core" />
+              {/* <SvgMuiLogo width={30} /> */}
             </Box>
           </NextLink>
           {asPathWithoutLang.startsWith('/ui-core/') && (
-            <ProductIdentifier name="UI Core" metadata="MUI Core" />
+            <ProductIdentifier name={`ui-core#${uiCorePkgJson.version}`} metadata="Core" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-icons/') && (
+            <ProductIdentifier name="ui-icons" metadata="Core" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-utils/') && (
+            <ProductIdentifier name="ui-utils" metadata="Core" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-forms/') && (
+            <ProductIdentifier name="ui-forms" metadata="Core" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-components/') && (
+            <ProductIdentifier name="ui-components" metadata="Components" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-widgets/') && (
+            <ProductIdentifier name="ui-widgets" metadata="Components" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-model/') && (
+            <ProductIdentifier name="ui-model" metadata="Model" />
+          )}
+          {asPathWithoutLang.startsWith('/ui-model-legacy/') && (
+            <ProductIdentifier name="ui-model-legacy" metadata="Model [Legacy]" />
           )}
           {asPathWithoutLang.startsWith('/material-ui/') && (
             <ProductIdentifier
