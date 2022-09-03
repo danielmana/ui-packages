@@ -245,7 +245,7 @@ function findUICoreDemos(
     .filter((pathname) => pathname.indexOf('ui-core') >= 0)
     .map((pathname) => ({
       name: pageToTitle({ pathname }) || '',
-      demoPathname: replaceComponentLinks(`${pathname.replace(/^\/ui-core/, '')}/`),
+      demoPathname: pathname.replace(/\/components\//, '/'),
     }));
 }
 

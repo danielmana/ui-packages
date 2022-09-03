@@ -1,11 +1,10 @@
 ---
 product: ui-core
-title: Button component
+title: React Button component
 components: Button
 materialDesign: https://material.io/components/buttons
 githubLabel: 'component: button'
 waiAria: https://www.w3.org/WAI/ARIA/apg/patterns/button/
-unstyled: /base/react-button/
 ---
 
 # Button
@@ -15,5 +14,3 @@ unstyled: /base/react-button/
 ## Color
 
 {{"demo": "ButtonColor.js"}}
-
-In addition to using the default button colors, you can add custom ones, or disable any you don't need. See the [Adding new colors](/material-ui/customization/palette/#adding-new-colors) example for more info.

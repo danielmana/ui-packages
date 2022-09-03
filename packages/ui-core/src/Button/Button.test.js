@@ -2,14 +2,15 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { describeConformance, createRenderer } from 'test/utils';
 
-import Button, { buttonClasses as classes } from '@mui/material/Button';
+import Button, { buttonClasses as classes } from '@danielmana/ui-core/Button';
+import { ButtonBase } from '@mui/material/ButtonBase';
 
-describe('<ButtonExt />', () => {
+describe('<Button />', () => {
   const { render } = createRenderer();
 
   describeConformance(<Button startIcon="icon">Conformance?</Button>, () => ({
     classes,
-    inheritComponent: Button,
+    inheritComponent: ButtonBase,
     render,
     refInstanceof: window.HTMLButtonElement,
     muiName: 'MuiButton',
