@@ -10,7 +10,7 @@ type RegExpMatchArrayWithGroups<T> = (RegExpMatchArray & RegExpMatchArrayWithGro
 export default function SandboxDependencies(
   demo: {
     raw: string;
-    product?: 'joy-ui' | 'base';
+    product?: 'joy-ui' | 'base' | 'ui-core';
     codeVariant: keyof typeof CODE_VARIANTS;
   },
   options?: { commitRef?: string },
@@ -67,7 +67,6 @@ export default function SandboxDependencies(
     ): Record<string, string> {
       let newDeps: Record<string, string> = {
         ...deps,
-        lodash: versions.lodash,
         'react-dom': versions['react-dom'],
         react: versions.react,
         '@emotion/react': versions['@emotion/react'],
@@ -92,7 +91,6 @@ export default function SandboxDependencies(
     let deps: Record<string, string> = {};
     let versions: Record<string, string> = {
       react: 'latest',
-      lodash: 'latest',
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
@@ -165,6 +163,11 @@ export default function SandboxDependencies(
   if (demo.codeVariant === CODE_VARIANTS.TS) {
     addTypeDeps(dependencies);
     dependencies.typescript = 'latest';
+  }
+
+  // WORKAROUND: Add lodash dependency
+  if (demo.product === 'ui-core') {
+    dependencies.lodash = 'latest';
   }
 
   if (!demo.product && !dependencies['@mui/material']) {

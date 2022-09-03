@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import { exactProp } from '@mui/utils';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import NoSsr from '@mui/material/NoSsr';
+import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import Head from 'docs/src/modules/components/Head';
 import AppFrame from 'docs/src/modules/components/AppFrame';
 import EditPage from 'docs/src/modules/components/EditPage';
@@ -81,44 +82,35 @@ function AppLayoutDocs(props) {
     throw new Error('Missing description in the page');
   }
 
-  const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
+  const { canonicalAs } = pathnameToLanguage(router.asPath);
   let productName = 'MUI';
-  if (asPathWithoutLang.startsWith('/material-ui')) {
+  if (canonicalAs.startsWith('/material-ui/')) {
     productName = 'Material UI';
-  }
-  if (asPathWithoutLang.startsWith('/base')) {
+  } else if (canonicalAs.startsWith('/base/')) {
     productName = 'MUI Base';
-  }
-  if (asPathWithoutLang.startsWith('/x')) {
+  } else if (canonicalAs.startsWith('/x/')) {
     productName = 'MUI X';
-  }
-  if (asPathWithoutLang.startsWith('/system')) {
+  } else if (canonicalAs.startsWith('/system/')) {
     productName = 'MUI System';
-  }
-  if (asPathWithoutLang.startsWith('/toolpad')) {
+  } else if (canonicalAs.startsWith('/toolpad/')) {
     productName = 'MUI Toolpad';
-  }
-  if (asPathWithoutLang.startsWith('/ui-core')) {
+  } else if (canonicalAs.startsWith('/joy-ui/')) {
+    productName = 'Joy UI';
+  } else if (canonicalAs.startsWith('/ui-core')) {
     productName = 'ui-core';
-  }
-  if (asPathWithoutLang.startsWith('/ui-icons')) {
+  } else if (canonicalAs.startsWith('/ui-icons')) {
     productName = 'ui-icons';
-  }
-  if (asPathWithoutLang.startsWith('/ui-utils')) {
+  } else if (canonicalAs.startsWith('/ui-utils')) {
     productName = 'ui-utils';
-  }
-  if (asPathWithoutLang.startsWith('/ui-forms')) {
+  } else if (canonicalAs.startsWith('/ui-forms')) {
     productName = 'ui-forms';
-  }
-  if (asPathWithoutLang.startsWith('/ui-components')) {
+  } else if (canonicalAs.startsWith('/ui-components')) {
     productName = 'ui-components';
-  }
-  if (asPathWithoutLang.startsWith('/ui-widgets')) {
+  } else if (canonicalAs.startsWith('/ui-widgets')) {
     productName = 'ui-widgets';
-  }
-  if (asPathWithoutLang.startsWith('/ui-model-legacy')) {
+  } else if (canonicalAs.startsWith('/ui-model-legacy')) {
     productName = 'ui-model-legacy';
-  } else if (asPathWithoutLang.startsWith('/ui-model')) {
+  } else if (canonicalAs.startsWith('/ui-model')) {
     productName = 'ui-model';
   }
 

@@ -23,7 +23,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'classes' | 'className
  *
  * Demos:
  *
- * - [Button](https://mui.com/ui-core/button/)
+ * - [Button](https://mui.com/material-ui/react-button/)
  *
  * API:
  *

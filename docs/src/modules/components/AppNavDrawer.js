@@ -18,7 +18,7 @@ import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
 import IconImage from 'docs/src/components/icon/IconImage';
 // import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
-import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
+import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
 import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
@@ -292,7 +292,7 @@ export default function AppNavDrawer(props) {
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   const drawer = React.useMemo(() => {
-    const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
+    const { canonicalAs } = pathnameToLanguage(router.asPath);
 
     const navItems = renderNavItems({ onClose, pages, activePage, depth: 0, t });
 
@@ -394,31 +394,31 @@ export default function AppNavDrawer(props) {
               {/* <SvgMuiLogo width={30} /> */}
             </Box>
           </NextLink>
-          {asPathWithoutLang.startsWith('/ui-core/') && (
+          {canonicalAs.startsWith('/ui-core/') && (
             <ProductIdentifier name={`ui-core#${uiCorePkgJson.version}`} metadata="Core" />
           )}
-          {asPathWithoutLang.startsWith('/ui-icons/') && (
+          {canonicalAs.startsWith('/ui-icons/') && (
             <ProductIdentifier name="ui-icons" metadata="Core" />
           )}
-          {asPathWithoutLang.startsWith('/ui-utils/') && (
+          {canonicalAs.startsWith('/ui-utils/') && (
             <ProductIdentifier name="ui-utils" metadata="Core" />
           )}
-          {asPathWithoutLang.startsWith('/ui-forms/') && (
+          {canonicalAs.startsWith('/ui-forms/') && (
             <ProductIdentifier name="ui-forms" metadata="Core" />
           )}
-          {asPathWithoutLang.startsWith('/ui-components/') && (
+          {canonicalAs.startsWith('/ui-components/') && (
             <ProductIdentifier name="ui-components" metadata="Components" />
           )}
-          {asPathWithoutLang.startsWith('/ui-widgets/') && (
+          {canonicalAs.startsWith('/ui-widgets/') && (
             <ProductIdentifier name="ui-widgets" metadata="Components" />
           )}
-          {asPathWithoutLang.startsWith('/ui-model/') && (
+          {canonicalAs.startsWith('/ui-model/') && (
             <ProductIdentifier name="ui-model" metadata="Model" />
           )}
-          {asPathWithoutLang.startsWith('/ui-model-legacy/') && (
+          {canonicalAs.startsWith('/ui-model-legacy/') && (
             <ProductIdentifier name="ui-model-legacy" metadata="Model [Legacy]" />
           )}
-          {asPathWithoutLang.startsWith('/material-ui/') && (
+          {canonicalAs.startsWith('/material-ui/') && (
             <ProductIdentifier
               name="Material UI"
               metadata="MUI Core"
@@ -435,7 +435,7 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {asPathWithoutLang.startsWith('/joy-ui/') && (
+          {canonicalAs.startsWith('/joy-ui/') && (
             <ProductIdentifier
               name="Joy UI"
               metadata="MUI Core"
@@ -444,7 +444,7 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {asPathWithoutLang.startsWith('/system/') && (
+          {canonicalAs.startsWith('/system/') && (
             <ProductIdentifier
               name="MUI System"
               metadata="MUI Core"
@@ -458,7 +458,7 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {asPathWithoutLang.startsWith('/base/') && (
+          {canonicalAs.startsWith('/base/') && (
             <ProductIdentifier
               name="MUI Base"
               metadata="MUI Core"
@@ -467,11 +467,11 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {asPathWithoutLang.startsWith('/x/introduction') && (
+          {canonicalAs.startsWith('/x/introduction/') && (
             <ProductIdentifier name="Advanced components" metadata="MUI X" />
           )}
-          {(asPathWithoutLang.startsWith('/x/react-data-grid') ||
-            asPathWithoutLang.startsWith('/x/api/data-grid')) && (
+          {(canonicalAs.startsWith('/x/react-data-grid/') ||
+            canonicalAs.startsWith('/x/api/data-grid/')) && (
             <ProductIdentifier
               name="Data Grid"
               metadata="MUI X"
@@ -482,8 +482,8 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {(asPathWithoutLang.startsWith('/x/react-date-pickers') ||
-            asPathWithoutLang.startsWith('/x/api/date-pickers')) && (
+          {(canonicalAs.startsWith('/x/react-date-pickers/') ||
+            canonicalAs.startsWith('/x/api/date-pickers/')) && (
             <ProductIdentifier
               name="Date pickers"
               metadata="MUI X"
@@ -493,7 +493,7 @@ export default function AppNavDrawer(props) {
               ])}
             />
           )}
-          {asPathWithoutLang.startsWith('/toolpad') && (
+          {canonicalAs.startsWith('/toolpad/') && (
             <ProductIdentifier name="Toolpad" metadata="MUI Toolpad" />
           )}
         </ToolbarDiv>
