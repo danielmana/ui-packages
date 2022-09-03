@@ -8,7 +8,7 @@ const createReactApp = (demo: {
   raw: string;
   codeVariant: 'TS' | 'JS';
   githubLocation: string;
-  product?: 'joy-ui' | 'base';
+  product?: 'joy-ui' | 'base' | 'ui-core';
 }) => {
   const ext = getFileExtension(demo.codeVariant);
   const { title, githubLocation: description } = demo;

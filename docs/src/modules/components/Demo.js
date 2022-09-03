@@ -50,6 +50,10 @@ function useDemoData(codeVariant, demo, githubLocation) {
     product = 'base';
     name = 'MUI Base';
   }
+  if (asPathWithoutLang.startsWith('/ui-core/')) {
+    product = 'ui-core';
+    name = 'ui-core';
+  }
   if (asPathWithoutLang.startsWith('/x/')) {
     name = 'MUI X';
   }
@@ -257,6 +261,8 @@ export default function Demo(props) {
   const t = useTranslate();
   const codeVariant = useCodeVariant();
   const demoData = useDemoData(codeVariant, demo, githubLocation);
+
+  console.log('############# Demo', { demo, demoData });
 
   const [demoHovered, setDemoHovered] = React.useState(false);
   const handleDemoHover = (event) => {
