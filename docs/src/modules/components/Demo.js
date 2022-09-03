@@ -262,8 +262,6 @@ export default function Demo(props) {
   const codeVariant = useCodeVariant();
   const demoData = useDemoData(codeVariant, demo, githubLocation);
 
-  console.log('############# Demo', { demo, demoData });
-
   const [demoHovered, setDemoHovered] = React.useState(false);
   const handleDemoHover = (event) => {
     setDemoHovered(event.type === 'mouseenter');
