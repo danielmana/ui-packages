@@ -71,7 +71,7 @@ function AppLayoutDocs(props) {
   const {
     children,
     description,
-    disableAd = false,
+    disableAd = true,
     disableToc = false,
     location,
     title,
@@ -96,6 +96,22 @@ function AppLayoutDocs(props) {
     productName = 'MUI Toolpad';
   } else if (canonicalAs.startsWith('/joy-ui/')) {
     productName = 'Joy UI';
+  } else if (canonicalAs.startsWith('/ui-core')) {
+    productName = 'ui-core';
+  } else if (canonicalAs.startsWith('/ui-icons')) {
+    productName = 'ui-icons';
+  } else if (canonicalAs.startsWith('/ui-utils')) {
+    productName = 'ui-utils';
+  } else if (canonicalAs.startsWith('/ui-forms')) {
+    productName = 'ui-forms';
+  } else if (canonicalAs.startsWith('/ui-components')) {
+    productName = 'ui-components';
+  } else if (canonicalAs.startsWith('/ui-widgets')) {
+    productName = 'ui-widgets';
+  } else if (canonicalAs.startsWith('/ui-model-legacy')) {
+    productName = 'ui-model-legacy';
+  } else if (canonicalAs.startsWith('/ui-model')) {
+    productName = 'ui-model';
   }
 
   return (

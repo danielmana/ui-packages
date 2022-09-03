@@ -153,71 +153,75 @@ function AppSettingsDrawer(props) {
             {t('settings.dark')}
           </IconToggleButton>
         </ToggleButtonGroup>
-        <Heading gutterBottom id="settings-direction">
-          {t('settings.direction')}
-        </Heading>
-        <ToggleButtonGroup
-          exclusive
-          value={theme.direction}
-          onChange={handleChangeDirection}
-          aria-labelledby="settings-direction"
-          color="primary"
-          fullWidth
-        >
-          <IconToggleButton
-            value="ltr"
-            aria-label={t('settings.light')}
-            data-ga-event-category="settings"
-            data-ga-event-action="ltr"
-          >
-            <FormatTextdirectionLToRIcon fontSize="small" />
-            {t('settings.ltr')}
-          </IconToggleButton>
-          <IconToggleButton
-            value="rtl"
-            aria-label={t('settings.system')}
-            data-ga-event-category="settings"
-            data-ga-event-action="rtl"
-          >
-            <FormatTextdirectionRToLIcon fontSize="small" />
-            {t('settings.rtl')}
-          </IconToggleButton>
-        </ToggleButtonGroup>
-        <Heading gutterBottom>{t('settings.language')}</Heading>
-        <NoSsr defer>
-          <List>
-            {LANGUAGES_LABEL.map((language) => (
-              <ListItemButton
-                component="a"
-                divider
-                data-no-markdown-link="true"
-                href={language.code === 'en' ? canonicalAs : `/${language.code}${canonicalAs}`}
-                key={language.code}
-                onClick={handleLanguageClick(language)}
-                selected={userLanguage === language.code}
-                lang={language.code}
-                hrefLang={language.code}
-              >
-                {language.text}
-              </ListItemButton>
-            ))}
-            <ListItemButton
-              component="a"
-              href={
-                userLanguage === 'en'
-                  ? `${CROWDIN_ROOT_URL}`
-                  : `${CROWDIN_ROOT_URL}${crowdInLocale}#/staging`
-              }
-              rel="noopener nofollow"
-              target="_blank"
-              key={userLanguage}
-              lang={userLanguage}
-              hrefLang="en"
+        {false && (
+          <React.Fragment>
+            <Heading gutterBottom id="settings-direction">
+              {t('settings.direction')}
+            </Heading>
+            <ToggleButtonGroup
+              exclusive
+              value={theme.direction}
+              onChange={handleChangeDirection}
+              aria-labelledby="settings-direction"
+              color="primary"
+              fullWidth
             >
-              {t('appFrame.helpToTranslate')}
-            </ListItemButton>
-          </List>
-        </NoSsr>
+              <IconToggleButton
+                value="ltr"
+                aria-label={t('settings.light')}
+                data-ga-event-category="settings"
+                data-ga-event-action="ltr"
+              >
+                <FormatTextdirectionLToRIcon fontSize="small" />
+                {t('settings.ltr')}
+              </IconToggleButton>
+              <IconToggleButton
+                value="rtl"
+                aria-label={t('settings.system')}
+                data-ga-event-category="settings"
+                data-ga-event-action="rtl"
+              >
+                <FormatTextdirectionRToLIcon fontSize="small" />
+                {t('settings.rtl')}
+              </IconToggleButton>
+            </ToggleButtonGroup>
+            <Heading gutterBottom>{t('settings.language')}</Heading>
+            <NoSsr defer>
+              <List>
+                {LANGUAGES_LABEL.map((language) => (
+                  <ListItemButton
+                    component="a"
+                    divider
+                    data-no-markdown-link="true"
+                    href={language.code === 'en' ? canonicalAs : `/${language.code}${canonicalAs}`}
+                    key={language.code}
+                    onClick={handleLanguageClick(language)}
+                    selected={userLanguage === language.code}
+                    lang={language.code}
+                    hrefLang={language.code}
+                  >
+                    {language.text}
+                  </ListItemButton>
+                ))}
+                <ListItemButton
+                  component="a"
+                  href={
+                    userLanguage === 'en'
+                      ? `${CROWDIN_ROOT_URL}`
+                      : `${CROWDIN_ROOT_URL}${crowdInLocale}#/staging`
+                  }
+                  rel="noopener nofollow"
+                  target="_blank"
+                  key={userLanguage}
+                  lang={userLanguage}
+                  hrefLang="en"
+                >
+                  {t('appFrame.helpToTranslate')}
+                </ListItemButton>
+              </List>
+            </NoSsr>
+          </React.Fragment>
+        )}
         <Heading gutterBottom>{t('settings.color')}</Heading>
         <Button
           component="a"

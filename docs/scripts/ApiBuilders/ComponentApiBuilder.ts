@@ -435,6 +435,13 @@ const attachPropsTable = (reactApi: ReactApi) => {
   const componentProps: ReactApi['propsTable'] = _.fromPairs(
     Object.entries(reactApi.props!).map(([propName, propDescriptor]) => {
       let prop: DescribeablePropDescriptor | null;
+
+      // WORKAROUND: Support TS and flow types
+      // https://github.com/reactjs/react-docgen#result-data-structure
+      if (!propDescriptor.type) {
+        // @ts-ignore
+        propDescriptor.type = propDescriptor.tsType || propDescriptor.flowType;
+      }
       try {
         prop = createDescribeableProp(propDescriptor, propName);
       } catch (error) {

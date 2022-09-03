@@ -1,5 +1,5 @@
 import * as recast from 'recast';
-import { parse as docgenParse, PropTypeDescriptor } from 'react-docgen';
+import { parse as docgenParse, PropTypeDescriptor, UnionPropType } from 'react-docgen';
 import { escapeCell } from './helpers';
 
 function getDeprecatedInfo(type: PropTypeDescriptor) {
@@ -112,7 +112,18 @@ export default function generatePropTypeDescription(type: PropTypeDescriptor): s
         })
         .join(', ')} }`;
 
-    case 'union':
+    case 'union': {
+      // @ts-ignore WORKAROUND: Handle TS types with `elements` instead of `value`
+      if (!type.value && type.elements) {
+        return (
+          (type as unknown as UnionPropType).elements
+            .map((type2) => {
+              return generatePropTypeDescription(type2);
+            })
+            // Display one value per line as it's better for visibility.
+            .join('<br>&#124;&nbsp;')
+        );
+      }
       return (
         type.value
           .map((type2) => {
@@ -121,6 +132,7 @@ export default function generatePropTypeDescription(type: PropTypeDescriptor): s
           // Display one value per line as it's better for visibility.
           .join('<br>&#124;&nbsp;')
       );
+    }
     case 'enum':
       return (
         type.value
@@ -142,7 +154,9 @@ export default function generatePropTypeDescription(type: PropTypeDescriptor): s
       return type.value;
     }
 
-    default:
-      return type.name;
+    default: {
+      // @ts-ignore WORKAROUND: tsType informs the `value`
+      return type.value || type.name;
+    }
   }
 }

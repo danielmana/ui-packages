@@ -8,6 +8,7 @@ import { findComponents } from 'docs/src/modules/utils/find';
 import {
   ComponentInfo,
   getMaterialComponentInfo,
+  getUICoreComponentInfo,
   getBaseComponentInfo,
   getSystemComponentInfo,
   extractApiPage,
@@ -148,6 +149,16 @@ const SETTINGS: Settings[] = [
     },
     getApiPages: () => findApiPages('docs/pages/system/api'),
     getComponentInfo: getSystemComponentInfo,
+  },
+  {
+    input: {
+      libDirectory: [path.join(process.cwd(), 'packages/ui-core/src')],
+    },
+    output: {
+      apiManifestPath: path.join(process.cwd(), 'docs/data/ui-core/pagesApi.js'),
+    },
+    getApiPages: () => findApiPages('docs/pages/ui-core/api'),
+    getComponentInfo: getUICoreComponentInfo,
   },
 ];
 

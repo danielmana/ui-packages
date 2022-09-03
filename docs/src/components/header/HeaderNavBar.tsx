@@ -289,7 +289,7 @@ export default function HeaderNavBar() {
                         href={ROUTES.productCore}
                         icon={<IconImage name="product-core" />}
                         name="MUI Core"
-                        description="Ready-to-use foundational components, free forever."
+                        description="Ready-to-use foundational components."
                         onKeyDown={handleKeyDown}
                       />
                     </li>

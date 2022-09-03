@@ -1,0 +1,80 @@
+{
+  "name": "@danielmana/ui-core",
+  "version": "0.1.3",
+  "private": false,
+  "author": "Daniel M",
+  "description": "A library of React UI components.",
+  "main": "./src/index.ts",
+  "keywords": [
+    "react",
+    "react-component",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmana/ui-packages.git",
+    "directory": "packages/ui-core"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielmana/ui-packages/issues"
+  },
+  "homepage": "https://verdant-klepon-5d2a5e.netlify.app/",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/mui"
+  },
+  "scripts": {
+    "build": "yarn build:modern && yarn build:node && yarn build:stable && yarn build:types && yarn build:copy-files",
+    "build:modern": "node ../../scripts/build modern",
+    "build:node": "node ../../scripts/build node",
+    "build:stable": "node ../../scripts/build stable",
+    "build:copy-files": "node ../../scripts/copy-files.js",
+    "build:types": "node ../../scripts/buildTypes",
+    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
+    "release": "yarn build && npm publish build",
+    "test": "cd ../../ && cross-env NODE_ENV=test mocha 'packages/ui-core/**/*.test.{js,ts,tsx}'",
+    "typescript": "tslint -p tsconfig.json \"{src,test}/**/*.{spec,d}.{ts,tsx}\" && tsc -p tsconfig.json",
+    "typescript:module-augmentation": "node scripts/testModuleAugmentation.js"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "lodash": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@emotion/react": {
+      "optional": true
+    },
+    "@emotion/styled": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/base": "5.0.0-alpha.95",
+    "@mui/core-downloads-tracker": "^5.10.3",
+    "@mui/material": "^5.10.3",
+    "@mui/system": "^5.10.3",
+    "@mui/types": "^7.2.0",
+    "@mui/utils": "^5.10.3",
+    "clsx": "^1.2.1",
+    "csstype": "^3.1.0",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
+    "react-is": "^18.2.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

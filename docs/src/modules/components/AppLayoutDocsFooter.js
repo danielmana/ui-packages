@@ -6,12 +6,12 @@ import TextField from '@mui/material/TextField';
 import Collapse from '@mui/material/Collapse';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
-import ThumbUpIcon from '@mui/icons-material/ThumbUpAlt';
-import ThumbDownIcon from '@mui/icons-material/ThumbDownAlt';
+// import Tooltip from '@mui/material/Tooltip';
+// import IconButton from '@mui/material/IconButton';
+// import ThumbUpIcon from '@mui/icons-material/ThumbUpAlt';
+// import ThumbDownIcon from '@mui/icons-material/ThumbDownAlt';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Snackbar from '@mui/material/Snackbar';
@@ -45,23 +45,23 @@ const PageLinkButton = styled(Button)(({ theme }) => {
   };
 });
 
-const FeedbackGrid = styled(Grid)(({ theme }) => {
-  return {
-    width: 'auto',
-    color: theme.palette.text.secondary,
-    [theme.breakpoints.down('sm')]: {
-      order: 3,
-      marginTop: 40,
-      width: '100%',
-    },
-  };
-});
+// const FeedbackGrid = styled(Grid)(({ theme }) => {
+//   return {
+//     width: 'auto',
+//     color: theme.palette.text.secondary,
+//     [theme.breakpoints.down('sm')]: {
+//       order: 3,
+//       marginTop: 40,
+//       width: '100%',
+//     },
+//   };
+// });
 
-const FeedbackMessage = styled(Typography)(({ theme }) => {
-  return {
-    margin: theme.spacing(0, 2),
-  };
-});
+// const FeedbackMessage = styled(Typography)(({ theme }) => {
+//   return {
+//     margin: theme.spacing(0, 2),
+//   };
+// });
 
 /**
  * @typedef {import('docs/src/pages').MuiPage} MuiPage
@@ -213,12 +213,12 @@ export default function AppLayoutDocsFooter() {
     setSnackbarOpen(true);
   }
 
-  const handleClickThumb = (vote) => async () => {
-    if (vote !== rating) {
-      setRating(vote);
-      setCommentOpen(true);
-    }
-  };
+  // const handleClickThumb = (vote) => async () => {
+  //   if (vote !== rating) {
+  //     setRating(vote);
+  //     setCommentOpen(true);
+  //   }
+  // };
 
   const handleChangeTextfield = (event) => {
     setComment(event.target.value);
@@ -266,7 +266,7 @@ export default function AppLayoutDocsFooter() {
               ) : (
                 <div />
               )}
-              <FeedbackGrid
+              {/* <FeedbackGrid
                 container
                 role="group"
                 justifyContent="center"
@@ -293,7 +293,7 @@ export default function AppLayoutDocsFooter() {
                     </IconButton>
                   </Tooltip>
                 </div>
-              </FeedbackGrid>
+              </FeedbackGrid> */}
               {nextPage !== null ? (
                 <PageLinkButton
                   component={Link}
