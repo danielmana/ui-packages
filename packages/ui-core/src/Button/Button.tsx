@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref } from 'react';
 
 import MuiButton from '@mui/material/Button';
 import { ButtonBaseProps } from '@mui/material/ButtonBase';
@@ -90,8 +90,8 @@ export interface ButtonProps extends Omit<ButtonBaseProps, 'classes' | 'classNam
  * - [Button API](https://mui.com/ui-core/api/button/)
  * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  return <MuiButton {...props} />;
-};
+const Button: React.FC<ButtonProps> = React.forwardRef((props: ButtonProps, ref: Ref<any>) => {
+  return <MuiButton {...props} ref={ref} />;
+});
 
 export default Button;
