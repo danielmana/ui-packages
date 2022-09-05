@@ -1,8 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import MuiButton from '@mui/material/Button';
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-import { ExtendButton, ButtonTypeMap } from './ButtonProps';
+import { ButtonTypeMap, ExtendButton } from './ButtonProps';
 /**
  *
  * Demos:
@@ -15,7 +15,7 @@ import { ExtendButton, ButtonTypeMap } from './ButtonProps';
  * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 const Button = React.forwardRef(function Button(props, ref) {
-  return <MuiButton {...props} ref={ref} />;
+  return <MuiButton {...(props as MuiButtonProps)} ref={ref} />;
 }) as ExtendButton<ButtonTypeMap>;
 
 Button.propTypes /* remove-proptypes */ = {

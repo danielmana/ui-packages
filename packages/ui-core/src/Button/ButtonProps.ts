@@ -1,11 +1,7 @@
 import React from 'react';
 import { SxProps, Theme } from '@mui/material/styles';
-import { ExtendButtonBaseTypeMap } from '@mui/material/ButtonBase';
-import {
-  OverridableComponent,
-  OverridableTypeMap,
-  OverrideProps,
-} from '@mui/material/OverridableComponent';
+import { ExtendButton as MuiExtendButton } from '@mui/material/Button';
+import { OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
 
 export interface ButtonTypeMap<P = {}, D extends React.ElementType = 'button'> {
   props: P & {
@@ -85,7 +81,4 @@ export type ButtonProps<
   P = {},
 > = OverrideProps<ButtonTypeMap<P, D>, D>;
 
-export type ExtendButton<M extends OverridableTypeMap> = ((
-  props: { href: string } & OverrideProps<ExtendButtonBaseTypeMap<M>, 'a'>,
-) => JSX.Element) &
-  OverridableComponent<ExtendButtonBaseTypeMap<M>> & { propTypes?: any };
+export type ExtendButton<M extends OverridableTypeMap> = MuiExtendButton<M> & { propTypes?: any };
