@@ -194,7 +194,7 @@ function findUICoreDemos(
     )
     .map((page) => ({
       name: page.title,
-      demoPathname: replaceComponentLinks(`${page.pathname.replace(/^\/ui-core/, '')}/`),
+      demoPathname: page.pathname.replace(/\/components\//, '/'),
     }));
 }
 
