@@ -776,9 +776,9 @@ workflows:
       - test_browser:
           requires:
             - checkout
-      - test_regressions:
-          requires:
-            - checkout
+      # - test_regressions:
+      #     requires:
+      #       - checkout
       - test_e2e:
           requires:
             - checkout
@@ -841,8 +841,8 @@ workflows:
           react-version: ^17.0.0
       - test_browser:
           react-version: ^17.0.0
-      - test_regressions:
-          react-version: ^17.0.0
+      # - test_regressions:
+      #     react-version: ^17.0.0
       - test_e2e:
           react-version: ^17.0.0
   react-next:
@@ -858,8 +858,8 @@ workflows:
           react-version: next
       - test_browser:
           react-version: next
-      - test_regressions:
-          react-version: next
+      # - test_regressions:
+      #     react-version: next
       - test_e2e:
           react-version: next
   typescript-next:
