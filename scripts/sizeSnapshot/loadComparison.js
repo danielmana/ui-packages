@@ -6,7 +6,8 @@ const path = require('path');
 const fetch = require('node-fetch');
 const lodash = require('lodash');
 
-const ARTIFACT_SERVER = 'https://s3.eu-central-1.amazonaws.com/mui-org-ci';
+const ARTIFACT_SERVER = 'https://ui-packages.s3.us-west-1.amazonaws.com';
+// const ARTIFACT_SERVER = 'https://s3.eu-central-1.amazonaws.com/mui-org-ci';
 
 async function loadCurrentSnapshot() {
   return fse.readJSON(path.join(__dirname, '../../size-snapshot.json'));
