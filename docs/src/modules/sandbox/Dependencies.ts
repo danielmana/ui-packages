@@ -57,7 +57,8 @@ export default function SandboxDependencies(
       return 'latest';
     }
     const shortSha = commitRef.slice(0, 8);
-    return `https://pkg.csb.dev/danielmana/ui-core/commit/${shortSha}/@danielmana/${packageName}`;
+    // TODO danielmana: return `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
+    return `https://pkg.csb.dev/mui/material-ui/commit/${shortSha}/@mui/${packageName}`;
   }
 
   function extractDependencies(raw: string) {
