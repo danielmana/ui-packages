@@ -434,22 +434,23 @@ jobs:
           # see karma.conf.profile.js reactProfilerReporter.outputDir
           path: tmp/react-profiler-report/karma
           destination: react-profiler-report/karma
-  test_regressions:
-    <<: *defaults
-    docker:
-      - image: mcr.microsoft.com/playwright:v1.25.1-focal
-        environment:
-          NODE_ENV: development # Needed if playwright is in `devDependencies`
-    steps:
-      - checkout
-      - install_js:
-          browsers: true
-      - run:
-          name: Run visual regression tests
-          command: xvfb-run yarn test:regressions
-      - run:
-          name: Upload screenshots to Argos CI
-          command: yarn test:argos
+  # TODO danielmana: Enable test_regressions
+  # test_regressions:
+  #   <<: *defaults
+  #   docker:
+  #     - image: mcr.microsoft.com/playwright:v1.25.1-focal
+  #       environment:
+  #         NODE_ENV: development # Needed if playwright is in `devDependencies`
+  #   steps:
+  #     - checkout
+  #     - install_js:
+  #         browsers: true
+  #     - run:
+  #         name: Run visual regression tests
+  #         command: xvfb-run yarn test:regressions
+  #     - run:
+  #         name: Upload screenshots to Argos CI
+  #         command: yarn test:argos
   test_bundling_prepare:
     <<: *defaults
     steps:
