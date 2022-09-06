@@ -141,8 +141,9 @@ async function reportBundleSize() {
 
   const comparison = await loadLastComparison(upstreamRef);
 
-  const detailedComparisonRoute = `/size-comparison?circleCIBuildNumber=${circleCIBuildNumber}&baseRef=${danger.github.pr.base.ref}&baseCommit=${comparison.previous}&prNumber=${danger.github.pr.number}`;
-  const detailedComparisonUrl = `https://mui-dashboard.netlify.app${detailedComparisonRoute}`;
+  // TODO danielmana: Enable size-comparison details
+  // const detailedComparisonRoute = `/size-comparison?circleCIBuildNumber=${circleCIBuildNumber}&baseRef=${danger.github.pr.base.ref}&baseCommit=${comparison.previous}&prNumber=${danger.github.pr.number}`;
+  // const detailedComparisonUrl = `https://mui-dashboard.netlify.app${detailedComparisonRoute}`;
 
   const { all: allResults, main: mainResults } = sieveResults(Object.entries(comparison.bundles));
   const anyResultsChanges = allResults.filter(createComparisonFilter(1, 1));
@@ -158,11 +159,11 @@ async function reportBundleSize() {
       markdown(importantChanges.join('\n'));
     }
 
-    const details = `[Details of bundle changes](${detailedComparisonUrl})`;
+    // const details = `[Details of bundle changes](${detailedComparisonUrl})`;
 
-    markdown(details);
-  } else {
-    markdown(`[No bundle size changes](${detailedComparisonUrl})`);
+    //   markdown(details);
+    // } else {
+    //   markdown(`[No bundle size changes](${detailedComparisonUrl})`);
   }
 }
 
