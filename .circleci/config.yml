@@ -695,7 +695,7 @@ jobs:
                 aws-region: AWS_REGION_ARTIFACTS
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_ARTIFACTS
                 from: ui-packages.tgz
-                to: s3://arn:aws:s3:::assets-193858265520-us-east-1/$CIRCLE_BRANCH/$CIRCLE_SHA1/
+                to: s3://ui-packages/artifacts/$CIRCLE_BRANCH/$CIRCLE_SHA1/
       - store_artifacts:
           path: ui-packages.tgz
           destination: ui-packages.tgz
@@ -724,7 +724,7 @@ jobs:
                 aws-region: AWS_REGION_ARTIFACTS
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_ARTIFACTS
                 from: size-snapshot.json
-                to: s3://arn:aws:s3:::assets-193858265520-us-east-1/$CIRCLE_BRANCH/$CIRCLE_SHA1/
+                to: s3://ui-packages/artifacts/$CIRCLE_BRANCH/$CIRCLE_SHA1/
             # symlink size-snapshot to latest
             - aws-s3/copy:
                 arguments: --content-type application/json
@@ -732,7 +732,7 @@ jobs:
                 aws-region: AWS_REGION_ARTIFACTS
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_ARTIFACTS
                 from: size-snapshot.json
-                to: s3://arn:aws:s3:::assets-193858265520-us-east-1/$CIRCLE_BRANCH/latest/
+                to: s3://ui-packages/artifacts/$CIRCLE_BRANCH/latest/
       - run:
           name: run danger on PRs
           command: yarn danger ci --fail-on-errors
