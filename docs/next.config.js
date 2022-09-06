@@ -157,6 +157,7 @@ module.exports = {
                         '@mui/base': '../packages/mui-base/src',
                         '@mui/material-next': '../packages/mui-material-next/src',
                         '@mui/joy': '../packages/mui-joy/src',
+                        '@danielmana/ui-core': '../packages/ui-core/src',
                       },
                       // transformFunctions: ['require'],
                     },

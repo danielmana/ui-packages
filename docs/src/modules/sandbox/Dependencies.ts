@@ -57,7 +57,7 @@ export default function SandboxDependencies(
       return 'latest';
     }
     const shortSha = commitRef.slice(0, 8);
-    return `https://pkg.csb.dev/mui/material-ui/commit/${shortSha}/@mui/${packageName}`;
+    return `https://pkg.csb.dev/danielmana/ui-core/commit/${shortSha}/@danielmana/${packageName}`;
   }
 
   function extractDependencies(raw: string) {
@@ -106,6 +106,7 @@ export default function SandboxDependencies(
       '@mui/utils': getMuiPackageVersion('utils'),
       '@mui/material-next': getMuiPackageVersion('material-next'),
       '@mui/joy': getMuiPackageVersion('joy'),
+      '@danielmana/ui-core': getMuiPackageVersion('ui-core'),
     };
 
     // TODO: consider if this configuration could be injected in a "cleaner" way.
