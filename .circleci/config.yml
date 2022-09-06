@@ -42,7 +42,7 @@ defaults: &defaults
     REACT_VERSION: << parameters.react-version >>
     TEST_GATE: << parameters.test-gate >>
     AWS_REGION_ARTIFACTS: eu-central-1
-  working_directory: /tmp/material-ui
+  working_directory: /tmp/ui-packages
   docker:
     - image: cimg/node:14.20
 
@@ -277,6 +277,7 @@ jobs:
             git add -f packages/mui-material/build || echo '/material declarations do not exist'
             git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
+            git add -f packages/ui-core/build || echo '/utils declarations do not exist'
             yarn lerna run build:types
             git --no-pager diff
 
@@ -291,6 +292,7 @@ jobs:
             - packages/mui-material/build
             - packages/mui-lab/build
             - packages/mui-utils/build
+            - packages/ui-core/build
   test_types_next:
     <<: *defaults
     resource_class: 'medium+'
@@ -328,6 +330,7 @@ jobs:
             git add -f packages/mui-material/build || echo '/core declarations do not exist'
             git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
+            git add -f packages/ui-core/build || echo '/ui-core declarations do not exist'
             yarn lerna run build:types
             git --no-pager diff
 
@@ -462,12 +465,12 @@ jobs:
 
   test_bundling_node-esm:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/node-esm/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/node-esm/
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -486,16 +489,16 @@ jobs:
             exit 0
   test_bundling_next-webpack4:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/next-webpack4/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/next-webpack4/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -510,16 +513,16 @@ jobs:
           command: yarn start
   test_bundling_next-webpack5:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/next-webpack5/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/next-webpack5/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -534,16 +537,16 @@ jobs:
           command: yarn start
   test_bundling_create-react-app:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/create-react-app/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/create-react-app/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -558,16 +561,16 @@ jobs:
           command: yarn start
   test_bundling_snowpack:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/snowpack/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/snowpack/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -582,16 +585,16 @@ jobs:
           command: yarn start
   test_bundling_vite:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/vite/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/vite/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -606,16 +609,16 @@ jobs:
           command: yarn start
   test_bundling_esbuild:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/esbuild/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/esbuild/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -634,16 +637,16 @@ jobs:
             exit 0
   test_bundling_gatsby:
     <<: *defaults
-    working_directory: /tmp/material-ui/test/bundling/fixtures/gatsby/
+    working_directory: /tmp/ui-packages/test/bundling/fixtures/gatsby/
     docker:
       - image: mcr.microsoft.com/playwright:v1.25.1-focal
         environment:
           NODE_ENV: development # Needed if playwright is in `devDependencies`
     steps:
       - checkout:
-          path: /tmp/material-ui
+          path: /tmp/ui-packages
       - attach_workspace:
-          at: /tmp/material-ui/packages
+          at: /tmp/ui-packages/packages
       - run:
           name: Prepare fixture
           command: |
@@ -674,7 +677,7 @@ jobs:
             cd packages/mui-material/build
             npm version 0.0.0-canary.${CIRCLE_SHA1} --no-git-tag-version
             npm pack
-            mv mui-material-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../mui-material.tgz
+            mv mui-material-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../ui-packages.tgz
       - when:
           # don't run on PRs
           condition:
@@ -691,11 +694,11 @@ jobs:
                 aws-access-key-id: AWS_ACCESS_KEY_ID_ARTIFACTS
                 aws-region: AWS_REGION_ARTIFACTS
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_ARTIFACTS
-                from: mui-material.tgz
+                from: ui-packages.tgz
                 to: s3://mui-org-ci/artifacts/$CIRCLE_BRANCH/$CIRCLE_SHA1/
       - store_artifacts:
-          path: mui-material.tgz
-          destination: mui-material.tgz
+          path: ui-packages.tgz
+          destination: ui-packages.tgz
       - run:
           name: create a size snapshot
           command: yarn size:snapshot

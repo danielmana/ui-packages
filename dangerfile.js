@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 const { loadComparison } = require('./scripts/sizeSnapshot');
 
 const circleCIBuildNumber = process.env.CIRCLE_BUILD_NUM;
-const circleCIBuildUrl = `https://app.circleci.com/pipelines/github/mui/material-ui/jobs/${circleCIBuildNumber}`;
+const circleCIBuildUrl = `https://app.circleci.com/pipelines/github/danielmana/ui-packages/jobs/${circleCIBuildNumber}`;
 const dangerCommand = process.env.DANGER_COMMAND;
 
 const parsedSizeChangeThreshold = 300;
