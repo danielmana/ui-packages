@@ -1,5 +1,7 @@
 import {
-    createTheme as muiCreateTheme, DeprecatedThemeOptions, ThemeOptions
+  createTheme as muiCreateTheme,
+  DeprecatedThemeOptions,
+  ThemeOptions,
 } from '@mui/material/styles';
 
 import sanitizeThemeOptions from './sanitizeThemeOptions';
