@@ -40,35 +40,17 @@
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "lodash": "^4.0.0"
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {
-      "optional": true
-    },
-    "@emotion/react": {
-      "optional": true
-    },
-    "@emotion/styled": {
       "optional": true
     }
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@mui/base": "5.0.0-alpha.95",
-    "@mui/core-downloads-tracker": "^5.10.3",
     "@mui/material": "^5.10.3",
-    "@mui/system": "^5.10.3",
-    "@mui/types": "^7.2.0",
-    "@mui/utils": "^5.10.3",
-    "clsx": "^1.2.1",
-    "csstype": "^3.1.0",
-    "lodash": "^4.17.21",
-    "prop-types": "^15.8.1",
-    "react-is": "^18.2.0"
+    "prop-types": "^15.8.1"
   },
   "sideEffects": false,
   "publishConfig": {

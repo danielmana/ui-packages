@@ -4,7 +4,6 @@ import { describeConformance, act, createRenderer, fireEvent, screen } from 'tes
 
 import Button from '@danielmana/ui-core/Button';
 import { ThemeProvider, createTheme } from '@danielmana/ui-core/styles';
-import { ClassNames } from '@emotion/react';
 import { buttonClasses as classes } from '@mui/material/Button';
 import ButtonBase, { touchRippleClasses } from '@mui/material/ButtonBase';
 
@@ -636,65 +635,5 @@ describe('<Button />', () => {
       </ThemeProvider>,
     );
     expect(container.querySelectorAll(`.${touchRippleClasses.root}`)).to.have.length(1);
-  });
-
-  describe('Emotion compatibility', () => {
-    it('classes.root should overwrite builtin styles.', () => {
-      // This is pink
-      const color = 'rgb(255, 192, 204)';
-
-      const { getByRole } = render(
-        <ClassNames>
-          {({ css }) => (
-            <Button color="primary" classes={{ root: css({ color }) }}>
-              This text should be pink
-            </Button>
-          )}
-        </ClassNames>,
-      );
-      const button = getByRole('button');
-
-      expect(getComputedStyle(button).color).to.equal(color);
-    });
-
-    it('className should overwrite classes.root and builtin styles.', () => {
-      const colorPink = 'rgb(255, 192, 204)';
-      const colorRed = 'rgb(255, 0, 0)';
-
-      const { getByRole } = render(
-        <ClassNames>
-          {({ css }) => (
-            <Button
-              color="primary"
-              className={css({ color: colorRed })}
-              classes={{ root: css({ color: colorPink }) }}
-            >
-              This text should be red
-            </Button>
-          )}
-        </ClassNames>,
-      );
-      const button = getByRole('button');
-
-      expect(getComputedStyle(button).color).to.equal(colorRed);
-    });
-
-    it('classes.* should overwrite builtin styles.', () => {
-      // This is pink
-      const color = 'rgb(255, 192, 204)';
-
-      const { getByRole } = render(
-        <ClassNames>
-          {({ css }) => (
-            <Button color="primary" classes={{ text: css({ color }) }}>
-              This text should be pink
-            </Button>
-          )}
-        </ClassNames>,
-      );
-      const button = getByRole('button');
-
-      expect(getComputedStyle(button).color).to.equal(color);
-    });
   });
 });
