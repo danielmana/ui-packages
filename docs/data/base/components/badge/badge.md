@@ -84,10 +84,6 @@ If the root element is customized with both the `component` and `components` pro
 Use the `componentsProps` prop to pass custom props to internal slots.
 The following code snippet applies a CSS class called `my-badge` to the badge slot:
 
-```jsx
-<BadgeUnstyled componentsProps={{ badge: { className: 'my-badge' } }} />
-```
-
 :::warning
 Note that `componentsProps` slot names are written in lowercase (`root`) while `components` slot names are capitalized (`Root`).
 :::
