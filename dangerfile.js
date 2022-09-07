@@ -116,7 +116,8 @@ function prepareBundleSizeReport() {
 // A previous build might have failed to produce a snapshot
 // Let's walk up the tree a bit until we find a commit that has a successful snapshot
 async function loadLastComparison(upstreamRef, n = 0) {
-  const mergeBaseCommit = await git(`merge-base HEAD~${n} ${UPSTREAM_REMOTE}/${upstreamRef}`);
+  // const mergeBaseCommit = await git(`merge-base HEAD~${n} ${UPSTREAM_REMOTE}/${upstreamRef}`);
+  const mergeBaseCommit = 'latest';
   try {
     return await loadComparison(mergeBaseCommit, upstreamRef);
   } catch (err) {
