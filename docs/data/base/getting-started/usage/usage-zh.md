@@ -65,10 +65,6 @@ The `componentsProps` prop is an object that contains the props for all slots wi
 
 For example, the code snippet below shows how to add a custom CSS class to the `badge` slot of the `BadgeUnstyled` component:
 
-```jsx
-<BadgeUnstyled componentsProps={{ badge: { className: 'my-badge' } }} />
-```
-
 All additional props placed on the primary component are also propagated into the `Root` slot (just as if they were placed in `componentsProps.root`).
 
 These two examples are equivalent:
