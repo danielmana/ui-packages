@@ -10,7 +10,7 @@ type RegExpMatchArrayWithGroups<T> = (RegExpMatchArray & RegExpMatchArrayWithGro
 export default function SandboxDependencies(
   demo: {
     raw: string;
-    product?: 'joy-ui' | 'base' | 'ui-core';
+    product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-model';
     codeVariant: keyof typeof CODE_VARIANTS;
   },
   options?: { commitRef?: string },
@@ -168,7 +168,7 @@ export default function SandboxDependencies(
   }
 
   // WORKAROUND: Add lodash dependency
-  if (demo.product === 'ui-core') {
+  if (demo.product === 'ui-model') {
     dependencies.lodash = 'latest';
   }
 
