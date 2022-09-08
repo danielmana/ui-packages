@@ -1,85 +1,10 @@
-# Contributing to MUI
+# Contributing to UI Packages
 
-If you're reading this, you're awesome! Thank you for helping us make this project great and being a part of the MUI community. Here are a few guidelines that will help you along the way.
-
-## Code of Conduct
-
-MUI has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) as its Code of Conduct, and we expect project participants to adhere to it.
-Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
-
-## A large spectrum of contributions
-
-There are [many ways](https://mui.com/material-ui/getting-started/faq/#mui-is-awesome-how-can-i-support-the-project) to contribute to MUI, code contribution is one aspect of it. For instance, documentation improvements are as important as code changes.
-
-## Your first Pull Request
-
-Working on your first Pull Request? You can learn how from this free video series:
-
-[How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
-
-To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/mui/material-ui/issues?q=is:open+is:issue+label:"good+first+issue") that contain changes that have a relatively limited scope. This label means that there is already a working solution to the issue in the discussion section. Therefore, it is a great place to get started.
-
-We also have a list of [good to take issues](https://github.com/mui/material-ui/issues?q=is:open+is:issue+label:"good+to+take"). This label is set when there has been already some discussion about the solution and it is clear in which direction to go. These issues are good for developers that want to reduce the chance of going down a rabbit hole.
-
-You can also work on any other issue you choose to.
-The "good first" and "good to take" issues are just issues where we have a clear picture about scope and timeline.
-Pull requests working on other issues or completely new problems may take a bit longer to review when they don't fit into our current development cycle.
-
-If you decide to fix an issue, please be sure to check the comment thread in case somebody is already working on a fix. If nobody is working on it at the moment, please leave a comment stating that you have started to work on it so other people don't accidentally duplicate your effort.
-
-If somebody claims an issue but doesn't follow up for more than a week, it's fine to take it over but you should still leave a comment.
-If there has been no activity on the issue for 7 to 14 days, it is safe to assume that nobody is working on it.
-
-## Sending a Pull Request
-
-MUI is a community project, so Pull Requests are always welcome, but, before working on a large change, it is best to open an issue first to discuss it with the maintainers.
-
-When in doubt, keep your Pull Requests small. To give a Pull Request the best chance of getting accepted, don't bundle more than one feature or bug fix per Pull Request. It's often best to create two smaller Pull Requests than one big one.
-
-1. Fork the repository.
-
-2. Clone the fork to your local machine and add upstream remote:
-
-```sh
-git clone https://github.com/<your username>/material-ui.git
-cd material-ui
-git remote add upstream https://github.com/mui/material-ui.git
-```
-
-<!-- #default-branch-switch -->
-
-3. Synchronize your local `master` branch with the upstream one:
-
-```sh
-git checkout master
-git pull upstream master
-```
-
-4. Install the dependencies with yarn (npm isn't supported):
-
-```sh
-yarn install
-```
-
-5. Create a new topic branch:
-
-```sh
-git checkout -b my-topic-branch
-```
-
-6. Make changes, commit and push to your fork:
-
-```sh
-git push -u origin HEAD
-```
-
-7. Go to [the repository](https://github.com/mui/material-ui) and make a Pull Request.
-
-The core team is monitoring for Pull Requests. We will review your Pull Request and either merge it, request changes to it, or close it with an explanation.
+Here are a few guidelines that will help you along the way.
 
 ### Trying changes on the documentation site
 
-The documentation site is built with MUI and contains examples of all the components.
+The documentation site contains examples of all the components.
 This is a great place to experiment with your changes.
 It's the local development environment used by the maintainers.
 
@@ -106,9 +31,9 @@ Make sure the following is true:
 - If a feature is being added:
   - If the result was already achievable with the core library, explain why this feature needs to be added to the core.
   - If this is a common use case, consider adding an example to the documentation.
-- When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/mui/material-ui/blob/HEAD/test/README.md).
+- When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/danielmana/ui-packages/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, the TypeScript declarations were updated.
-- When submitting a new component, please add it to the [lab](https://github.com/mui/material-ui/tree/HEAD/packages/mui-lab).
+- When submitting a new component, please add it to the [lab](https://github.com/danielmana/ui-packages/tree/HEAD/packages/mui-lab).
 - The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
 Because we will only merge a Pull Request for which all tests pass. The following items need to be true:
@@ -137,7 +62,7 @@ The following section gives an overview of what each check is responsible for.
 ##### ci/codesandbox
 
 This task should not fail in isolation. It creates multiple sandboxes on CodeSandbox.com that use the version
-of MUI that was built from this Pull Request. Use it to test more complex scenarios.
+of UI Packages that was built from this Pull Request. Use it to test more complex scenarios.
 
 ##### ci/circleci: checkout
 
@@ -202,7 +127,7 @@ on _Details_ to find out more about them.
 ### Updating the component API documentation
 
 The component API in the component `propTypes` and under `docs/pages/api-docs` is auto-generated from the [JSDoc](https://jsdoc.app/about-getting-started.html) in the TypeScript declarations.
-Be sure to update the documentation in the corresponding `.d.ts` files (e.g. `packages/mui-material/src/Button/Button.d.ts` for `<Button>`) and then run:
+Be sure to update the documentation in the corresponding `.ts` files (e.g. `packages/ui-core/src/Button/ButtonProps.ts` for `<Button>`) and then run:
 
 ```sh
 $ yarn proptypes
@@ -253,14 +178,10 @@ about translations](#translations).
 
 MUI documents how to use this library with TypeScript.
 
-If you are familiar with this language, write the demo in TypeScript, and only, in a \*.tsx file.
+Write the demo in TypeScript, and only, in a \*.tsx file.
 When you're done run `yarn docs:typescript:formatted` to automatically create the JavaScript version.
 
-If you are not familiar with that language, write the demo in JavaScript, a core contributor might help you to migrate it to TypeScript.
-
 ### 4. You are done 🎉
-
-In case you missed something, [we have a real example that can be used as a summary report](https://github.com/mui/material-ui/pull/19582/files).
 
 ## How can I use a change that wasn't released yet?
 
@@ -278,45 +199,30 @@ index 791a7da1f4..a5db13b414 100644
      "@babel/runtime": "^7.4.4",
      "@mui/styled-engine": "^5.0.0-alpha.16",
 -    "@mui/material": "^5.0.0-alpha.15",
-+    "@mui/material": "https://pkg.csb.dev/mui/material-ui/commit/371c952b/@mui/material",
++    "@mui/material": "https://pkg.csb.dev/danielmana/ui-packages/commit/371c952b/@mui/material",
      "@mui/system": "^5.0.0-alpha.16",
 ```
 
 Alternatively, you can open the Netlify preview of the documentation, and open any demo in Codesandbox. The documentation automatically configures the dependencies to use the preview packages.
 
 You can also package and test your changes locally.
-The following example shows how to package `@mui/material`, but you can package any MUI module with this process:
+The following example shows how to package `@danielmana/ui-core`, but you can package any UI module with this process:
 
 ```sh
-$> cd packages/mui-material # or path to any other mui package
-$packages\mui-material> yarn build
-$packages\mui-material> cd ./build
-$packages\mui-material> npm pack
+$> cd packages/ui-core # or path to any other mui package
+$packages\ui-core> yarn build
+$packages\ui-core> cd ./build
+$packages\ui-core> npm pack
 ```
 
-Navigate to the build folder of your respective package and locate a file with the format `mui-material-x.x.x.tar.gz`.
+Navigate to the build folder of your respective package and locate a file with the format `ui-core-x.x.x.tar.gz`.
 Copy this file and move it to the project directory you want to test in, then run:
 
 ```sh
-$test-project> npm i ./path-to-file/mui-material-x.x.x.tar.gz
+$test-project> npm i ./path-to-file/ui-core-x.x.x.tar.gz
 ```
 
 :::info
 If you have already installed this package, your changes will not be reflected when you reinstall it.
 As a quick fix, you can temporarily bump the version number in your `package.json` before running `yarn build`.
 :::
-
-## Translations
-
-Translations are handled via [Crowdin](https://translate.mui.com).
-You don't need to apply any changes to localized versions of our markdown files
-i.e. files having a `-locale` suffix. Crowdin automatically takes care of syncing
-these changes across the localized versions.
-
-## Roadmap
-
-To get a sense of where MUI is heading, or for ideas on where you could contribute, take a look at the [roadmap](https://mui.com/material-ui/discover-more/roadmap/).
-
-## License
-
-By contributing your code to the [mui/material-ui](https://github.com/mui/material-ui) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).
