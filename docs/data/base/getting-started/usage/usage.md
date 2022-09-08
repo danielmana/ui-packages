@@ -73,6 +73,10 @@ You can use it to define additional custom props for a component's interior elem
 
 For example, the code snippet below shows how to add a custom CSS class to the badge slot of the `BadgeUnstyled` component:
 
+```jsx
+<BadgeUnstyled componentsProps={{ badge: { className: 'my-badge' } }} />
+```
+
 :::warning
 Note that `componentsProps` slot names are written in lowercase (`root`) while `components` slot names are capitalized (`Root`).
 :::
