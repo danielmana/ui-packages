@@ -3,7 +3,7 @@
   "version": "0.1.7",
   "private": false,
   "author": "Daniel M",
-  "description": "A library of React UI components.",
+  "description": "A library of React UI core components.",
   "main": "./src/index.ts",
   "keywords": [
     "react",
