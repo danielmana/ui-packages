@@ -17,9 +17,18 @@
 
 - [UI Components](https://verdant-klepon-5d2a5e.netlify.app/ui-components/getting-started/overview/) is a library of advanced components for complex use cases.
 
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-components/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-components)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+
 - [UI Model](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is a library to connect the frontend with the backend.
 
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+
 - [UI Utils](https://verdant-klepon-5d2a5e.netlify.app/ui-utils/getting-started/overview/) is a collection of utils to help you rapidly implement the logic.
+
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
 ## Installation
 
@@ -35,7 +44,7 @@ Or **yarn**:
 yarn add @danielmana/ui-core
 ```
 
-This code shows how to install `@danielmana/ui-core`, but you can install any UI module with this command.
+This code shows how to install `@danielmana/ui-core`, but you can install any other UI module replacing `ui-core` by the package name.
 
 ## Contributing
 
