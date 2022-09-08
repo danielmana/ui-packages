@@ -2,6 +2,37 @@
 
 Here are a few guidelines that will help you along the way.
 
+## Sending a Pull Request
+
+Keep your Pull Requests small. To give a Pull Request the best chance of getting accepted, don't bundle more than one feature or bug fix per Pull Request. It's often best to create two smaller Pull Requests than one big one.
+
+1. Clone the repository to your local machine:
+
+```sh
+git clone git@github.com:danielmana/ui-packages.git
+cd ui-packages
+```
+
+2. Install the dependencies with yarn (npm isn't supported):
+
+```sh
+yarn install
+```
+
+3. Create a new topic branch:
+
+```sh
+git checkout -b <username>/my-topic-branch
+```
+
+4. Make changes, commit and push:
+
+```sh
+git push origin <username>/my-topic-branch
+```
+
+5. Go to [the repository](https://github.com/danielmana/ui-packages) and make a Pull Request.
+
 ### Trying changes on the documentation site
 
 The documentation site contains examples of all the components.
@@ -33,7 +64,6 @@ Make sure the following is true:
   - If this is a common use case, consider adding an example to the documentation.
 - When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/danielmana/ui-packages/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, the TypeScript declarations were updated.
-- When submitting a new component, please add it to the [lab](https://github.com/danielmana/ui-packages/tree/HEAD/packages/mui-lab).
 - The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
 Because we will only merge a Pull Request for which all tests pass. The following items need to be true:
@@ -196,11 +226,8 @@ index 791a7da1f4..a5db13b414 100644
 +++ b/package.json
 @@ -61,7 +61,7 @@
    "dependencies": {
-     "@babel/runtime": "^7.4.4",
-     "@mui/styled-engine": "^5.0.0-alpha.16",
--    "@mui/material": "^5.0.0-alpha.15",
-+    "@mui/material": "https://pkg.csb.dev/danielmana/ui-packages/commit/371c952b/@mui/material",
-     "@mui/system": "^5.0.0-alpha.16",
+-    "@danielmana/ui-core": "0.1.0",
++    "@danielmana/ui-core": "https://pkg.csb.dev/danielmana/ui-packages/commit/371c952b/@danielmana/ui-core",
 ```
 
 Alternatively, you can open the Netlify preview of the documentation, and open any demo in Codesandbox. The documentation automatically configures the dependencies to use the preview packages.
@@ -209,7 +236,7 @@ You can also package and test your changes locally.
 The following example shows how to package `@danielmana/ui-core`, but you can package any UI module with this process:
 
 ```sh
-$> cd packages/ui-core # or path to any other mui package
+$> cd packages/ui-core # or path to any other UI package
 $packages\ui-core> yarn build
 $packages\ui-core> cd ./build
 $packages\ui-core> npm pack
