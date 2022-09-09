@@ -20,10 +20,25 @@
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-components/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-components)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
+- [ui-forms](https://verdant-klepon-5d2a5e.netlify.app/ui-forms/getting-started/overview/) is a library to handle forms.
+
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-forms/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-forms)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+
 - [ui-model](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is a library to connect the frontend with the backend.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+
+- [ui-model-legacy](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is the legacy library to connect the frontend with the backend.
+
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model-legacy/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model-legacy)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+
+- [ui-icons](https://verdant-klepon-5d2a5e.netlify.app/ui-icons/getting-started/overview/) is a collection of ready-to-use icons.
+
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
 - [ui-utils](https://verdant-klepon-5d2a5e.netlify.app/ui-utils/getting-started/overview/) is a collection of utils to help you rapidly implement the logic.
 
@@ -36,12 +51,6 @@ To install and save in your `package.json` dependencies, run the command below u
 
 ```sh
 npm install @danielmana/ui-core
-```
-
-Or **yarn**:
-
-```sh
-yarn add @danielmana/ui-core
 ```
 
 This code shows how to install `@danielmana/ui-core`, but you can install any other UI module replacing `ui-core` by the package name.

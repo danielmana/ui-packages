@@ -6,15 +6,9 @@ const pages = [
     icon: 'DescriptionIcon',
     children: [
       { pathname: '/ui-core/getting-started/overview' },
-      { pathname: '/material-ui/getting-started/installation' },
-      { pathname: '/material-ui/getting-started/usage' },
-      // { pathname: '/material-ui/getting-started/example-projects' },
-      // { pathname: '/material-ui/getting-started/templates' },
-      // { pathname: '/material-ui/getting-started/learn' },
-      // { pathname: '/material-ui/getting-started/faq', title: 'FAQs' },
-      // { pathname: '/material-ui/getting-started/supported-components' },
-      { pathname: '/material-ui/getting-started/supported-platforms' },
-      // { pathname: '/material-ui/getting-started/support' },
+      { pathname: '/ui-core/getting-started/installation' },
+      { pathname: '/ui-core/getting-started/usage' },
+      { pathname: '/ui-core/getting-started/supported-platforms' },
     ],
   },
   {
