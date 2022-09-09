@@ -2,7 +2,7 @@
 
 ## Component
 
-> **Public components** are considered all components exported from `@mui/material` or `@mui/lab`.
+> **Public components** are considered all components exported from `@danielmana/ui-core` or `@danielmana/ui-components`.
 >
 > **Internal components** are considered all components that are not exported from the packages, but only used in some public component.
 
