@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { Button, createTheme, ThemeProvider } from '@danielmana/ui-core';
+import { Button, ThemeProvider } from '@danielmana/ui-core';
 import Stack from '@mui/material/Stack';
 
 export default function ButtonColor() {
   return (
-    <ThemeProvider theme={createTheme()}>
+    <ThemeProvider>
       <Stack direction="row" spacing={2}>
         <Button color="primary">Primary</Button>
         <Button color="secondary">Secondary</Button>

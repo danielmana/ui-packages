@@ -1,4 +1,4 @@
-<ThemeProvider theme={createTheme()}>
+<ThemeProvider>
   <Stack direction="row" spacing={2}>
     <Button color="primary">Primary</Button>
     <Button color="secondary">Secondary</Button>
