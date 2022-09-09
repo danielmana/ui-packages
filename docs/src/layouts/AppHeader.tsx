@@ -5,19 +5,16 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
-import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
-import HeaderNavBar from 'docs/src/components/header/HeaderNavBar';
-import HeaderNavDropdown from 'docs/src/components/header/HeaderNavDropdown';
 import ThemeModeToggle from 'docs/src/components/header/ThemeModeToggle';
 import { getCookie } from 'docs/src/modules/utils/helpers';
 import { useChangeTheme } from 'docs/src/modules/components/ThemeContext';
 import Link from 'docs/src/modules/components/Link';
-import { DeferredAppSearch } from 'docs/src/modules/components/AppFrame';
 import ROUTES from 'docs/src/route';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
+import IconImage from '../components/icon/IconImage';
 
 const Header = styled('header')(({ theme }) => ({
   position: 'sticky',
@@ -72,19 +69,16 @@ export default function AppHeader() {
           aria-label="Go to homepage"
           sx={{ lineHeight: 0, mr: 2 }}
         >
-          <SvgMuiLogo width={30} />
-        </Box>
-        <Box sx={{ display: { xs: 'none', md: 'initial' } }}>
-          <HeaderNavBar />
+          <IconImage name="product-core" />
+          &nbsp;UI Packages
         </Box>
         <Box sx={{ ml: 'auto' }} />
         <Stack direction="row" spacing={1}>
-          <DeferredAppSearch />
           <Tooltip title={t('appFrame.github')} enterDelay={300}>
             <IconButton
               component="a"
               color="primary"
-              href="https://github.com/mui"
+              href="https://github.com/danielmana/ui-packages"
               data-ga-event-category="header"
               data-ga-event-action="github"
             >
@@ -98,9 +92,6 @@ export default function AppHeader() {
             />
           ) : null}
         </Stack>
-        <Box sx={{ display: { md: 'none' }, ml: 1 }}>
-          <HeaderNavDropdown />
-        </Box>
       </Container>
     </Header>
   );

@@ -8,9 +8,9 @@
 
 </div>
 
-**UI Packages** repository contains foundational React UI libraries for shipping new features faster.
+**UI Packages** contains foundational React UI libraries for shipping new features faster:
 
-- [ui-core](https://verdant-klepon-5d2a5e.netlify.app/ui-core/getting-started/overview/) is a library of ready-to-use foundational core components.
+- [ui-core](https://verdant-klepon-5d2a5e.netlify.app/ui-core/getting-started/overview/) is a library of ready-to-use core components.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-core/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-core)](https://bundlephobia.com/package/@danielmana/ui-core@latest)

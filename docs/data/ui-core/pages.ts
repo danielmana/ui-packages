@@ -31,7 +31,7 @@ const pages = [
       {
         pathname: '/ui-core/components/inputs',
         subheader: 'inputs',
-        children: [{ pathname: '/ui-core/button' }],
+        children: [{ pathname: '/ui-core/react-button' }],
       },
     ],
   },
