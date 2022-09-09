@@ -103,11 +103,6 @@ export default function MuiProductSelector() {
                 slug: 'ui-core',
               },
               {
-                name: 'ui-forms',
-                href: ROUTES.uiCoreDocs,
-                slug: 'ui-forms',
-              },
-              {
                 name: 'ui-icons',
                 href: ROUTES.uiCoreDocs,
                 slug: 'ui-icons',
@@ -147,7 +142,7 @@ export default function MuiProductSelector() {
       >
         <ProductSubMenu
           role="menuitem"
-          icon={<IconImage name="product-core" />}
+          icon={<IconImage name="product-advanced" />}
           name="Components"
           description="Advanced components for complex use cases."
         />
@@ -172,6 +167,11 @@ export default function MuiProductSelector() {
                 name: 'ui-components',
                 href: ROUTES.uiCoreDocs,
                 slug: 'ui-components',
+              },
+              {
+                name: 'ui-forms',
+                href: ROUTES.uiCoreDocs,
+                slug: 'ui-forms',
               },
             ].map((product) => (
               <Chip
@@ -203,7 +203,7 @@ export default function MuiProductSelector() {
       >
         <ProductSubMenu
           role="menuitem"
-          icon={<IconImage name="product-core" />}
+          icon={<IconImage name="product-toolpad" />}
           name="Model"
           description="Connect the frontent with the backend."
         />

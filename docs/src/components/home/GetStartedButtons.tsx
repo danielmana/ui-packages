@@ -9,10 +9,11 @@ import ROUTES from 'docs/src/route';
 import Link from 'docs/src/modules/components/Link';
 
 export default function GetStartedButtons({
+  label = 'Get started',
   installation = 'npm install @mui/material @emotion/react @emotion/styled',
   to = ROUTES.documentation,
   ...props
-}: { installation?: string; to?: string } & BoxProps) {
+}: { label?: string; installation?: string; to?: string } & BoxProps) {
   const [copied, setCopied] = React.useState(false);
   const handleCopy = () => {
     setCopied(true);
@@ -39,7 +40,7 @@ export default function GetStartedButtons({
         endIcon={<KeyboardArrowRightRounded />}
         sx={{ mr: { xs: 0, sm: 2 } }}
       >
-        Get started
+        {label}
       </Button>
       <Box sx={{ py: 1, display: { xs: 'block', sm: 'hidden' } }} />
       <Button

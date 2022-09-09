@@ -7,7 +7,7 @@ import { ButtonTypeMap, ExtendButton } from './ButtonProps';
  *
  * Demos:
  *
- * - [Button](https://mui.com/ui-core/button)
+ * - [Button](https://mui.com/ui-core/react-button/)
  *
  * API:
  *
