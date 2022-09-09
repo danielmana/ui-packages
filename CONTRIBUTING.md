@@ -22,13 +22,13 @@ yarn install
 3. Create a new topic branch:
 
 ```sh
-git checkout -b <username>/my-topic-branch
+git checkout -b <username>/<task-id>
 ```
 
 4. Make changes, commit and push:
 
 ```sh
-git push origin <username>/my-topic-branch
+git push origin <username>/<task-id>
 ```
 
 5. Go to [the repository](https://github.com/danielmana/ui-packages) and make a Pull Request.
@@ -64,7 +64,7 @@ Make sure the following is true:
   - If this is a common use case, consider adding an example to the documentation.
 - When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/danielmana/ui-packages/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, the TypeScript declarations were updated.
-- The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
+- The branch is not behind its target branch.
 
 Because we will only merge a Pull Request for which all tests pass. The following items need to be true:
 
@@ -74,12 +74,6 @@ Because we will only merge a Pull Request for which all tests pass. The followin
 - The API docs are up-to-date. If API was changed, run `yarn proptypes && yarn docs:api`.
 - The demos are up-to-date. If demos were changed, make sure `yarn docs:typescript:formatted` does not introduce changes. See [about writing demos](#3-write-the-content-of-the-demo).
 - The Pull Request title follows the pattern `[Component] Imperative commit message`. (See: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) for a great explanation).
-
-If you have missed a step, don't worry, the Continuous Integration will run a thorough test on your commits and the maintainers of the project can assist.
-
-If your pull request addresses an open issue, make sure to link the PR to that issue.
-Use any [supported GitHub keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) in the PR description to automatically link them.
-This makes it easier to understand where the PR is coming from and also speeds things up as the issue gets closed when the PR is merged.
 
 #### Checks and how to fix them
 
@@ -166,7 +160,7 @@ $ yarn docs:api
 
 ### Coding style
 
-Please follow the coding style of the project. MUI uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
+Please follow the coding style of the project. UI Packages repository uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
 
 - `yarn prettier` reformats the code.
 - `yarn lint` runs manually the linting rules.
@@ -205,8 +199,6 @@ about translations](#translations).
 ```
 
 ### 3. Write the content of the demo
-
-MUI documents how to use this library with TypeScript.
 
 Write the demo in TypeScript, and only, in a \*.tsx file.
 When you're done run `yarn docs:typescript:formatted` to automatically create the JavaScript version.

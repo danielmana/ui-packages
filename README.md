@@ -10,22 +10,22 @@
 
 **UI Packages** repository contains foundational React UI libraries for shipping new features faster.
 
-- [UI Core](https://verdant-klepon-5d2a5e.netlify.app/ui-core/getting-started/overview/) is a library of ready-to-use foundational core components.
+- [ui-core](https://verdant-klepon-5d2a5e.netlify.app/ui-core/getting-started/overview/) is a library of ready-to-use foundational core components.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-core/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-core)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
-- [UI Components](https://verdant-klepon-5d2a5e.netlify.app/ui-components/getting-started/overview/) is a library of advanced components for complex use cases.
+- [ui-components](https://verdant-klepon-5d2a5e.netlify.app/ui-components/getting-started/overview/) is a library of advanced components for complex use cases.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-components/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-components)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
-- [UI Model](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is a library to connect the frontend with the backend.
+- [ui-model](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is a library to connect the frontend with the backend.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
 
-- [UI Utils](https://verdant-klepon-5d2a5e.netlify.app/ui-utils/getting-started/overview/) is a collection of utils to help you rapidly implement the logic.
+- [ui-utils](https://verdant-klepon-5d2a5e.netlify.app/ui-utils/getting-started/overview/) is a collection of utils to help you rapidly implement the logic.
 
 [![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
