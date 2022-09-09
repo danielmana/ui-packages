@@ -4,6 +4,11 @@ import Box from '@mui/material/Box';
 import GetStartedButtons from 'docs/src/components/home/GetStartedButtons';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import uiCorePkgJson from '../../../../packages/ui-core/package.json';
+
+const versions: Record<string, string> = {
+  'ui-core': uiCorePkgJson.version,
+};
 
 export default function Hero() {
   return (
@@ -11,18 +16,18 @@ export default function Hero() {
       <Grid container wrap="nowrap" sx={{ height: '100%', mx: 'auto' }}>
         <Grid item md={12}>
           {[
-            'ui-core',
-            'ui-icons',
-            'ui-utils',
+            `ui-core`,
             'ui-components',
             'ui-forms',
             'ui-model',
             'ui-model-legacy',
+            'ui-icons',
+            'ui-utils',
           ].map((label) => (
             <Box mb={2}>
               <GetStartedButtons
                 sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}
-                label={label}
+                label={`${label}${versions[label] ? `#${versions[label]}` : ''}`}
                 installation={`npm i @danielmana/${label}`}
                 to={`/${label}/getting-started/overview/`}
               />
