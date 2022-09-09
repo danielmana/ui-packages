@@ -11,11 +11,12 @@ if (reactStrictMode) {
   // eslint-disable-next-line no-console
   console.log(`Using React.StrictMode.`);
 }
-const l10nPRInNetlify = /^l10n_/.test(process.env.HEAD) && process.env.NETLIFY === 'true';
-const vercelDeploy = Boolean(process.env.VERCEL);
-const isDeployPreview = process.env.PULL_REQUEST === 'true';
+// const l10nPRInNetlify = /^l10n_/.test(process.env.HEAD) && process.env.NETLIFY === 'true';
+// const vercelDeploy = Boolean(process.env.VERCEL);
+// const isDeployPreview = process.env.PULL_REQUEST === 'true';
 // For crowdin PRs we want to build all locales for testing.
-const buildOnlyEnglishLocale = isDeployPreview && !l10nPRInNetlify && !vercelDeploy;
+// const buildOnlyEnglishLocale = isDeployPreview && !l10nPRInNetlify && !vercelDeploy;
+const buildOnlyEnglishLocale = true;
 
 const staging =
   process.env.REPOSITORY_URL === undefined ||
@@ -193,8 +194,8 @@ module.exports = {
     PULL_REQUEST: process.env.PULL_REQUEST === 'true',
     FEEDBACK_URL: process.env.FEEDBACK_URL,
     // #default-branch-switch
-    SOURCE_CODE_ROOT_URL: 'https://github.com/mui/material-ui/blob/master',
-    SOURCE_CODE_REPO: 'https://github.com/mui/material-ui',
+    SOURCE_CODE_ROOT_URL: 'https://github.com/danielmana/ui-packages/blob/master',
+    SOURCE_CODE_REPO: 'https://github.com/danielmana/ui-packages',
     STAGING: staging,
     BUILD_ONLY_ENGLISH_LOCALE: buildOnlyEnglishLocale,
   },
