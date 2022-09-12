@@ -195,8 +195,6 @@ declare module '@mui/material/styles' {
 }
 ```
 
-{{"demo": "CustomColor.js"}}
-
 ## Picking colors
 
 Need inspiration? The Material Design team has built an [palette configuration tool](/material-ui/customization/color/#picking-colors) to help you.

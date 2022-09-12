@@ -1,8 +1,9 @@
 import { createTheme as muiCreateTheme, DeprecatedThemeOptions } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
-import defaultTheme, { ThemeOptions } from './defaultTheme';
+import defaultTheme from './defaultTheme';
 import sanitizeThemeOptions from './sanitizeThemeOptions';
+import { ThemeOptions } from './types';
 
 /**
  * Generate a theme base on the options received.
