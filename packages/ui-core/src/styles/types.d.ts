@@ -10,6 +10,8 @@ import {
 
 import { ButtonProps } from '../Button/ButtonProps';
 import { ButtonClassKey } from '../Button/buttonClasses';
+import { StackProps } from '../Stack/StackProps';
+import { StackClassKey } from '../Stack/stackClasses';
 
 // Add colors to `theme.palette`
 declare module '@mui/material/styles' {
@@ -33,9 +35,11 @@ declare module '@mui/material/Button' {
 declare module '@mui/material/styles' {
   interface ComponentNameToClassKey {
     UICoreButton: ButtonClassKey;
+    UICoreStack: StackClassKey;
   }
   interface ComponentsPropsList {
     UICoreButton: ButtonProps;
+    UICoreStack: StackProps;
   }
 }
 
@@ -43,6 +47,10 @@ export interface Components<Theme = unknown> {
   UICoreButton?: {
     defaultProps?: ComponentsProps['UICoreButton'];
     styleOverrides?: ComponentsOverrides<Theme>['UICoreButton'];
+  };
+  UICoreStack?: {
+    defaultProps?: ComponentsProps['UICoreStack'];
+    styleOverrides?: ComponentsOverrides<Theme>['UICoreStack'];
   };
 }
 
