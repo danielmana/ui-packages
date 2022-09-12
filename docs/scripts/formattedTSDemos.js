@@ -143,8 +143,8 @@ async function main(argv) {
   }
 
   const tsxFiles = [
-    ...(await getFiles(path.join(workspaceRoot, 'docs/src/pages'))), // old structure
-    ...(await getFiles(path.join(workspaceRoot, 'docs/data'))), // new structure
+    ...(await getFiles(path.join(workspaceRoot, 'docs/data/ui-core'))),
+    // ...(await getFiles(path.join(workspaceRoot, 'docs/data/ui-components'))),
   ].filter((fileName) => {
     return filePattern.test(fileName);
   });

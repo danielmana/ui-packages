@@ -1,10 +1,7 @@
 import { teal } from '@mui/material/colors';
-import { createTheme as muiCreateTheme, ThemeOptions } from '@mui/material/styles';
+import { ThemeOptions } from '@mui/material/styles';
 import { createBreakpoints, createSpacing } from '@mui/system';
-
-const { augmentColor } = muiCreateTheme().palette;
-
-export const createColor = (mainColor: string) => augmentColor({ color: { main: mainColor } });
+import createColor from './createColor';
 
 /**
  * Generate a sanitized theme based on the theme options received.

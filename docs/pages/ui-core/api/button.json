@@ -42,7 +42,10 @@
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
   "filename": "/packages/ui-core/src/Button/Button.tsx",
-  "inheritance": { "component": "ButtonBase", "pathname": "/material-ui/api/button-base/" },
+  "inheritance": {
+    "component": "ButtonBase",
+    "pathname": "https://mui.com/material-ui/api/button-base/"
+  },
   "demos": "<ul><li><a href=\"/ui-core/react-button/\">Button</a></li></ul>",
   "cssComponent": false
 }

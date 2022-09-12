@@ -374,8 +374,15 @@ module.exports = {
     },
     {
       files: ['packages/*/src/**/*{.ts,.tsx,.js}'],
-      excludedFiles: ['*.d.ts', '*.spec.ts', '*.spec.tsx', 'packages/mui-joy/**/*{.ts,.tsx,.js}'],
+      excludedFiles: [
+        '*.d.ts',
+        '*.spec.ts',
+        '*.spec.tsx',
+        'packages/mui-joy/**/*{.ts,.tsx,.js}',
+        'packages/ui-core/**/*{.ts,.tsx,.js}',
+      ],
       rules: {
+        // TODO danielmana: Add `ui-packages/ui-core-name-matches-component-name` rule
         'material-ui/mui-name-matches-component-name': [
           'error',
           {
