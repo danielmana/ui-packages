@@ -1,17 +1,8 @@
-import {
-  Components as MuiComponents,
-  createTheme as muiCreateTheme,
-  DeprecatedThemeOptions,
-  Theme,
-  ThemeOptions as MuiThemeOptions,
-} from '@mui/material/styles';
+import { createTheme as muiCreateTheme, DeprecatedThemeOptions } from '@mui/material/styles';
+import { deepmerge } from '@mui/utils';
 
-import { Components } from './components';
+import defaultTheme, { ThemeOptions } from './defaultTheme';
 import sanitizeThemeOptions from './sanitizeThemeOptions';
-
-interface ThemeOptions extends MuiThemeOptions {
-  components?: MuiComponents<Omit<Theme, 'components'>> & Components;
-}
 
 /**
  * Generate a theme base on the options received.
@@ -19,7 +10,9 @@ interface ThemeOptions extends MuiThemeOptions {
  * @param args Deep merge the arguments with the about to be returned theme.
  * @returns A complete, ready-to-use theme object for MUI v5
  */
-const createTheme = (options?: Partial<ThemeOptions> | DeprecatedThemeOptions, ...args: object[]) =>
-  muiCreateTheme(sanitizeThemeOptions(options || {}), args);
+const createTheme = (options?: ThemeOptions | DeprecatedThemeOptions, ...args: object[]) => {
+  const themeOptions = deepmerge(defaultTheme, sanitizeThemeOptions(options || {}));
+  return muiCreateTheme(themeOptions, args);
+};
 
 export default createTheme;

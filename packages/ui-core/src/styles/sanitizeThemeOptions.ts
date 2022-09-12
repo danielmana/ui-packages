@@ -1,7 +1,5 @@
-import { teal } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 import { createBreakpoints, createSpacing } from '@mui/system';
-import createColor from './createColor';
 
 /**
  * Generate a sanitized theme based on the theme options received.
@@ -85,9 +83,6 @@ export default function sanitizeThemeOptions(inputTheme: any): ThemeOptions {
     type: finalMode,
     ...paletteRest,
   };
-
-  // Ensure additional colors exist
-  theme.palette.tertiary ||= createColor(teal.A700);
 
   // Extend components in case of using a V5 theme
   const components = (inputTheme as Partial<ThemeOptions>).components;

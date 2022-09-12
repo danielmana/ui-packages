@@ -233,7 +233,7 @@ async function generateProptypes(
       '----------------------------- Warning --------------------------------',
       '| These PropTypes are generated from the TypeScript type definitions |',
       isTsFile
-        ? `| To update them edit "${propsFile.replace(/^.*\//, '')}" and run "yarn proptypes"`
+        ? `| To update them edit TypeScript types and run "yarn proptypes"`
         : '| To update them edit the d.ts file and run "yarn proptypes"',
       '----------------------------------------------------------------------',
     ].join('\n'),
