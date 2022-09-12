@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 
 import composeClasses from '@mui/base/composeClasses';
-import MuiButton, {
-  ButtonProps as MuiButtonProps,
-  ExtendButton as MuiExtendButton,
-} from '@mui/material/Button';
-import { OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
-import { styled, SxProps, Theme, useThemeProps } from '@mui/material/styles';
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
+import { styled, useThemeProps } from '@mui/material/styles';
 import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { capitalize } from '@mui/material/utils';
 
 import { getButtonUtilityClass } from './buttonClasses';
+import { ButtonProps, ButtonTypeMap, ExtendButton } from './ButtonProps';
 
 const useUtilityClasses = (ownerState: ButtonProps) => {
   const { classes } = ownerState;
@@ -36,84 +33,6 @@ const ButtonRoot = styled(MuiButton, {
   },
 })<{ ownerState: ButtonProps }>(() => ({}));
 
-export interface ButtonTypeMap<P = {}, D extends React.ElementType = 'button'> {
-  props: P & {
-    /**
-     * The content of the component.
-     */
-    children?: React.ReactNode;
-    /**
-     * The color of the component.
-     * @default 'primary'
-     */
-    color?:
-      | 'inherit'
-      | 'primary'
-      | 'secondary'
-      | 'tertiary'
-      | 'success'
-      | 'error'
-      | 'info'
-      | 'warning';
-    /**
-     * If `true`, the component is disabled.
-     * @default false
-     */
-    disabled?: boolean;
-    /**
-     * If `true`, no elevation is used.
-     * @default false
-     */
-    disableElevation?: boolean;
-    /**
-     * If `true`, the  keyboard focus ripple is disabled.
-     * @default false
-     */
-    disableFocusRipple?: boolean;
-    /**
-     * Element placed after the children.
-     */
-    endIcon?: React.ReactNode;
-    /**
-     * If `true`, the button will take up the full width of its container.
-     * @default false
-     */
-    fullWidth?: boolean;
-    /**
-     * The URL to link to when the button is clicked.
-     * If defined, an `a` element will be used as the root node.
-     */
-    href?: string;
-    /**
-     * The size of the component.
-     * `small` is equivalent to the dense button styling.
-     * @default 'medium'
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * Element placed before the children.
-     */
-    startIcon?: React.ReactNode;
-    /**
-     * The system prop that allows defining system overrides as well as additional CSS styles.
-     */
-    sx?: SxProps<Theme>;
-    /**
-     * The variant to use.
-     * @default 'text'
-     */
-    variant?: 'text' | 'outlined' | 'contained';
-  };
-
-  defaultComponent: D;
-}
-
-export type ButtonProps<
-  D extends React.ElementType = ButtonTypeMap['defaultComponent'],
-  P = {},
-> = OverrideProps<ButtonTypeMap<P, D>, D>;
-
-export type ExtendButton<M extends OverridableTypeMap> = MuiExtendButton<M> & { propTypes?: any };
 /**
  *
  * Demos:
@@ -153,7 +72,7 @@ const Button = React.forwardRef(function Button(inProps, ref) {
 Button.propTypes /* remove-proptypes */ = {
   // ----------------------------- Warning --------------------------------
   // | These PropTypes are generated from the TypeScript type definitions |
-  // | To update them edit TypeScript types and run "yarn proptypes"
+  // | To update them edit "ButtonProps.ts" and run "yarn proptypes"
   // ----------------------------------------------------------------------
   /**
    * The content of the component.

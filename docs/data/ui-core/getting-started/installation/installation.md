@@ -22,8 +22,7 @@ Please note that [react](https://www.npmjs.com/package/react) >= 17.0.0 and [rea
 
 ## SVG icons
 
-In order to use prebuilt SVG Material icons, such as those found in the [icons demos](/ui-core/icons/)
-you must first install the [@danielmana/ui-icons](https://www.npmjs.com/package/@danielmana/ui-icons) package:
+In order to use prebuilt icons, you must first install the [@danielmana/ui-icons](https://www.npmjs.com/package/@danielmana/ui-icons) package:
 
 <!-- #default-branch-switch -->
 

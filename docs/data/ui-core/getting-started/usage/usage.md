@@ -27,11 +27,3 @@ To ensure proper rendering and touch zooming for all devices, add the responsive
 ```html
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 ```
-
-## Next steps
-
-Now that you have an idea of the basic setup, it's time to learn more about:
-
-- How to provide [the Material Design font and typography](/ui-core/react-typography/).
-- How to take advantage of the [theming solution](/ui-core/customization/theming/).
-- How to [override](/ui-core/customization/how-to-customize/) the look and feel of the components.
