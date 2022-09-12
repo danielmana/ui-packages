@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 
 import composeClasses from '@mui/base/composeClasses';
-import MuiButton from '@mui/material/Button';
-import { styled, Theme, useThemeProps } from '@mui/material/styles';
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
+import { styled, useThemeProps } from '@mui/material/styles';
 import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { capitalize } from '@mui/material/utils';
 
@@ -45,7 +45,7 @@ const ButtonRoot = styled(MuiButton, {
  * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 const Button = React.forwardRef(function Button(inProps, ref) {
-  const props = useThemeProps<Theme, ButtonProps, 'UICoreButton'>({
+  const props = useThemeProps({
     props: inProps,
     name: 'UICoreButton',
   });
@@ -62,7 +62,7 @@ const Button = React.forwardRef(function Button(inProps, ref) {
       classes={classes}
       className={clsx(classesRoot, className)}
       ownerState={ownerState}
-      {...other}
+      {...(other as MuiButtonProps)}
     >
       {children}
     </ButtonRoot>
