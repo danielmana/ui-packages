@@ -5,6 +5,7 @@ import * as React from 'react';
 import composeClasses from '@mui/base/composeClasses';
 import MuiButton from '@mui/material/Button';
 import { styled, Theme, useThemeProps } from '@mui/material/styles';
+import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { capitalize } from '@mui/material/utils';
 
 import { getButtonUtilityClass } from './buttonClasses';
@@ -22,6 +23,7 @@ const useUtilityClasses = (ownerState: ButtonProps) => {
 };
 
 const ButtonRoot = styled(MuiButton, {
+  shouldForwardProp: (prop: string) => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'UICoreButton',
   slot: 'Root',
   overridesResolver: (props, styles) => {
