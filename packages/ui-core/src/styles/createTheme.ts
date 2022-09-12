@@ -1,10 +1,17 @@
 import {
+  Components as MuiComponents,
   createTheme as muiCreateTheme,
   DeprecatedThemeOptions,
-  ThemeOptions,
+  Theme,
+  ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles';
 
+import { Components } from './components';
 import sanitizeThemeOptions from './sanitizeThemeOptions';
+
+interface ThemeOptions extends MuiThemeOptions {
+  components?: MuiComponents<Omit<Theme, 'components'>> & Components;
+}
 
 /**
  * Generate a theme base on the options received.

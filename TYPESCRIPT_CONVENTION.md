@@ -180,31 +180,26 @@ const BarRoot = styled(Typography)<{
   <summary>public component</summary>
 
 ```ts
-const Foo = React.forwardRef<HTMLSpanElement, FooProps>(function Foo(inProps, ref) => {
+const Foo = React.forwardRef<HTMLSpanElement, FooProps>(function Foo(inProps, ref) {
   // pass args like this, otherwise will get error about theme at return section
   const props = useThemeProps<Theme, FooProps, 'MuiFoo'>({
     props: inProps,
     name: 'MuiFoo',
   });
-  const { children, className, ...other } = props
+  const { children, className, ...other } = props;
 
   // ...implementation
 
-  const ownerState = { ...props, ...otherValue }
+  const ownerState = { ...props, ...otherValue };
 
   const classes = useUtilityClasses(ownerState);
 
   return (
-    <FooRoot
-      ref={ref}
-      className={clsx(classes.root, className)}
-      ownerState={ownerState}
-      {...other}
-    >
+    <FooRoot ref={ref} className={clsx(classes.root, className)} ownerState={ownerState} {...other}>
       {children}
     </FooRoot>
-  )
-})
+  );
+});
 ```
 
 </details>

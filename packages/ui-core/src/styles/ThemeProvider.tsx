@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Theme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { Theme, ThemeProvider as MuiThemeProvider, useTheme } from '@mui/material/styles';
 import createTheme from './createTheme';
 
 export default function ThemeProvider({
@@ -8,5 +8,6 @@ export default function ThemeProvider({
 }: React.PropsWithChildren<{
   theme?: Theme;
 }>) {
-  return <MuiThemeProvider theme={theme || createTheme()}>{children}</MuiThemeProvider>;
+  const currentTheme = useTheme();
+  return <MuiThemeProvider theme={theme || createTheme(currentTheme)}>{children}</MuiThemeProvider>;
 }

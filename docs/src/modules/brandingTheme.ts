@@ -1,6 +1,7 @@
 import { deepmerge } from '@mui/utils';
 import ArrowDropDownRounded from '@mui/icons-material/ArrowDropDownRounded';
-import { createTheme, ThemeOptions, Theme, alpha } from '@mui/material/styles';
+import { ThemeOptions, Theme, alpha } from '@mui/material/styles';
+import { createTheme } from '@danielmana/ui-core';
 
 declare module '@mui/material/styles/createPalette' {
   interface ColorRange {

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { deepmerge } from '@mui/utils';
-import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
+import { ThemeProvider, useTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { getDesignTokens, getThemedComponents } from 'docs/src/modules/brandingTheme';
 import { NextNProgressBar } from 'docs/src/modules/components/AppFrame';
 import SkipLink from 'docs/src/modules/components/SkipLink';
+import { createTheme } from '@danielmana/ui-core';
 
 interface BrandingProviderProps {
   children: React.ReactNode;

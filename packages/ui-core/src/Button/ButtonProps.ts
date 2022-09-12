@@ -1,7 +1,8 @@
 import React from 'react';
-import { SxProps, Theme } from '@mui/material/styles';
+
 import { ExtendButton as MuiExtendButton } from '@mui/material/Button';
 import { OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
+import { SxProps, Theme } from '@mui/material/styles';
 
 export interface ButtonTypeMap<P = {}, D extends React.ElementType = 'button'> {
   props: P & {
@@ -11,8 +12,6 @@ export interface ButtonTypeMap<P = {}, D extends React.ElementType = 'button'> {
     children?: React.ReactNode;
     /**
      * The color of the component.
-     * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'primary'
      */
     color?:

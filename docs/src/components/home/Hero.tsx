@@ -24,7 +24,7 @@ export default function Hero() {
             'ui-icons',
             'ui-utils',
           ].map((label) => (
-            <Box mb={2}>
+            <Box key={label} mb={2}>
               <GetStartedButtons
                 sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}
                 label={`${label}${versions[label] ? `#${versions[label]}` : ''}`}

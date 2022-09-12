@@ -160,9 +160,9 @@ export const getMaterialComponentInfo = (filename: string): ComponentInfo => {
         apiPathname:
           inheritedComponent === 'Transition'
             ? 'http://reactcommunity.org/react-transition-group/transition/#Transition-props'
-            : `/${inheritedComponent.match(/unstyled/i) ? 'base' : 'material-ui'}/api/${kebabCase(
-                inheritedComponent,
-              )}/`,
+            : `${
+                inheritedComponent.match(/unstyled/i) ? '/base' : 'https://mui.com/material-ui'
+              }/api/${kebabCase(inheritedComponent)}/`,
       };
     },
     getDemos: () => {
@@ -225,9 +225,9 @@ export const getUICoreComponentInfo = (filename: string): ComponentInfo => {
         apiPathname:
           inheritedComponent === 'Transition'
             ? 'http://reactcommunity.org/react-transition-group/transition/#Transition-props'
-            : `/${inheritedComponent.match(/unstyled/i) ? 'base' : 'material-ui'}/api/${kebabCase(
-                inheritedComponent,
-              )}/`,
+            : `${
+                inheritedComponent.match(/unstyled/i) ? '/base' : 'https://mui.com/material-ui'
+              }/api/${kebabCase(inheritedComponent)}/`,
       };
     },
     getDemos: () => {

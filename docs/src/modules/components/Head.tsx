@@ -6,7 +6,7 @@ import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
 import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 
 // #major-version-switch
-const HOST = 'https://mui.com';
+const HOST = 'https://verdant-klepon-5d2a5e.netlify.app';
 
 interface HeadProps {
   card?: string;
@@ -64,7 +64,7 @@ export default function Head(props: HeadProps) {
             <link
               key={userLanguage2}
               rel="alternate"
-              href={`https://mui.com${
+              href={`https://verdant-klepon-5d2a5e.netlify.app${
                 userLanguage2 === 'en' ? '' : `/${userLanguage2}`
               }${canonicalAs}`}
               hrefLang={userLanguage2}

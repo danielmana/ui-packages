@@ -58,3 +58,11 @@ This code shows how to install `@danielmana/ui-core`, but you can install any ot
 ## Contributing
 
 Read the [contributing guide](/CONTRIBUTING.md) to learn about our development process and how to build and test your changes.
+
+## Release
+
+Read the [scripts guide](/scripts/README.md) to learn about our release process.
+
+## Documentation
+
+It lives at https://verdant-klepon-5d2a5e.netlify.app/

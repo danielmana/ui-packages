@@ -1,36 +1,87 @@
-import * as React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
+import * as React from 'react';
 
-import { ButtonTypeMap, ExtendButton } from './ButtonProps';
+import composeClasses from '@mui/base/composeClasses';
+import MuiButton from '@mui/material/Button';
+import { styled, Theme, useThemeProps } from '@mui/material/styles';
+import { capitalize } from '@mui/material/utils';
+
+import { getButtonUtilityClass } from './buttonClasses';
+import { ButtonProps, ButtonTypeMap, ExtendButton } from './ButtonProps';
+
+const useUtilityClasses = (ownerState: ButtonProps) => {
+  const { classes } = ownerState;
+
+  const slots = {
+    root: ['root'],
+  };
+
+  const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
+  return { ...classes, ...composedClasses };
+};
+
+const ButtonRoot = styled(MuiButton, {
+  name: 'UICoreButton',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const { color, variant = 'text' } = props.ownerState as ButtonProps;
+
+    return [styles.root, color && styles[`${variant || 'text'}${capitalize(color)}`]];
+  },
+})<{ ownerState: ButtonProps }>(() => ({}));
+
 /**
  *
  * Demos:
  *
- * - [Button](https://mui.com/ui-core/react-button/)
+ * - [Button](https://verdant-klepon-5d2a5e.netlify.app//ui-core/react-button/)
  *
  * API:
  *
- * - [Button API](https://mui.com/ui-core/api/button/)
+ * - [Button API](https://verdant-klepon-5d2a5e.netlify.app//ui-core/api/button/)
  * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
-const Button = React.forwardRef(function Button(props, ref) {
-  return <MuiButton {...(props as MuiButtonProps)} ref={ref} />;
+const Button = React.forwardRef(function Button(inProps, ref) {
+  const props = useThemeProps<Theme, ButtonProps, 'UICoreButton'>({
+    props: inProps,
+    name: 'UICoreButton',
+  });
+
+  const { children, className, ...other } = props;
+
+  const ownerState = { ...props };
+
+  const { root: classesRoot, ...classes } = useUtilityClasses(ownerState);
+
+  return (
+    <ButtonRoot
+      ref={ref}
+      classes={classes}
+      className={clsx(classesRoot, className)}
+      ownerState={ownerState}
+      {...other}
+    >
+      {children}
+    </ButtonRoot>
+  );
 }) as ExtendButton<ButtonTypeMap>;
 
 Button.propTypes /* remove-proptypes */ = {
   // ----------------------------- Warning --------------------------------
   // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit TypeScript types and run "yarn proptypes"  |
+  // | To update them edit "ButtonProps.ts" and run "yarn proptypes"
   // ----------------------------------------------------------------------
   /**
    * The content of the component.
    */
   children: PropTypes.node,
   /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
    * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
    * @default 'primary'
    */
   color: PropTypes.oneOf([

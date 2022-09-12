@@ -233,8 +233,8 @@ async function generateProptypes(
       '----------------------------- Warning --------------------------------',
       '| These PropTypes are generated from the TypeScript type definitions |',
       isTsFile
-        ? '|     To update them edit TypeScript types and run "yarn proptypes"  |'
-        : '|     To update them edit the d.ts file and run "yarn proptypes"     |',
+        ? `| To update them edit "${propsFile.replace(/^.*\//, '')}" and run "yarn proptypes"`
+        : '| To update them edit the d.ts file and run "yarn proptypes"',
       '----------------------------------------------------------------------',
     ].join('\n'),
     ensureBabelPluginTransformReactRemovePropTypesIntegration: true,
@@ -357,7 +357,7 @@ async function run(argv: HandlerArgv) {
     const sourceFile = tsFile.includes('.d.ts') ? tsFile.replace('.d.ts', '.js') : tsFile;
     try {
       await generateProptypes(program, sourceFile, tsFile);
-    } catch (error) {
+    } catch (error: any) {
       error.message = `${tsFile}: ${error.message}`;
       throw error;
     }
@@ -388,7 +388,7 @@ yargs
         type: 'string',
       });
     },
-    handler: run,
+    handler: run as any,
   })
   .help()
   .strict(true)
