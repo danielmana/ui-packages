@@ -33,6 +33,10 @@ git push origin <username>/<task-id>
 
 5. Go to [the repository](https://github.com/danielmana/ui-packages) and make a Pull Request.
 
+### UI Core components
+
+Read the [UI Core guide](/packages/ui-core/README.md) to learn about how to format the core components.
+
 ### Trying changes on the documentation site
 
 The documentation site contains examples of all the components.
@@ -166,10 +170,6 @@ Please follow the coding style of the project. UI Packages repository uses prett
 - `yarn lint` runs manually the linting rules.
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
-
-### Core components format convention
-
-Read the [TypeScript Convention guide](/TYPESCRIPT_CONVENTION.md) to learn about how to format the components using TS.
 
 ## How to add a new demo in the documentation
 

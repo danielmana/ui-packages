@@ -1,7 +1,11 @@
 import * as React from 'react';
 
-import { Button } from '@danielmana/ui-core';
+import { Button, ThemeProvider } from '@danielmana/ui-core';
 
 export default function UsageDemo() {
-  return <Button variant="contained">Hello World</Button>;
+  return (
+    <ThemeProvider>
+      <Button variant="contained">Hello World</Button>
+    </ThemeProvider>
+  );
 }

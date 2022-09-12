@@ -186,8 +186,6 @@ declare module '@mui/core/styles/createPalette' {
 }
 ```
 
-{{"demo": "CustomColor.js"}}
-
 ## 选取颜色
 
 需要灵感吗？ The Material Design team has built an [palette configuration tool](/material-ui/customization/color/#picking-colors) to help you.
