@@ -7,6 +7,7 @@
 /packages/ui-model/ @bosifullstack @guimkogus
 /packages/ui-utils/ @bosifullstack @phelipe-ohlsen @guimkogus @fpudo
 
-# Components - Inputs
+# Components
 
-/packages/mui-material/src/Button/ @danielmana
+/packages/ui-core/src/Button/ @danielmana
+/packages/ui-core/src/Stack/ @danielmana
