@@ -4,8 +4,6 @@
 
 /packages/ui-core/ @mdanielmana
 /packages/ui-components/ @mdanielmana
-/packages/ui-model/ @bosifullstack @guimkogus
-/packages/ui-utils/ @bosifullstack @phelipe-ohlsen @guimkogus @fpudo
 
 # Components
 
