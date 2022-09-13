@@ -12,8 +12,9 @@ export default function GetStartedButtons({
   label = 'Get started',
   installation = 'npm install @mui/material @emotion/react @emotion/styled',
   to = ROUTES.documentation,
+  disabled,
   ...props
-}: { label?: string; installation?: string; to?: string } & BoxProps) {
+}: { label?: string; installation?: string; to?: string; disabled?: boolean } & BoxProps) {
   const [copied, setCopied] = React.useState(false);
   const handleCopy = () => {
     setCopied(true);
@@ -39,6 +40,7 @@ export default function GetStartedButtons({
         variant="contained"
         endIcon={<KeyboardArrowRightRounded />}
         sx={{ mr: { xs: 0, sm: 2 } }}
+        disabled={disabled}
       >
         {label}
       </Button>
@@ -49,6 +51,7 @@ export default function GetStartedButtons({
         variant="code"
         endIcon={copied ? <CheckRounded color="primary" /> : <ContentCopyRounded />}
         onClick={handleCopy}
+        disabled={disabled}
         sx={{
           maxWidth: '324px',
           display: 'inline-block',

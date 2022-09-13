@@ -396,34 +396,34 @@ export default function DemoToolbar(props) {
     // eslint-disable-next-line react-hooks/rules-of-hooks -- process.env.STAGING never changes
     const router = useRouter();
 
-    const defaultReviewID = process.env.GIT_REVIEW_ID ?? '20000';
+    // const defaultReviewID = process.env.GIT_REVIEW_ID ?? '20000';
     devMenuItems.push(
-      <MenuItem
-        key="link-deploy-preview"
-        data-ga-event-category="demo"
-        data-ga-event-label={demoOptions.demo}
-        data-ga-event-action="link-deploy-preview"
-        component="a"
-        href={`https://deploy-preview-${defaultReviewID}--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
-        target="_blank"
-        rel="noopener nofollow"
-        onClick={handleMoreClose}
-      >
-        demo on PR #{defaultReviewID}
-      </MenuItem>,
-      <MenuItem
-        key="link-next"
-        data-ga-event-category="demo"
-        data-ga-event-label={demoOptions.demo}
-        data-ga-event-action="link-next"
-        component="a"
-        href={`https://next--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
-        target="_blank"
-        rel="noopener nofollow"
-        onClick={handleMoreClose}
-      >
-        demo on&#160;<code>next</code>
-      </MenuItem>,
+      // <MenuItem
+      //   key="link-deploy-preview"
+      //   data-ga-event-category="demo"
+      //   data-ga-event-label={demoOptions.demo}
+      //   data-ga-event-action="link-deploy-preview"
+      //   component="a"
+      //   href={`https://deploy-preview-${defaultReviewID}--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
+      //   target="_blank"
+      //   rel="noopener nofollow"
+      //   onClick={handleMoreClose}
+      // >
+      //   demo on PR #{defaultReviewID}
+      // </MenuItem>,
+      // <MenuItem
+      //   key="link-next"
+      //   data-ga-event-category="demo"
+      //   data-ga-event-label={demoOptions.demo}
+      //   data-ga-event-action="link-next"
+      //   component="a"
+      //   href={`https://next--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
+      //   target="_blank"
+      //   rel="noopener nofollow"
+      //   onClick={handleMoreClose}
+      // >
+      //   demo on&#160;<code>next</code>
+      // </MenuItem>,
       <MenuItem
         key="permalink"
         data-ga-event-category="demo"
@@ -437,19 +437,19 @@ export default function DemoToolbar(props) {
       >
         demo permalink
       </MenuItem>,
-      <MenuItem
-        key="link-master"
-        data-ga-event-category="demo"
-        data-ga-event-label={demoOptions.demo}
-        data-ga-event-action="link-master"
-        component="a"
-        href={`https://master--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
-        target="_blank"
-        rel="noopener nofollow"
-        onClick={handleMoreClose}
-      >
-        demo on&#160;<code>master</code>
-      </MenuItem>,
+      // <MenuItem
+      //   key="link-master"
+      //   data-ga-event-category="demo"
+      //   data-ga-event-label={demoOptions.demo}
+      //   data-ga-event-action="link-master"
+      //   component="a"
+      //   href={`https://master--${process.env.NETLIFY_SITE_NAME}.netlify.app${router.route}/#${demoName}`}
+      //   target="_blank"
+      //   rel="noopener nofollow"
+      //   onClick={handleMoreClose}
+      // >
+      //   demo on&#160;<code>master</code>
+      // </MenuItem>,
     );
 
     /* eslint-enable material-ui/no-hardcoded-labels */

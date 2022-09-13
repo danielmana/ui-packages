@@ -27,6 +27,11 @@ const pages = [
         subheader: 'inputs',
         children: [{ pathname: '/ui-core/react-button' }],
       },
+      {
+        pathname: '/ui-core/components/layout',
+        subheader: 'layout',
+        children: [{ pathname: '/ui-core/react-stack' }],
+      },
     ],
   },
   {
@@ -34,6 +39,11 @@ const pages = [
     pathname: '/ui-core/api',
     icon: 'CodeIcon',
     children: pagesApi,
+  },
+  {
+    pathname: '/ui-core/customization',
+    icon: 'CreateIcon',
+    children: [{ pathname: '/ui-core/customization/color' }],
   },
 ];
 

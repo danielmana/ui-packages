@@ -30,6 +30,7 @@ export default function Hero() {
                 label={`${label}${versions[label] ? `#${versions[label]}` : ''}`}
                 installation={`npm i @danielmana/${label}`}
                 to={`/${label}/getting-started/overview/`}
+                disabled={!versions[label]}
               />
             </Box>
           ))}

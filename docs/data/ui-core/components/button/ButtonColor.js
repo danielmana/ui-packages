@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { Stack } from '@mui/material';
-import { Button, ThemeProvider } from '@danielmana/ui-core';
+import { Button, Stack, ThemeProvider } from '@danielmana/ui-core';
 
 export default function ButtonColor() {
   return (
