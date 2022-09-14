@@ -23,14 +23,14 @@ const pages = [
     icon: 'ToggleOnIcon',
     children: [
       {
-        pathname: '/ui-core/components/inputs',
-        subheader: 'inputs',
+        pathname: '/ui-core/components/enhanced',
+        subheader: 'Enhanced',
         children: [{ pathname: '/ui-core/react-button' }],
       },
       {
-        pathname: '/ui-core/components/layout',
-        subheader: 'layout',
-        children: [{ pathname: '/ui-core/react-stack' }],
+        pathname: '/ui-core/components/other',
+        subheader: 'Other',
+        children: [{ pathname: '/ui-core/other-mui-components', title: 'MUI components' }],
       },
     ],
   },
