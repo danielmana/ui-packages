@@ -17,33 +17,33 @@
 
 - [ui-components](https://verdant-klepon-5d2a5e.netlify.app/ui-components/getting-started/overview/) is a library of advanced components for complex use cases.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-components/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-components)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-components/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-components)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-components)](https://bundlephobia.com/package/@danielmana/ui-components@latest)
 
 - [ui-forms](https://verdant-klepon-5d2a5e.netlify.app/ui-forms/getting-started/overview/) is a library to handle forms.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-forms/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-forms)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-forms/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-forms)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-forms)](https://bundlephobia.com/package/@danielmana/ui-forms@latest)
 
 - [ui-model](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is a library to connect the frontend with the backend.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-model)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model)](https://bundlephobia.com/package/@danielmana/ui-model@latest)
 
-- [ui-model-legacy](https://verdant-klepon-5d2a5e.netlify.app/ui-model/getting-started/overview/) is the legacy library to connect the frontend with the backend.
+- [ui-model-legacy](https://verdant-klepon-5d2a5e.netlify.app/ui-model-legacy/getting-started/overview/) is the legacy library to connect the frontend with the backend.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model-legacy/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model-legacy)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-model-legacy/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-model-legacy)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-model-legacy)](https://bundlephobia.com/package/@danielmana/ui-model-legacy@latest)
 
 - [ui-icons](https://verdant-klepon-5d2a5e.netlify.app/ui-icons/getting-started/overview/) is a collection of ready-to-use icons.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-icons/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-icons)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-icons)](https://bundlephobia.com/package/@danielmana/ui-icons@latest)
 
 - [ui-utils](https://verdant-klepon-5d2a5e.netlify.app/ui-utils/getting-started/overview/) is a collection of utils to help you rapidly implement the logic.
 
-[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-core)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-core@latest)
+[![npm latest package](https://img.shields.io/npm/v/@danielmana/ui-utils/latest.svg)](https://www.npmjs.com/package/@danielmana/ui-utils)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@danielmana/ui-utils)](https://bundlephobia.com/package/@danielmana/ui-utils@latest)
 
 ## Installation
 
