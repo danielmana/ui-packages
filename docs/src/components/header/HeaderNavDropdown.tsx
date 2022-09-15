@@ -64,17 +64,12 @@ const PRODUCTS = [
     description: 'Our components available in your favorite design tool.',
     href: ROUTES.productDesignKits,
   },
-  // @ts-ignore
-  ...(process.env.STAGING === true
-    ? [
-        {
-          name: 'MUI Toolpad',
-          description: 'Low-code tool builder, powered by MUI.',
-          href: ROUTES.productToolpad,
-          chip: 'Alpha',
-        },
-      ]
-    : []),
+  {
+    name: 'MUI Toolpad',
+    description: 'Low-code admin builder.',
+    href: ROUTES.productToolpad,
+    chip: 'Alpha',
+  },
 ];
 
 const DOCS = [
@@ -113,7 +108,7 @@ const DOCS = [
     ? [
         {
           name: 'MUI Toolpad',
-          description: 'Low-code tool builder, powered by MUI.',
+          description: 'Low-code admin builder.',
           href: ROUTES.toolpadDocs,
         },
       ]

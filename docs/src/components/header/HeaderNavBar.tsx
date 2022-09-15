@@ -51,8 +51,7 @@ const PRODUCT_IDS = [
   'product-advanced',
   'product-templates',
   'product-design',
-  // @ts-ignore
-  ...(process.env.STAGING === true ? ['product-toolpad'] : []),
+  'product-toolpad',
 ];
 
 type ProductSubMenuProps = {
@@ -326,21 +325,18 @@ export default function HeaderNavBar() {
                         onKeyDown={handleKeyDown}
                       />
                     </li>
-                    {/* @ts-ignore */}
-                    {process.env.STAGING === true ? (
-                      <li role="none">
-                        <ProductSubMenu
-                          id={PRODUCT_IDS[4]}
-                          role="menuitem"
-                          href={ROUTES.productToolpad}
-                          icon={<IconImage name="product-toolpad" />}
-                          name="MUI Toolpad"
-                          chip={<Chip label="Alpha" size="small" color="grey" />}
-                          description="Low-code tool builder, powered by MUI."
-                          onKeyDown={handleKeyDown}
-                        />
-                      </li>
-                    ) : null}
+                    <li role="none">
+                      <ProductSubMenu
+                        id={PRODUCT_IDS[4]}
+                        role="menuitem"
+                        href={ROUTES.productToolpad}
+                        icon={<IconImage name="product-toolpad" />}
+                        name="MUI Toolpad"
+                        chip={<Chip label="Alpha" size="small" color="grey" />}
+                        description="Low-code admin builder."
+                        onKeyDown={handleKeyDown}
+                      />
+                    </li>
                   </ul>
                 </Paper>
               </Fade>
