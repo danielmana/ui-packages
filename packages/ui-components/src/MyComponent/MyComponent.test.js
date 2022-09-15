@@ -7,9 +7,10 @@ import MyComponent from './MyComponent';
 describe('<MyComponent />', () => {
   const { render } = createRenderer();
 
-  describeConformance(<MyComponent>Conformance?</MyComponent>, () => ({
+  describeConformance(<MyComponent />, () => ({
     inheritComponent: Stepper,
     render,
     refInstanceof: window.HTMLDivElement,
+    only: ['reactTestRenderer'],
   }));
 });
