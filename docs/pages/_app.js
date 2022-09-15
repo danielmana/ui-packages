@@ -156,17 +156,15 @@ function loadDependencies() {
   );
 }
 
-if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+if (typeof window !== 'undefined') {
   // eslint-disable-next-line no-console
   console.log(
     `%c
-
-███╗   ███╗ ██╗   ██╗ ██████╗
-████╗ ████║ ██║   ██║   ██╔═╝
-██╔████╔██║ ██║   ██║   ██║
-██║╚██╔╝██║ ██║   ██║   ██║
-██║ ╚═╝ ██║ ╚██████╔╝ ██████╗
-╚═╝     ╚═╝  ╚═════╝  ╚═════╝
+██    ██ ██     ██████   █████   ██████ ██   ██  █████   ██████  ███████ ███████ 
+██    ██ ██     ██   ██ ██   ██ ██      ██  ██  ██   ██ ██       ██      ██      
+██    ██ ██     ██████  ███████ ██      █████   ███████ ██   ███ █████   ███████ 
+██    ██ ██     ██      ██   ██ ██      ██  ██  ██   ██ ██    ██ ██           ██ 
+ ██████  ██     ██      ██   ██  ██████ ██   ██ ██   ██  ██████  ███████ ███████ 
 
 Tip: you can access the documentation \`theme\` object directly in the console.
 `,
