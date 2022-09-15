@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const PRODUCTION_DEPLOYEMENT = !process.env.PULL_REQUEST && process.env.NODE_ENV === 'production';
 
-const GOOGLE_ANALYTICS_ID = PRODUCTION_DEPLOYEMENT ? 'UA-106598593-2' : 'UA-106598593-3';
+const GOOGLE_ANALYTICS_ID = PRODUCTION_DEPLOYEMENT ? 'G-7NCKH7SK9X' : 'G-7NCKH7SK9X';
 
 export default class MyDocument extends Document {
   render() {
