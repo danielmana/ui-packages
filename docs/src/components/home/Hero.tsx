@@ -5,9 +5,11 @@ import GetStartedButtons from 'docs/src/components/home/GetStartedButtons';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import uiCorePkgJson from '../../../../packages/ui-core/package.json';
+import uiComponentsPkgJson from '../../../../packages/ui-components/package.json';
 
 const versions: Record<string, string> = {
   'ui-core': uiCorePkgJson.version,
+  'ui-components': uiComponentsPkgJson.version,
 };
 
 export default function Hero() {

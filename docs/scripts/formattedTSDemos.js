@@ -144,7 +144,7 @@ async function main(argv) {
 
   const tsxFiles = [
     ...(await getFiles(path.join(workspaceRoot, 'docs/data/ui-core'))),
-    // ...(await getFiles(path.join(workspaceRoot, 'docs/data/ui-components'))),
+    ...(await getFiles(path.join(workspaceRoot, 'docs/data/ui-components'))),
   ].filter((fileName) => {
     return filePattern.test(fileName);
   });

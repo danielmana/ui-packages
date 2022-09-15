@@ -32,6 +32,8 @@ const defaultPackageNames = {
   'joy-ui': '@mui/joy',
   base: '@mui/base',
   system: '@mui/system',
+  'ui-core': '@danielmana/ui-core',
+  'ui-components': '@danielmana/ui-components',
 };
 
 export default function ComponentLinkHeader(props) {

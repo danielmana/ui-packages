@@ -1,0 +1,11 @@
+{
+  "props": { "children": { "type": { "name": "node" } }, "foo": { "type": { "name": "bool" } } },
+  "name": "MyComponent",
+  "styles": { "classes": [], "globalClasses": {}, "name": null },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "/packages/ui-components/src/MyComponent/MyComponent.tsx",
+  "inheritance": { "component": "Stepper", "pathname": "https://mui.com/material-ui/api/stepper/" },
+  "demos": "<ul><li><a href=\"/ui-components/react-my-component/\">MyComponent</a></li></ul>",
+  "cssComponent": false
+}

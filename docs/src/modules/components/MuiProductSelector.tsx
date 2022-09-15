@@ -165,7 +165,7 @@ export default function MuiProductSelector() {
             {[
               {
                 name: 'ui-components',
-                href: ROUTES.uiCoreDocs,
+                href: ROUTES.uiComponentsDocs,
                 slug: 'ui-components',
               },
               {

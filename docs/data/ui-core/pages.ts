@@ -13,12 +13,6 @@ const pages = [
   },
   {
     pathname: '/ui-core/react-',
-    scopePathnames: [
-      '/ui-core/icons',
-      '/ui-core/material-icons',
-      '/ui-core/about-the-lab',
-      '/ui-core/transitions',
-    ],
     title: 'Components',
     icon: 'ToggleOnIcon',
     children: [

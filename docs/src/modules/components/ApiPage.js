@@ -235,6 +235,7 @@ function ApiDocs(props) {
   const source = filename
     .replace(/\/packages\/mui(-(.+?))?\/src/, (match, dash, pkg) => `@mui/${pkg}`)
     .replace(/\/packages\/ui-core\/src/, '@danielmana/ui-core')
+    .replace(/\/packages\/ui-components\/src/, '@danielmana/ui-components')
     // convert things like `/Table/Table.js` to ``
     .replace(/\/([^/]+)\/\1\.(js|tsx)$/, '');
 

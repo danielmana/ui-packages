@@ -40,6 +40,8 @@
       "@mui/joy/*": ["./packages/mui-joy/src/*"],
       "@danielmana/ui-core": ["./packages/ui-core/src"],
       "@danielmana/ui-core/*": ["./packages/ui-core/src/*"],
+      "@danielmana/ui-components": ["./packages/ui-components/src"],
+      "@danielmana/ui-components/*": ["./packages/ui-components/src/*"],
       "test/*": ["./test/*"],
       "typescript-to-proptypes": ["./packages/typescript-to-proptypes/src"]
     },

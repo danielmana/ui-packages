@@ -26,6 +26,7 @@ import DoneRounded from '@mui/icons-material/DoneRounded';
 import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
 import materialPkgJson from '../../../../packages/mui-material/package.json';
 import uiCorePkgJson from '../../../../packages/ui-core/package.json';
+import uiComponentsPkgJson from '../../../../packages/ui-components/package.json';
 import joyPkgJson from '../../../../packages/mui-joy/package.json';
 import basePkgJson from '../../../../packages/mui-base/package.json';
 import systemPkgJson from '../../../../packages/mui-system/package.json';
@@ -397,6 +398,12 @@ export default function AppNavDrawer(props) {
           {canonicalAs.startsWith('/ui-core/') && (
             <ProductIdentifier name={`ui-core#${uiCorePkgJson.version}`} metadata="Core" />
           )}
+          {canonicalAs.startsWith('/ui-components/') && (
+            <ProductIdentifier
+              name={`ui-components#${uiComponentsPkgJson.version}`}
+              metadata="Components"
+            />
+          )}
           {canonicalAs.startsWith('/ui-icons/') && (
             <ProductIdentifier name="ui-icons" metadata="Core" />
           )}
@@ -405,9 +412,6 @@ export default function AppNavDrawer(props) {
           )}
           {canonicalAs.startsWith('/ui-forms/') && (
             <ProductIdentifier name="ui-forms" metadata="Core" />
-          )}
-          {canonicalAs.startsWith('/ui-components/') && (
-            <ProductIdentifier name="ui-components" metadata="Components" />
           )}
           {canonicalAs.startsWith('/ui-widgets/') && (
             <ProductIdentifier name="ui-widgets" metadata="Components" />

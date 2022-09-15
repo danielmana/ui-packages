@@ -10,7 +10,7 @@ type RegExpMatchArrayWithGroups<T> = (RegExpMatchArray & RegExpMatchArrayWithGro
 export default function SandboxDependencies(
   demo: {
     raw: string;
-    product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-model';
+    product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-components' | 'ui-model';
     codeVariant: keyof typeof CODE_VARIANTS;
   },
   options?: { commitRef?: string },
@@ -108,6 +108,7 @@ export default function SandboxDependencies(
       '@mui/material-next': getMuiPackageVersion('material-next'),
       '@mui/joy': getMuiPackageVersion('joy'),
       '@danielmana/ui-core': getMuiPackageVersion('ui-core'),
+      '@danielmana/ui-components': getMuiPackageVersion('ui-components'),
     };
 
     // TODO: consider if this configuration could be injected in a "cleaner" way.
