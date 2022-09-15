@@ -17,7 +17,8 @@ export default function useRouterExtra() {
       | 'system'
       | 'data-grid'
       | 'date-pickers'
-      | 'ui-core',
+      | 'ui-core'
+      | 'ui-components',
     isMuiX: asPathWithoutLang.startsWith('/x'),
   };
 }

@@ -79,6 +79,11 @@ const DOCS = [
     href: ROUTES.uiCoreDocs,
   },
   {
+    name: 'UI Components',
+    description: 'Advanced and powerful components for complex use cases.',
+    href: ROUTES.uiComponentsDocs,
+  },
+  {
     name: 'Material UI',
     description: "React components that implement Google's Material Design.",
     href: ROUTES.materialDocs,

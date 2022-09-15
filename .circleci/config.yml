@@ -262,6 +262,7 @@ jobs:
             yarn workspace @mui/base typescript:module-augmentation
             yarn workspace @mui/joy typescript:module-augmentation
             yarn workspace @danielmana/ui-core typescript:module-augmentation
+            yarn workspace @danielmana/ui-components typescript:module-augmentation
 
       - restore_cache:
           name: Restore generated declaration files
@@ -278,6 +279,7 @@ jobs:
             git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/utils declarations do not exist'
+            git add -f packages/ui-components/build || echo '/utils declarations do not exist'
             yarn lerna run build:types
             git --no-pager diff
 
@@ -293,6 +295,7 @@ jobs:
             - packages/mui-lab/build
             - packages/mui-utils/build
             - packages/ui-core/build
+            - packages/ui-components/build
   test_types_next:
     <<: *defaults
     resource_class: 'medium+'
@@ -331,6 +334,7 @@ jobs:
             git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/ui-core declarations do not exist'
+            git add -f packages/ui-components/build || echo '/ui-components declarations do not exist'
             yarn lerna run build:types
             git --no-pager diff
 

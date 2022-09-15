@@ -379,10 +379,12 @@ module.exports = {
         '*.spec.ts',
         '*.spec.tsx',
         'packages/mui-joy/**/*{.ts,.tsx,.js}',
+        // TODO danielmana: Add `ui-packages/ui-core-name-matches-component-name` rule
+        // TODO danielmana: Add `ui-packages/ui-components-name-matches-component-name` rule
         'packages/ui-core/**/*{.ts,.tsx,.js}',
+        'packages/ui-components/**/*{.ts,.tsx,.js}',
       ],
       rules: {
-        // TODO danielmana: Add `ui-packages/ui-core-name-matches-component-name` rule
         'material-ui/mui-name-matches-component-name': [
           'error',
           {

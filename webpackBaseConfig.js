@@ -23,6 +23,7 @@ module.exports = {
       '@mui/material-next': path.resolve(__dirname, './packages/mui-material-next/src'),
       '@mui/joy': path.resolve(__dirname, './packages/mui-joy/src'),
       '@danielmana/ui-core': path.resolve(__dirname, './packages/ui-core/src'),
+      '@danielmana/ui-components': path.resolve(__dirname, './packages/ui-components/src'),
       'typescript-to-proptypes': path.resolve(__dirname, './packages/typescript-to-proptypes/src'),
       docs: path.resolve(__dirname, './docs'),
     },

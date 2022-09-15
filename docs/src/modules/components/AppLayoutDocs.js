@@ -98,14 +98,14 @@ function AppLayoutDocs(props) {
     productName = 'Joy UI';
   } else if (canonicalAs.startsWith('/ui-core')) {
     productName = 'ui-core';
+  } else if (canonicalAs.startsWith('/ui-components')) {
+    productName = 'ui-components';
   } else if (canonicalAs.startsWith('/ui-icons')) {
     productName = 'ui-icons';
   } else if (canonicalAs.startsWith('/ui-utils')) {
     productName = 'ui-utils';
   } else if (canonicalAs.startsWith('/ui-forms')) {
     productName = 'ui-forms';
-  } else if (canonicalAs.startsWith('/ui-components')) {
-    productName = 'ui-components';
   } else if (canonicalAs.startsWith('/ui-widgets')) {
     productName = 'ui-widgets';
   } else if (canonicalAs.startsWith('/ui-model-legacy')) {

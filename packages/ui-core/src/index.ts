@@ -107,7 +107,7 @@ export { default as StepConnector } from '@mui/material/StepConnector';
 export { default as StepContent } from '@mui/material/StepContent';
 export { default as StepIcon } from '@mui/material/StepIcon';
 export { default as StepLabel } from '@mui/material/StepLabel';
-export { default as Stepper } from '@mui/material/Stepper';
+export { default as Stepper, StepperProps } from '@mui/material/Stepper';
 export { default as SvgIcon } from '@mui/material/SvgIcon';
 export { default as SwipeableDrawer } from '@mui/material/SwipeableDrawer';
 export { default as Switch } from '@mui/material/Switch';
