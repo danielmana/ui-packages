@@ -234,6 +234,7 @@ function ApiDocs(props) {
 
   const source = filename
     .replace(/\/packages\/mui(-(.+?))?\/src/, (match, dash, pkg) => `@mui/${pkg}`)
+    .replace(/\/packages\/ui-core\/src/, '@danielmana/ui-core')
     // convert things like `/Table/Table.js` to ``
     .replace(/\/([^/]+)\/\1\.(js|tsx)$/, '');
 
@@ -287,7 +288,7 @@ function ApiDocs(props) {
   return (
     <AppLayoutDocs
       description={description}
-      disableAd={false}
+      disableAd
       disableToc={false}
       location={apiSourceLocation}
       title={`${componentName} API`}

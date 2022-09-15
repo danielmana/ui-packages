@@ -32,7 +32,8 @@
     "@mui/utils": "packages/mui-utils/build",
     "@mui/base": "packages/mui-base/build",
     "@mui/material-next": "packages/mui-material-next/build",
-    "@mui/joy": "packages/mui-joy/build"
+    "@mui/joy": "packages/mui-joy/build",
+    "@danielmana/ui-core": "packages/ui-core/build"
   },
   "sandboxes": [
     "material-ui-issue-latest-s2dsx",

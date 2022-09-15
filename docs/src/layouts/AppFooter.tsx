@@ -16,6 +16,9 @@ import Link from 'docs/src/modules/components/Link';
 import SvgStackOverflow from 'docs/src/icons/SvgStackOverflow';
 
 export default function AppFooter() {
+  if (!''.length) {
+    return null;
+  }
   return (
     <Container component="footer">
       <Box

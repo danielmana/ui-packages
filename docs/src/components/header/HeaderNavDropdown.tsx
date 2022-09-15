@@ -46,7 +46,7 @@ const UList = styled('ul')({
 const PRODUCTS = [
   {
     name: 'MUI Core',
-    description: 'Ready-to-use foundational React components, free forever.',
+    description: 'Ready-to-use foundational components.',
     href: ROUTES.productCore,
   },
   {
@@ -73,6 +73,11 @@ const PRODUCTS = [
 ];
 
 const DOCS = [
+  {
+    name: 'UI Core',
+    description: "React components that implement Google's Material Design.",
+    href: ROUTES.uiCoreDocs,
+  },
   {
     name: 'Material UI',
     description: "React components that implement Google's Material Design.",

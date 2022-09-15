@@ -9,7 +9,7 @@ import NoSsr from '@mui/material/NoSsr';
 import Link from 'docs/src/modules/components/Link';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { openLinkInNewTab } from 'docs/src/modules/components/MarkdownLinks';
-import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
+// import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
 
 const Nav = styled('nav')(({ theme }) => ({
   top: 0,
@@ -116,13 +116,14 @@ function flatten(headings) {
 }
 
 const shouldShowJobAd = () => {
-  const date = new Date();
-  const timeZoneOffset = date.getTimezoneOffset();
-  // Hide for time zones UT+5.5 - UTC+14 & UTC-8 - UTC-12
-  if (timeZoneOffset <= -5.5 * 60 || timeZoneOffset >= 8 * 60) {
-    return false;
-  }
-  return true;
+  return false;
+  // const date = new Date();
+  // const timeZoneOffset = date.getTimezoneOffset();
+  // // Hide for time zones UT+5.5 - UTC+14 & UTC-8 - UTC-12
+  // if (timeZoneOffset <= -5.5 * 60 || timeZoneOffset >= 8 * 60) {
+  //   return false;
+  // }
+  // return true;
 };
 
 export default function AppTableOfContents(props) {
@@ -215,7 +216,7 @@ export default function AppTableOfContents(props) {
   return (
     <Nav aria-label={t('pageTOC')}>
       <NoSsr>
-        <TableOfContentsBanner />
+        {/* <TableOfContentsBanner /> */}
         {showAddJob && (
           <Link
             href="https://jobs.ashbyhq.com/MUI?utm_source=2vOWXNv1PE"

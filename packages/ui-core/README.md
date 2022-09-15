@@ -1,19 +1,23 @@
-# TypeScript convention
+# @danielmana/ui-core
 
-## Component
+UI Core is a library of designed React UI components build in the top of Material UI
 
-> **Public components** are considered all components exported from `@mui/material` or `@mui/lab`.
+It features foundational components such as the ones you'd find in Material UI and it comes with a beautifully designed default theme. It comes with a lot of customization features so you match it to your desired look and feel.
+
+## TypeScript convention
+
+> **Public components** are considered all components exported from `@danielmana/ui-core` or `@danielmana/ui-components`.
 >
 > **Internal components** are considered all components that are not exported from the packages, but only used in some public component.
 
 ### `Props Interface`
 
-- export interface `{ComponentName}classes` from `{component}Classes.ts` and add comment for generating api docs (for internal components, may or may not expose classes but don't need comment)
-- export interface `{ComponentName}Props`
+- export interface `{ComponentName}Classes` from `{componentName}Classes.ts` and add comment for generating api docs (for internal components, may or may not expose classes but don't need comment)
+- export interface `{ComponentName}Props` from `{ComponentName}Props.ts`
 - always export props interface (use `interface` over `type`) from the component file
+- use the `UICore{Component}` prefix for the utility classes name
 
-<details>
-  <summary>Public component</summary>
+<summary>Public component</summary>
 
 ```ts
 // fooClasses.tsx
@@ -27,7 +31,7 @@ export interface FooClasses {
   disabled: string;
 }
 
-const fooClasses: FooClasses = generateUtilityClasses('MuiFoo', ['root', 'foo', 'disabled']);
+const fooClasses: FooClasses = generateUtilityClasses('UICoreFoo', ['root', 'foo', 'disabled']);
 
 export default fooClasses;
 ```
@@ -49,9 +53,7 @@ export interface FooProps {
 }
 ```
 
-</details>
-<details>
-  <summary>internal component</summary>
+<summary>internal component</summary>
 
 ```ts
 // Bar.tsx
@@ -66,8 +68,6 @@ export interface BarProps {
   sx?: SxProps<Theme>;
 }
 ```
-
-</details>
 
 ### `ClassKey`
 
@@ -90,13 +90,10 @@ export type FooClassKey = keyof FooClasses;
 - use `{Component}Classes` as type to preventing typo and missing classes
 - use `Private` prefix for internal component
 
-<details>
-  <summary>Public component</summary>
-
 ```ts
 // fooClasses.ts
 export function getFooUtilityClass(slot: string) {
-  return generateUtilityClass('MuiFoo', slot);
+  return generateUtilityClass('UICoreFoo', slot);
 }
 
 const useUtilityClasses = (ownerState: FooProps & { extraProp: boolean }) => {
@@ -111,9 +108,7 @@ const useUtilityClasses = (ownerState: FooProps & { extraProp: boolean }) => {
 };
 ```
 
-</details>
-<details>
-  <summary>internal component</summary>
+<summary>internal component</summary>
 
 ```ts
 // Bar.tsx
@@ -122,19 +117,16 @@ const useUtilityClasses = (ownerState: FooProps & { extraProp: boolean }) => {
 const classes = generateUtilityClasses('PrivateBar', ['root', 'bar']);
 ```
 
-</details>
-
 ### `StyledComponent`
 
 - naming using slot `{ComponentName}{Slot}`
 - to extend interface of the styled component, pass argument to generic
 
-<details>
-  <summary>public component</summary>
+<summary>public component</summary>
 
 ```ts
 const FooRoot = styled(Typography, {
-  name: 'MuiFoo',
+  name: 'UICoreFoo',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root,
 })({
@@ -142,9 +134,7 @@ const FooRoot = styled(Typography, {
 });
 ```
 
-</details>
-<details>
-  <summary>internal component</summary>
+<summary>internal component</summary>
 
 ```ts
 const BarRoot = styled(Typography)({
@@ -152,9 +142,7 @@ const BarRoot = styled(Typography)({
 });
 ```
 
-</details>
-<details>
-  <summary>extends interface</summary>
+<summary>extends interface</summary>
 
 ```ts
 const BarRoot = styled(Typography)<{
@@ -167,8 +155,6 @@ const BarRoot = styled(Typography)<{
 // <BarRoot component="span" ownerState={ownerState} />
 ```
 
-</details>
-
 ### `Component declaration`
 
 - prefer `function Component() {}` over `React.FC`
@@ -176,40 +162,41 @@ const BarRoot = styled(Typography)<{
 - `useThemeProps` is needed only for public component
 - pass `ownerState` to StyledComponent for styling
 
-<details>
-  <summary>public component</summary>
+<summary>public component</summary>
 
 ```ts
-const Foo = React.forwardRef<HTMLSpanElement, FooProps>(function Foo(inProps, ref) => {
+const Foo = React.forwardRef<HTMLSpanElement, FooProps>(function Foo(inProps, ref) {
   // pass args like this, otherwise will get error about theme at return section
-  const props = useThemeProps<Theme, FooProps, 'MuiFoo'>({
+  const props = useThemeProps<Theme, FooProps, 'UICoreFoo'>({
     props: inProps,
-    name: 'MuiFoo',
+    name: 'UICoreFoo',
   });
-  const { children, className, ...other } = props
+  const { children, className, ...other } = props;
 
   // ...implementation
 
-  const ownerState = { ...props, ...otherValue }
+  const ownerState = { ...props, ...otherValue };
 
-  const classes = useUtilityClasses(ownerState);
+  const { root: classesRoot, ...classes } = useUtilityClasses(ownerState);
 
   return (
     <FooRoot
       ref={ref}
-      className={clsx(classes.root, className)}
+      classes={classes}
+      className={clsx(classesRoot, className)}
       ownerState={ownerState}
       {...other}
+      // Cast the type in case there's props override.
+      // E.g. <Button component="a" ... /> has different props bc of the overrides
+      // {...(other as RootProps)}
     >
       {children}
     </FooRoot>
-  )
-})
+  );
+});
 ```
 
-</details>
-<details>
-  <summary>internal component</summary>
+<summary>internal component</summary>
 
 ```ts
 const classes = generateUtilityClasses('PrivateBar', ['selected']);
@@ -226,5 +213,3 @@ const Bar = (props: BarProps) => {
   return <BarRoot className={clsx({ [classes.selected]: selected })} {...other} />;
 };
 ```
-
-</details>

@@ -79,6 +79,18 @@ async function getWebpackEntries() {
     },
   );
 
+  const uicorePackagePath = path.join(workspaceRoot, 'packages/ui-core/build');
+  const uicoreComponents = (await glob(path.join(uicorePackagePath, '([A-Z])*/index.js'))).map(
+    (componentPath) => {
+      const componentName = path.basename(path.dirname(componentPath));
+
+      return {
+        id: `@danielmana/ui-core/${componentName}`,
+        path: path.relative(workspaceRoot, path.dirname(componentPath)),
+      };
+    },
+  );
+
   return [
     {
       // WARNING: Changing the name will break tracking of bundle size over time
@@ -162,6 +174,11 @@ async function getWebpackEntries() {
       path: path.join(path.relative(workspaceRoot, joyPackagePath), 'index.js'),
     },
     ...joyComponents,
+    {
+      id: '@danielmana/ui-core',
+      path: path.join(path.relative(workspaceRoot, uicorePackagePath), 'index.js'),
+    },
+    ...uicoreComponents,
   ];
 }
 
@@ -220,6 +237,7 @@ function createWebpackConfig(entry, environment) {
         '@mui/base': path.join(workspaceRoot, 'packages/mui-base/build'),
         '@mui/material-next': path.join(workspaceRoot, 'packages/mui-material-next/build'),
         '@mui/joy': path.join(workspaceRoot, 'packages/mui-joy/build'),
+        '@danielmana/ui-core': path.join(workspaceRoot, 'packages/ui-core/build'),
       },
     },
     entry: { [entry.id]: path.join(workspaceRoot, entry.path) },

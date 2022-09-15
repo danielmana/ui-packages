@@ -114,15 +114,15 @@ async function computeApiDescription(api: ReactApi, options: { host: string }): 
  * /**
  *  * Demos:
  *  *
- *  * - [Icons](https://mui.com/components/icons/)
- *  * - [Material Icons](https://mui.com/components/material-icons/)
+ *  * - [Icons](https://verdant-klepon-5d2a5e.netlify.app/components/icons/)
+ *  * - [Material Icons](https://verdant-klepon-5d2a5e.netlify.app/components/material-icons/)
  *  *
  *  * API:
  *  *
- *  * - [Icon API](https://mui.com/api/icon/)
+ *  * - [Icon API](https://verdant-klepon-5d2a5e.netlify.app/api/icon/)
  */
 async function annotateComponentDefinition(api: ReactApi) {
-  const HOST = 'https://mui.com';
+  const HOST = 'https://verdant-klepon-5d2a5e.netlify.app/';
 
   const typesFilename = api.filename.replace(/\.js$/, '.d.ts');
   const typesSource = readFileSync(typesFilename, { encoding: 'utf8' });
@@ -416,7 +416,9 @@ const attachTranslations = (reactApi: ReactApi) => {
         description += ' See <a href="#css">CSS API</a> below for more details.';
       } else if (propName === 'sx') {
         description +=
-          ' See the <a href="/system/getting-started/the-sx-prop/">`sx` page</a> for more details.';
+          ' See the <a href="https://mui.com/system/getting-started/the-sx-prop/">`sx` page</a> for more details.';
+        description +=
+          ' <strong>Warning</strong>: Use other properties instead of defining additional CSS styles if possible.';
       }
       translations.propDescriptions[propName] = description.replace(/\n@default.*$/, '');
     }
@@ -435,6 +437,13 @@ const attachPropsTable = (reactApi: ReactApi) => {
   const componentProps: ReactApi['propsTable'] = _.fromPairs(
     Object.entries(reactApi.props!).map(([propName, propDescriptor]) => {
       let prop: DescribeablePropDescriptor | null;
+
+      // WORKAROUND: Support TS and flow types
+      // https://github.com/reactjs/react-docgen#result-data-structure
+      if (!propDescriptor.type) {
+        // @ts-ignore
+        propDescriptor.type = propDescriptor.tsType || propDescriptor.flowType;
+      }
       try {
         prop = createDescribeableProp(propDescriptor, propName);
       } catch (error) {

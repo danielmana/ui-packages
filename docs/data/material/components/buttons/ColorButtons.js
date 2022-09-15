@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
+
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 export default function ColorButtons() {
   return (

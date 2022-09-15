@@ -1,13 +1,28 @@
 import * as doctrine from 'doctrine';
 import { PropDescriptor, PropTypeDescriptor } from 'react-docgen';
 
+const { parse: parseDoctrine } = require('doctrine');
+
 export interface DescribeablePropDescriptor {
   annotation: doctrine.Annotation;
   defaultValue: string | null;
   required: boolean;
   type: PropTypeDescriptor;
+  tsType?: PropTypeDescriptor;
+  flowType?: PropTypeDescriptor;
 }
 
+/**
+ * @param {import('doctrine').Annotation} jsdoc
+ * @return {{ value: string } | undefined}
+ */
+function getJsdocDefaultValue(jsdoc: any) {
+  const defaultTag = jsdoc.tags.find((tag: any) => tag.title === 'default');
+  if (defaultTag === undefined) {
+    return undefined;
+  }
+  return { value: defaultTag.description || '' };
+}
 /**
  * Returns `null` if the prop should be ignored.
  * Throws if it is invalid.
@@ -18,7 +33,23 @@ export default function createDescribeableProp(
   prop: PropDescriptor,
   propName: string,
 ): DescribeablePropDescriptor | null {
-  const { defaultValue, jsdocDefaultValue, description, required, type } = prop;
+  const {
+    defaultValue,
+    jsdocDefaultValue: jsdocDefaultValueProp,
+    description,
+    required,
+    type,
+  } = prop;
+
+  // WORKAROUND
+  const jsdocDefaultValue =
+    jsdocDefaultValueProp ||
+    getJsdocDefaultValue(
+      parseDoctrine(prop.description, {
+        sloppy: true,
+      }),
+    );
+  prop.jsdocDefaultValue = jsdocDefaultValue;
 
   const renderedDefaultValue = defaultValue?.value.replace(/\r?\n/g, '');
   const renderDefaultValue = Boolean(

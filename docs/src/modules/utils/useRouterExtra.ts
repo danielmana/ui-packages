@@ -10,7 +10,14 @@ export default function useRouterExtra() {
   return {
     ...router,
     asPathWithoutLang,
-    product: product as 'base' | 'material-ui' | 'joy-ui' | 'system' | 'data-grid' | 'date-pickers',
+    product: product as
+      | 'base'
+      | 'material-ui'
+      | 'joy-ui'
+      | 'system'
+      | 'data-grid'
+      | 'date-pickers'
+      | 'ui-core',
     isMuiX: asPathWithoutLang.startsWith('/x'),
   };
 }

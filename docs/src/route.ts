@@ -11,6 +11,7 @@ const ROUTES = {
   handbook: 'https://mui-org.notion.site/Handbook-f086d47e10794d5e839aef9dc67f324b',
   baseDocs: '/base/getting-started/overview/',
   materialDocs: '/material-ui/getting-started/overview/',
+  uiCoreDocs: '/ui-core/getting-started/overview/',
   joyDocs: '/joy-ui/getting-started/overview/',
   systemDocs: '/system/getting-started/overview/',
   materialIcons: '/material-ui/material-icons/',

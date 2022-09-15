@@ -78,7 +78,7 @@ async function main(argv) {
    */
   const timeline = octokit.paginate.iterator(
     octokit.repos.compareCommits.endpoint.merge({
-      owner: 'mui',
+      owner: 'danielmana',
       repo,
       base: lastRelease,
       head: release,
@@ -164,7 +164,7 @@ yargs
       return command
         .option('lastRelease', {
           describe:
-            'The release to compare against e.g. `v5.0.0-alpha.23`. Default: The latest tag on the current branch.',
+            'The release to compare against e.g. `v0.1.0`. Default: The latest tag on the current branch.',
           type: 'string',
         })
         .option('githubToken', {
@@ -180,7 +180,7 @@ yargs
           type: 'string',
         })
         .option('repo', {
-          default: 'material-ui',
+          default: 'ui-packages',
           describe: 'Repository to generate a changelog for',
           type: 'string',
         });

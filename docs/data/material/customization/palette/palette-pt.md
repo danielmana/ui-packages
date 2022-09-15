@@ -180,8 +180,6 @@ declare module '@material-ui/core/styles/createPalette' {
 }
 ```
 
-{{"demo": "CustomColor.js"}}
-
 ## Escolhendo cores
 
 Precisa de inspiração? The Material Design team has built an [palette configuration tool](/material-ui/customization/color/#picking-colors) to help you.

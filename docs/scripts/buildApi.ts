@@ -1,15 +1,16 @@
 import { mkdirSync } from 'fs';
 import * as fse from 'fs-extra';
 import path from 'path';
-import kebabCase from 'lodash/kebabCase';
+// import kebabCase from 'lodash/kebabCase';
 import * as yargs from 'yargs';
 import * as ttp from 'typescript-to-proptypes';
 import { findComponents } from 'docs/src/modules/utils/find';
 import {
   ComponentInfo,
-  getMaterialComponentInfo,
-  getBaseComponentInfo,
-  getSystemComponentInfo,
+  // getMaterialComponentInfo,
+  getUICoreComponentInfo,
+  // getBaseComponentInfo,
+  // getSystemComponentInfo,
   extractApiPage,
 } from 'docs/scripts/buildApiUtils';
 import generateComponentApi, {
@@ -17,38 +18,38 @@ import generateComponentApi, {
   ReactApi,
 } from 'docs/scripts/ApiBuilders/ComponentApiBuilder';
 
-const apiDocsTranslationsDirectory = path.resolve('docs', 'translations', 'api-docs');
+// const apiDocsTranslationsDirectory = path.resolve('docs', 'translations', 'api-docs');
 
-async function removeOutdatedApiDocsTranslations(components: readonly ReactApi[]): Promise<void> {
-  const componentDirectories = new Set<string>();
-  const files = await fse.readdir(apiDocsTranslationsDirectory);
-  await Promise.all(
-    files.map(async (filename) => {
-      const filepath = path.join(apiDocsTranslationsDirectory, filename);
-      const stats = await fse.stat(filepath);
-      if (stats.isDirectory()) {
-        componentDirectories.add(filepath);
-      }
-    }),
-  );
+// async function removeOutdatedApiDocsTranslations(components: readonly ReactApi[]): Promise<void> {
+//   const componentDirectories = new Set<string>();
+//   const files = await fse.readdir(apiDocsTranslationsDirectory);
+//   await Promise.all(
+//     files.map(async (filename) => {
+//       const filepath = path.join(apiDocsTranslationsDirectory, filename);
+//       const stats = await fse.stat(filepath);
+//       if (stats.isDirectory()) {
+//         componentDirectories.add(filepath);
+//       }
+//     }),
+//   );
 
-  const currentComponentDirectories = new Set(
-    components.map((component) => {
-      return path.resolve(apiDocsTranslationsDirectory, kebabCase(component.name));
-    }),
-  );
+//   const currentComponentDirectories = new Set(
+//     components.map((component) => {
+//       return path.resolve(apiDocsTranslationsDirectory, kebabCase(component.name));
+//     }),
+//   );
 
-  const outdatedComponentDirectories = new Set(componentDirectories);
-  currentComponentDirectories.forEach((componentDirectory) => {
-    outdatedComponentDirectories.delete(componentDirectory);
-  });
+//   const outdatedComponentDirectories = new Set(componentDirectories);
+//   currentComponentDirectories.forEach((componentDirectory) => {
+//     outdatedComponentDirectories.delete(componentDirectory);
+//   });
 
-  await Promise.all(
-    Array.from(outdatedComponentDirectories, (outdatedComponentDirectory) => {
-      return fse.remove(outdatedComponentDirectory);
-    }),
-  );
-}
+//   await Promise.all(
+//     Array.from(outdatedComponentDirectories, (outdatedComponentDirectory) => {
+//       return fse.remove(outdatedComponentDirectory);
+//     }),
+//   );
+// }
 
 const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []) => {
   const files = fse.readdirSync(dirPath);
@@ -116,38 +117,48 @@ interface Settings {
 }
 
 const SETTINGS: Settings[] = [
+  // {
+  //   input: {
+  //     libDirectory: [
+  //       path.join(process.cwd(), 'packages/mui-material/src'),
+  //       path.join(process.cwd(), 'packages/mui-lab/src'),
+  //     ],
+  //   },
+  //   output: {
+  //     apiManifestPath: path.join(process.cwd(), 'docs/data/material/pagesApi.js'),
+  //   },
+  //   getApiPages: () => findApiPages('docs/pages/material-ui/api'),
+  //   getComponentInfo: getMaterialComponentInfo,
+  // },
+  // {
+  //   input: {
+  //     libDirectory: [path.join(process.cwd(), 'packages/mui-base/src')],
+  //   },
+  //   output: {
+  //     apiManifestPath: path.join(process.cwd(), 'docs/data/base/pagesApi.js'),
+  //   },
+  //   getApiPages: () => findApiPages('docs/pages/base/api'),
+  //   getComponentInfo: getBaseComponentInfo,
+  // },
+  // {
+  //   input: {
+  //     libDirectory: [path.join(process.cwd(), 'packages/mui-system/src')],
+  //   },
+  //   output: {
+  //     apiManifestPath: path.join(process.cwd(), 'docs/data/system/pagesApi.js'),
+  //   },
+  //   getApiPages: () => findApiPages('docs/pages/system/api'),
+  //   getComponentInfo: getSystemComponentInfo,
+  // },
   {
     input: {
-      libDirectory: [
-        path.join(process.cwd(), 'packages/mui-material/src'),
-        path.join(process.cwd(), 'packages/mui-lab/src'),
-      ],
+      libDirectory: [path.join(process.cwd(), 'packages/ui-core/src')],
     },
     output: {
-      apiManifestPath: path.join(process.cwd(), 'docs/data/material/pagesApi.js'),
+      apiManifestPath: path.join(process.cwd(), 'docs/data/ui-core/pagesApi.js'),
     },
-    getApiPages: () => findApiPages('docs/pages/material-ui/api'),
-    getComponentInfo: getMaterialComponentInfo,
-  },
-  {
-    input: {
-      libDirectory: [path.join(process.cwd(), 'packages/mui-base/src')],
-    },
-    output: {
-      apiManifestPath: path.join(process.cwd(), 'docs/data/base/pagesApi.js'),
-    },
-    getApiPages: () => findApiPages('docs/pages/base/api'),
-    getComponentInfo: getBaseComponentInfo,
-  },
-  {
-    input: {
-      libDirectory: [path.join(process.cwd(), 'packages/mui-system/src')],
-    },
-    output: {
-      apiManifestPath: path.join(process.cwd(), 'docs/data/system/pagesApi.js'),
-    },
-    getApiPages: () => findApiPages('docs/pages/system/api'),
-    getComponentInfo: getSystemComponentInfo,
+    getApiPages: () => findApiPages('docs/pages/ui-core/api'),
+    getComponentInfo: getUICoreComponentInfo,
   },
 ];
 
@@ -243,16 +254,16 @@ async function run(argv: CommandOptions) {
     return Promise.resolve();
   }, Promise.resolve());
 
-  if (grep === null) {
-    const componentApis = allBuilds
-      .filter((build): build is PromiseFulfilledResult<ReactApi> => {
-        return build.status === 'fulfilled' && build.value !== null;
-      })
-      .map((build) => {
-        return build.value;
-      });
-    await removeOutdatedApiDocsTranslations(componentApis);
-  }
+  // if (grep === null) {
+  //   const componentApis = allBuilds
+  //     .filter((build): build is PromiseFulfilledResult<ReactApi> => {
+  //       return build.status === 'fulfilled' && build.value !== null;
+  //     })
+  //     .map((build) => {
+  //       return build.value;
+  //     });
+  //   await removeOutdatedApiDocsTranslations(componentApis);
+  // }
 }
 
 yargs

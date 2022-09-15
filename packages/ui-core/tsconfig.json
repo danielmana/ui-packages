@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig",
+  "include": ["src/**/*", "../../docs/data/ui-core/components/button/createPalette.d.ts"]
+}

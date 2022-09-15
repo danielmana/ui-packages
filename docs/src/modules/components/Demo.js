@@ -50,6 +50,10 @@ function useDemoData(codeVariant, demo, githubLocation) {
     product = 'base';
     name = 'MUI Base';
   }
+  if (asPathWithoutLang.startsWith('/ui-core/')) {
+    product = 'ui-core';
+    name = 'ui-core';
+  }
   if (asPathWithoutLang.startsWith('/x/')) {
     name = 'MUI X';
   }

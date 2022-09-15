@@ -29,6 +29,11 @@ function rewriteImportPath(importPath) {
     return importPath.replace(systemSrcPath, '@mui/system');
   }
 
+  const uicoreSrcPath = path.posix.join('..', 'ui-core', 'src');
+  if (importPath.startsWith(uicoreSrcPath)) {
+    return importPath.replace(uicoreSrcPath, '@danielmana/ui-core');
+  }
+
   throw new Error(`Don't know where to rewrite '${importPath}' to`);
 }
 

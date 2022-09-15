@@ -10,7 +10,7 @@ type RegExpMatchArrayWithGroups<T> = (RegExpMatchArray & RegExpMatchArrayWithGro
 export default function SandboxDependencies(
   demo: {
     raw: string;
-    product?: 'joy-ui' | 'base';
+    product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-model';
     codeVariant: keyof typeof CODE_VARIANTS;
   },
   options?: { commitRef?: string },
@@ -57,6 +57,7 @@ export default function SandboxDependencies(
       return 'latest';
     }
     const shortSha = commitRef.slice(0, 8);
+    // TODO danielmana: return `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
     return `https://pkg.csb.dev/mui/material-ui/commit/${shortSha}/@mui/${packageName}`;
   }
 
@@ -106,6 +107,7 @@ export default function SandboxDependencies(
       '@mui/utils': getMuiPackageVersion('utils'),
       '@mui/material-next': getMuiPackageVersion('material-next'),
       '@mui/joy': getMuiPackageVersion('joy'),
+      '@danielmana/ui-core': getMuiPackageVersion('ui-core'),
     };
 
     // TODO: consider if this configuration could be injected in a "cleaner" way.
@@ -163,6 +165,11 @@ export default function SandboxDependencies(
   if (demo.codeVariant === CODE_VARIANTS.TS) {
     addTypeDeps(dependencies);
     dependencies.typescript = 'latest';
+  }
+
+  // WORKAROUND: Add lodash dependency
+  if (demo.product === 'ui-model') {
+    dependencies.lodash = 'latest';
   }
 
   if (!demo.product && !dependencies['@mui/material']) {
