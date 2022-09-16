@@ -389,6 +389,12 @@ jobs:
       - run:
           name: yarn test:e2e
           command: yarn test:e2e
+      - run:
+          name: Can we generate the @mui/material umd build?
+          command: yarn workspace @mui/material build:umd
+      - run:
+          name: Test umd release
+          command: yarn test:umd
   test_e2e_website:
     <<: *defaults
     docker:

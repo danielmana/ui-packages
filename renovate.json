@@ -95,6 +95,16 @@
       "enabled": false
     },
     {
+      "groupName": "examples",
+      "matchPaths": ["examples/**/package.json"],
+      "minor": {
+        "enabled": false
+      },
+      "patch": {
+        "enabled": false
+      }
+    },
+    {
       "groupName": "Playwright",
       "matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"]
     }
