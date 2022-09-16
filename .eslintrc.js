@@ -378,7 +378,6 @@ module.exports = {
         '*.d.ts',
         '*.spec.ts',
         '*.spec.tsx',
-        'packages/mui-joy/**/*{.ts,.tsx,.js}',
         // TODO danielmana: Add `ui-packages/ui-core-name-matches-component-name` rule
         // TODO danielmana: Add `ui-packages/ui-components-name-matches-component-name` rule
         'packages/ui-core/**/*{.ts,.tsx,.js}',

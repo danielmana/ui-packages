@@ -325,7 +325,6 @@ async function run(argv: HandlerArgv) {
       // path.resolve(__dirname, '../packages/mui-material/src'),
       // path.resolve(__dirname, '../packages/mui-lab/src'),
       // path.resolve(__dirname, '../packages/mui-material-next/src'),
-      // path.resolve(__dirname, '../packages/mui-joy/src'),
       path.resolve(__dirname, '../packages/ui-core/src'),
       path.resolve(__dirname, '../packages/ui-components/src'),
     ].map((folderPath) =>

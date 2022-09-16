@@ -13,7 +13,6 @@ export default function useRouterExtra() {
     product: product as
       | 'base'
       | 'material-ui'
-      | 'joy-ui'
       | 'system'
       | 'data-grid'
       | 'date-pickers'

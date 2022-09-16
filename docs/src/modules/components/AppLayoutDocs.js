@@ -94,8 +94,6 @@ function AppLayoutDocs(props) {
     productName = 'MUI System';
   } else if (canonicalAs.startsWith('/toolpad/')) {
     productName = 'MUI Toolpad';
-  } else if (canonicalAs.startsWith('/joy-ui/')) {
-    productName = 'Joy UI';
   } else if (canonicalAs.startsWith('/ui-core')) {
     productName = 'ui-core';
   } else if (canonicalAs.startsWith('/ui-components')) {

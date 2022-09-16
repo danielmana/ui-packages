@@ -8,7 +8,6 @@ import { exactProp } from '@mui/utils';
 import ComponentLinkHeader from 'docs/src/modules/components/ComponentLinkHeader';
 import AppLayoutDocs from 'docs/src/modules/components/AppLayoutDocs';
 import { useTranslate, useUserLanguage } from 'docs/src/modules/utils/i18n';
-import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
 import BrandingProvider from 'docs/src/BrandingProvider';
 
 // TODO: Only import on demand via @mui/markdown/loader
@@ -45,10 +44,6 @@ function MarkdownDocs(props) {
 
   const { description, location, rendered, title, toc, headers } = docs[userLanguage] || docs.en;
 
-  const isJoy = asPathWithoutLang.startsWith('/joy-ui');
-  const Provider = isJoy ? CssVarsProvider : React.Fragment;
-  const Wrapper = isJoy ? BrandingProvider : React.Fragment;
-
   return (
     <AppLayoutDocs
       description={description}
@@ -58,23 +53,22 @@ function MarkdownDocs(props) {
       title={title}
       toc={toc}
     >
-      <Provider>
-        {isJoy && <JoyModeObserver mode={theme.palette.mode} />}
+      <React.Fragment>
         {rendered.map((renderedMarkdownOrDemo, index) => {
           if (typeof renderedMarkdownOrDemo === 'string') {
             return (
-              <Wrapper key={index} {...(isJoy && { mode: theme.palette.mode })}>
+              <React.Fragment key={index}>
                 <MarkdownElement renderedMarkdown={renderedMarkdownOrDemo} />
-              </Wrapper>
+              </React.Fragment>
             );
           }
 
           if (renderedMarkdownOrDemo.component) {
             const Component = markdownComponents[renderedMarkdownOrDemo.component];
             return (
-              <Wrapper key={index} {...(isJoy && { mode: theme.palette.mode })}>
+              <React.Fragment key={index}>
                 <Component headers={headers} options={renderedMarkdownOrDemo} />
-              </Wrapper>
+              </React.Fragment>
             );
           }
 
@@ -128,7 +122,7 @@ function MarkdownDocs(props) {
             />
           );
         })}
-      </Provider>
+      </React.Fragment>
     </AppLayoutDocs>
   );
 }

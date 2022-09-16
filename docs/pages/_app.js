@@ -10,7 +10,6 @@ import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
 import pages from 'docs/src/pages';
 import basePages from 'docs/data/base/pages';
 import materialPages from 'docs/data/material/pages';
-import joyPages from 'docs/data/joy/pages';
 import systemPages from 'docs/data/system/pages';
 import uiCorePages from 'docs/data/ui-core/pages';
 import uiComponentsPages from 'docs/data/ui-components/pages';
@@ -192,8 +191,6 @@ function AppWrapper(props) {
     productPages = basePages;
   } else if (product === 'material-ui') {
     productPages = materialPages;
-  } else if (product === 'joy-ui') {
-    productPages = joyPages;
   } else if (product === 'system') {
     productPages = systemPages;
   } else if (product === 'ui-core') {

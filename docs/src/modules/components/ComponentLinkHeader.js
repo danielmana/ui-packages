@@ -29,7 +29,6 @@ const Root = styled('ul')(({ theme }) => ({
 
 const defaultPackageNames = {
   'material-ui': '@mui/material',
-  'joy-ui': '@mui/joy',
   base: '@mui/base',
   system: '@mui/system',
   'ui-core': '@danielmana/ui-core',

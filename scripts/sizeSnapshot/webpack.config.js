@@ -67,18 +67,6 @@ async function getWebpackEntries() {
     };
   });
 
-  const joyPackagePath = path.join(workspaceRoot, 'packages/mui-joy/build');
-  const joyComponents = (await glob(path.join(joyPackagePath, '([A-Z])*/index.js'))).map(
-    (componentPath) => {
-      const componentName = path.basename(path.dirname(componentPath));
-
-      return {
-        id: `@mui/joy/${componentName}`,
-        path: path.relative(workspaceRoot, path.dirname(componentPath)),
-      };
-    },
-  );
-
   // ui-core
   const uicorePackagePath = path.join(workspaceRoot, 'packages/ui-core/build');
   const uicoreComponents = (await glob(path.join(uicorePackagePath, '([A-Z])*/index.js'))).map(
@@ -184,11 +172,6 @@ async function getWebpackEntries() {
     },
     ...materialNextComponents,
     {
-      id: '@mui/joy',
-      path: path.join(path.relative(workspaceRoot, joyPackagePath), 'index.js'),
-    },
-    ...joyComponents,
-    {
       id: '@danielmana/ui-core',
       path: path.join(path.relative(workspaceRoot, uicorePackagePath), 'index.js'),
     },
@@ -255,7 +238,6 @@ function createWebpackConfig(entry, environment) {
         '@mui/utils': path.join(workspaceRoot, 'packages/mui-utils/build'),
         '@mui/base': path.join(workspaceRoot, 'packages/mui-base/build'),
         '@mui/material-next': path.join(workspaceRoot, 'packages/mui-material-next/build'),
-        '@mui/joy': path.join(workspaceRoot, 'packages/mui-joy/build'),
         '@danielmana/ui-core': path.join(workspaceRoot, 'packages/ui-core/build'),
         '@danielmana/ui-components': path.join(workspaceRoot, 'packages/ui-components/build'),
       },

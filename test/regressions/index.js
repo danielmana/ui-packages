@@ -27,8 +27,6 @@ importRegressionFixtures.keys().forEach((path) => {
 }, []);
 
 const blacklist = [
-  'docs-joy-getting-started-templates/TemplateCollection.png',
-  'docs-joy-core-features-automatic-adjustment/ListThemes.png',
   'docs-base-guides-working-with-tailwind-css/PlayerFinal.png', // No public components
   'docs-components-alert/TransitionAlerts.png', // Needs interaction
   'docs-components-app-bar/BackToTop.png', // Needs interaction
@@ -164,10 +162,6 @@ const unusedBlacklistPatterns = new Set(blacklist);
 
 function excludeDemoFixture(suite, name) {
   if (/^docs-premium-themes(.*)/.test(suite)) {
-    return true;
-  }
-
-  if (suite.includes('docs-joy') && name.match(/(Variables|Usage)$/)) {
     return true;
   }
 

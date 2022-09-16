@@ -2,7 +2,6 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { alpha, styled } from '@mui/material/styles';
-import { styled as joyStyled } from '@mui/joy/styles';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import NoSsr from '@mui/material/NoSsr';
@@ -12,7 +11,6 @@ import { AdCarbonInline } from 'docs/src/modules/components/AdCarbon';
 import { useCodeVariant } from 'docs/src/modules/utils/codeVariant';
 import { CODE_VARIANTS } from 'docs/src/modules/constants';
 import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
-import BrandingProvider from 'docs/src/BrandingProvider';
 
 const DemoToolbar = React.lazy(() => import('./DemoToolbar'));
 // Sync with styles from DemoToolbar
@@ -42,13 +40,12 @@ function useDemoData(codeVariant, demo, githubLocation) {
   const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
   let product;
   let name = 'Material UI';
-  if (asPathWithoutLang.startsWith('/joy-ui/')) {
-    product = 'joy-ui';
-    name = 'Joy UI';
-  }
   if (asPathWithoutLang.startsWith('/base/')) {
     product = 'base';
     name = 'MUI Base';
+  }
+  if (asPathWithoutLang.startsWith('/x/')) {
+    name = 'MUI X';
   }
   if (asPathWithoutLang.startsWith('/ui-core/')) {
     product = 'ui-core';
@@ -57,9 +54,6 @@ function useDemoData(codeVariant, demo, githubLocation) {
   if (asPathWithoutLang.startsWith('/ui-components/')) {
     product = 'ui-components';
     name = 'ui-components';
-  }
-  if (asPathWithoutLang.startsWith('/x/')) {
-    name = 'MUI X';
   }
 
   const title = `${getDemoName(githubLocation)} demo — ${name}`;
@@ -191,47 +185,6 @@ const DemoRootMaterial = styled('div', {
   }),
 }));
 
-const DemoRootJoy = joyStyled('div', {
-  shouldForwardProp: (prop) => prop !== 'hiddenToolbar' && prop !== 'bg',
-})(({ theme, hiddenToolbar, bg }) => ({
-  position: 'relative',
-  outline: 0,
-  margin: 'auto',
-  display: 'flex',
-  justifyContent: 'center',
-  [theme.breakpoints.up('sm')]: {
-    borderRadius: 10,
-    ...(bg === 'outlined' && {
-      borderLeftWidth: 1,
-      borderRightWidth: 1,
-    }),
-    /* Make no difference between the demo and the markdown. */
-    ...(bg === 'inline' && {
-      padding: theme.spacing(0),
-    }),
-    ...(hiddenToolbar && {
-      paddingTop: theme.spacing(1),
-    }),
-  },
-  /* Isolate the demo with an outline. */
-  ...(bg === 'outlined' && {
-    padding: theme.spacing(3),
-    backgroundColor: theme.vars.palette.background.surface,
-    border: `1px solid`,
-    borderColor: theme.vars.palette.divider,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-  }),
-  /* Prepare the background to display an inner elevation. */
-  ...(bg === true && {
-    padding: theme.spacing(3),
-    backgroundColor: theme.vars.palette.background.level2,
-  }),
-  ...(hiddenToolbar && {
-    paddingTop: theme.spacing(3),
-  }),
-}));
-
 const Code = styled(HighlightedCode)(({ theme }) => ({
   padding: 0,
   marginBottom: theme.spacing(1),
@@ -315,27 +268,23 @@ export default function Demo(props) {
 
   const [showAd, setShowAd] = React.useState(false);
 
-  const isJoy = asPathWithoutLang.startsWith('/joy-ui');
-  const DemoRoot = asPathWithoutLang.startsWith('/joy-ui') ? DemoRootJoy : DemoRootMaterial;
-  const Wrapper = asPathWithoutLang.startsWith('/joy-ui') ? BrandingProvider : React.Fragment;
-
   return (
     <Root>
       <AnchorLink id={`${demoName}`} />
-      <DemoRoot
+      <DemoRootMaterial
         hiddenToolbar={demoOptions.hideToolbar}
         bg={demoOptions.bg}
         id={demoId}
         onMouseEnter={handleDemoHover}
         onMouseLeave={handleDemoHover}
       >
-        <Wrapper {...(isJoy && { mode })}>
+        <React.Fragment>
           <InitialFocus
             aria-label={t('initialFocusLabel')}
             action={initialFocusRef}
             tabIndex={-1}
           />
-        </Wrapper>
+        </React.Fragment>
         <DemoSandboxed
           key={demoKey}
           style={demoSandboxedStyle}
@@ -344,10 +293,10 @@ export default function Demo(props) {
           name={demoName}
           onResetDemoClick={resetDemo}
         />
-      </DemoRoot>
+      </DemoRootMaterial>
       <AnchorLink id={`${demoName}.js`} />
       <AnchorLink id={`${demoName}.tsx`} />
-      <Wrapper {...(isJoy && { mode })}>
+      <React.Fragment>
         {demoOptions.hideToolbar ? null : (
           <NoSsr defer fallback={<DemoToolbarFallback />}>
             <React.Suspense fallback={<DemoToolbarFallback />}>
@@ -386,7 +335,7 @@ export default function Demo(props) {
           />
         </Collapse>
         {showAd && !disableAd && !demoOptions.disableAd ? <AdCarbonInline /> : null}
-      </Wrapper>
+      </React.Fragment>
     </Root>
   );
 }

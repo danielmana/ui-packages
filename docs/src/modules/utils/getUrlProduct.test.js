@@ -12,11 +12,6 @@ describe('getUrlProduct', () => {
     expect(getUrlProduct('/zh/base/react-button-unstyled/')).to.equal('base');
   });
 
-  it('get joy-ui', () => {
-    expect(getUrlProduct('/joy-ui/react-button/')).to.equal('joy-ui');
-    expect(getUrlProduct('/zh/joy-ui/react-button/')).to.equal('joy-ui');
-  });
-
   it('get system', () => {
     expect(getUrlProduct('/system/')).to.equal('system');
     expect(getUrlProduct('/zh/system/getting-started/overview/')).to.equal('system');
@@ -31,4 +26,13 @@ describe('getUrlProduct', () => {
     expect(getUrlProduct('/x/react-date-picker/components')).to.equal('date-picker');
     expect(getUrlProduct('/zh/x/react-date-picker/components')).to.equal('date-picker');
   });
+
+  it('get ui-core', () => {
+    expect(getUrlProduct('/ui-core/react-button/')).to.equal('ui-core');
+  });
+
+  // TODO danielmana: add test to ui-components#getUrlProduct()
+  // it('get ui-components', () => {
+  //   expect(getUrlProduct('/ui-components/my-component/')).to.equal('ui-components');
+  // });
 });

@@ -20,23 +20,7 @@ export const getHtml = ({ title, language }: { title: string; language: string }
 </html>`;
 };
 
-export const getRootIndex = (product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-components') => {
-  if (product === 'joy-ui') {
-    return `import * as React from 'react';
-import ReactDOM from 'react-dom/client';
-import { StyledEngineProvider, CssVarsProvider } from '@mui/joy/styles';
-import Demo from './demo';
-
-ReactDOM.createRoot(document.querySelector("#root")).render(
-  <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <CssVarsProvider>
-        <Demo />
-      </CssVarsProvider>
-    </StyledEngineProvider>
-  </React.StrictMode>
-);`;
-  }
+export const getRootIndex = (product?: 'base' | 'ui-core' | 'ui-components') => {
   if (product === 'base') {
     return `import * as React from 'react';
 import ReactDOM from 'react-dom/client';

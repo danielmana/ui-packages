@@ -10,7 +10,7 @@ type RegExpMatchArrayWithGroups<T> = (RegExpMatchArray & RegExpMatchArrayWithGro
 export default function SandboxDependencies(
   demo: {
     raw: string;
-    product?: 'joy-ui' | 'base' | 'ui-core' | 'ui-components' | 'ui-model';
+    product?: 'base' | 'ui-core' | 'ui-components' | 'ui-model';
     codeVariant: keyof typeof CODE_VARIANTS;
   },
   options?: { commitRef?: string },
@@ -30,7 +30,8 @@ export default function SandboxDependencies(
     const packagesWithDTPackage = Object.keys(deps)
       .filter((name) => packagesWithBundledTypes.indexOf(name) === -1)
       // All the MUI packages come with bundled types
-      .filter((name) => name.indexOf('@mui/') !== 0);
+      .filter((name) => name.indexOf('@mui/') !== 0)
+      .filter((name) => name.indexOf('@danielmana/') !== 0);
 
     packagesWithDTPackage.forEach((name) => {
       let resolvedName = name;
@@ -57,7 +58,7 @@ export default function SandboxDependencies(
       return 'latest';
     }
     const shortSha = commitRef.slice(0, 8);
-    // TODO danielmana: return `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
+    // TODO danielmana: getUiPackageVersion `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
     return `https://pkg.csb.dev/mui/material-ui/commit/${shortSha}/@mui/${packageName}`;
   }
 
@@ -106,9 +107,8 @@ export default function SandboxDependencies(
       '@mui/base': getMuiPackageVersion('base'),
       '@mui/utils': getMuiPackageVersion('utils'),
       '@mui/material-next': getMuiPackageVersion('material-next'),
-      '@mui/joy': getMuiPackageVersion('joy'),
-      '@danielmana/ui-core': getMuiPackageVersion('ui-core'),
-      '@danielmana/ui-components': getMuiPackageVersion('ui-components'),
+      '@danielmana/ui-core': 'latest',
+      '@danielmana/ui-components': 'latest',
     };
 
     // TODO: consider if this configuration could be injected in a "cleaner" way.

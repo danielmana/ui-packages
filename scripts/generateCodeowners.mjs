@@ -172,17 +172,13 @@ const areaMaintainers = {
 };
 
 const packageOwners = {
-  base: ['michaldudak'],
-  joy: ['siriwatknp'],
-  material: ['mnajdova'],
+  'ui-core': ['danielmana'],
+  'ui-components': ['danielmana'],
 };
 
 const packageMaintainers = {
-  base: ['michaldudak', 'mnajdova'],
-  'icons-material': ['michaldudak', 'siriwatknp'],
-  joy: ['siriwatknp', 'danilo-leal'],
-  material: ['mnajdova', 'danilo-leal'],
-  system: ['mnajdova', 'siriwatknp'],
+  'ui-core': ['danielmana'],
+  'ui-components': ['danielmana'],
 };
 
 const additionalRules = {
@@ -264,7 +260,7 @@ function getAreaMaintainers(area, packageName) {
 }
 
 function processComponents(packageName) {
-  const componentsDirectory = path.join(thisDirectory, `../packages/mui-${packageName}/src`);
+  const componentsDirectory = path.join(thisDirectory, `../packages/${packageName}/src`);
   const componentDirectories = fs.readdirSync(componentsDirectory);
   const result = [];
 
@@ -278,7 +274,7 @@ function processComponents(packageName) {
 
     if (componentArea) {
       const maintainers = getAreaMaintainers(componentArea, packageName);
-      const codeowners = `/packages/mui-${packageName}/src/${componentDirectory}/ ${maintainers}`;
+      const codeowners = `/packages/${packageName}/src/${componentDirectory}/ ${maintainers}`;
 
       result.push(codeowners);
     } else {
@@ -318,7 +314,7 @@ function processDocs(packageName) {
 
 function processPackages() {
   return Object.entries(packageMaintainers)
-    .map(([packageName, maintainers]) => `/packages/mui-${packageName}/ @${maintainers.join(' @')}`)
+    .map(([packageName, maintainers]) => `/packages/${packageName}/ @${maintainers.join(' @')}`)
     .join('\n');
 }
 
@@ -332,17 +328,13 @@ function run() {
   write('\n# Packages\n');
   write(processPackages());
 
-  write('\n# Components - Material UI\n');
-  write(processComponents('material'));
-  write(processDocs('material'));
+  write('\n# Components - UI Core\n');
+  write(processComponents('ui-core'));
+  write(processDocs('ui-core'));
 
-  write('\n# Components - MUI Base\n');
-  write(processComponents('base'));
-  write(processDocs('base'));
-
-  write('\n# Components - Joy UI\n');
-  write(processComponents('joy'));
-  write(processDocs('joy'));
+  write('\n# Components - UI Components\n');
+  write(processComponents('ui-components'));
+  write(processDocs('ui-components'));
 
   save();
 }
