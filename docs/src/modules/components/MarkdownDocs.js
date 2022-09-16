@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '@mui/system';
 import Demo from 'docs/src/modules/components/Demo';
 import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
 import { exactProp } from '@mui/utils';
@@ -20,7 +19,6 @@ function noComponent(moduleID) {
 }
 
 function MarkdownDocs(props) {
-  const theme = useTheme();
   const { disableAd = true, disableToc = false, demos = {}, docs, demoComponents } = props;
 
   const userLanguage = useUserLanguage();
