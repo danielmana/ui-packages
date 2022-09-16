@@ -51,15 +51,9 @@ function getUnstyledFilename(filename, definitionFile = false) {
     const componentNameReg = new RegExp(componentName, 'g');
 
     if (separator === '/') {
-      unstyledFile = unstyledFile.replace(
-        /packages\/mui-lab|packages\/mui-material/g,
-        'packages/mui-base',
-      );
+      unstyledFile = unstyledFile.replace(/packages\/mui-material/g, 'packages/mui-base');
     } else {
-      unstyledFile = unstyledFile.replace(
-        /packages\\mui-lab|packages\\mui-material/g,
-        'packages\\mui-base',
-      );
+      unstyledFile = unstyledFile.replace(/packages\\mui-material/g, 'packages\\mui-base');
     }
 
     unstyledFile = unstyledFile.replace(componentNameReg, `${componentName}Unstyled`);

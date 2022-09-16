@@ -47,5 +47,4 @@ To synchronize with Material Icons, do the following:
 
 1. Inside this workspace run `yarn src:download`
 2. Inside this workspace run `yarn src:icons`
-3. Inside the root run `yarn docs:mdicons:synonyms`
-4. If the number of icons changed significantly, edit the icons/icons.md and material-icons/material-icons.md under docs/data/material/components and update the numbers.
+3. If the number of icons changed significantly, edit the icons/icons.md and material-icons/material-icons.md under docs/data/material/components and update the numbers.

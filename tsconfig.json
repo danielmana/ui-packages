@@ -16,8 +16,6 @@
     "paths": {
       "@mui/material": ["./packages/mui-material/src"],
       "@mui/material/*": ["./packages/mui-material/src/*"],
-      "@mui/lab": ["./packages/mui-lab/src"],
-      "@mui/lab/*": ["./packages/mui-lab/src/*"],
       "@mui/markdown": ["./docs/packages/markdown"],
       "@mui/styled-engine": ["./packages/mui-styled-engine/src"],
       "@mui/styled-engine/*": ["./packages/mui-styled-engine/src/*"],

@@ -8,9 +8,6 @@ import acceptLanguage from 'accept-language';
 import { useRouter } from 'next/router';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
 import pages from 'docs/src/pages';
-import basePages from 'docs/data/base/pages';
-import materialPages from 'docs/data/material/pages';
-import systemPages from 'docs/data/system/pages';
 import uiCorePages from 'docs/data/ui-core/pages';
 import uiComponentsPages from 'docs/data/ui-components/pages';
 import PageContext from 'docs/src/modules/components/PageContext';
@@ -187,13 +184,7 @@ function AppWrapper(props) {
   }, []);
 
   let productPages = pages;
-  if (product === 'base') {
-    productPages = basePages;
-  } else if (product === 'material-ui') {
-    productPages = materialPages;
-  } else if (product === 'system') {
-    productPages = systemPages;
-  } else if (product === 'ui-core') {
+  if (product === 'ui-core') {
     productPages = uiCorePages;
   } else if (product === 'ui-components') {
     productPages = uiComponentsPages;

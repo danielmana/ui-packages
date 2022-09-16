@@ -10,7 +10,6 @@
 *.tsbuildinfo
 /.eslintcache
 /.nyc_output
-/benchmark/**/dist
 /coverage
 /docs/.env.local
 /docs/export

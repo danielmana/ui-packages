@@ -43,18 +43,6 @@ async function getWebpackEntries() {
     },
   );
 
-  const labPackagePath = path.join(workspaceRoot, 'packages/mui-lab/build');
-  const labComponents = (await glob(path.join(labPackagePath, '([A-Z])*/index.js'))).map(
-    (componentPath) => {
-      const componentName = path.basename(path.dirname(componentPath));
-
-      return {
-        id: componentName,
-        path: path.relative(workspaceRoot, path.dirname(componentPath)),
-      };
-    },
-  );
-
   const materialNextPackagePath = path.join(workspaceRoot, 'packages/mui-material-next/build');
   const materialNextComponents = (
     await glob(path.join(materialNextPackagePath, '([A-Z])*/index.js'))
@@ -102,11 +90,6 @@ async function getWebpackEntries() {
     },
     ...materialComponents,
     {
-      id: '@material-ui/lab',
-      path: path.join(path.relative(workspaceRoot, labPackagePath), 'index.js'),
-    },
-    ...labComponents,
-    {
       id: '@material-ui/styles',
       path: 'packages/mui-styles/build/index.js',
     },
@@ -133,10 +116,6 @@ async function getWebpackEntries() {
     {
       id: 'colorManipulator',
       path: 'packages/mui-system/build/colorManipulator.js',
-    },
-    {
-      id: 'useAutocomplete',
-      path: 'packages/mui-lab/build/useAutocomplete/index.js',
     },
     {
       id: '@material-ui/core/useMediaQuery',
@@ -229,7 +208,6 @@ function createWebpackConfig(entry, environment) {
     resolve: {
       alias: {
         '@mui/material': path.join(workspaceRoot, 'packages/mui-material/build'),
-        '@mui/lab': path.join(workspaceRoot, 'packages/mui-lab/build'),
         '@mui/styled-engine': path.join(workspaceRoot, 'packages/mui-styled-engine/build'),
         '@mui/styled-engine-sc': path.join(workspaceRoot, 'packages/mui-styles-sc/build'),
         '@mui/styles': path.join(workspaceRoot, 'packages/mui-styles/build'),
