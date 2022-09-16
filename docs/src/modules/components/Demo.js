@@ -212,9 +212,7 @@ const InitialFocus = styled(IconButton)(({ theme }) => ({
   pointerEvents: 'none',
 }));
 export default function Demo(props) {
-  const router = useRouter();
-  const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
-  const { demo, demoOptions, disableAd, githubLocation, mode } = props;
+  const { demo, demoOptions, disableAd, githubLocation } = props;
   const t = useTranslate();
   const codeVariant = useCodeVariant();
   const demoData = useDemoData(codeVariant, demo, githubLocation);

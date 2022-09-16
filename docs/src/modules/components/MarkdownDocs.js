@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
 import { useTheme } from '@mui/system';
 import Demo from 'docs/src/modules/components/Demo';
 import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
@@ -8,7 +7,6 @@ import { exactProp } from '@mui/utils';
 import ComponentLinkHeader from 'docs/src/modules/components/ComponentLinkHeader';
 import AppLayoutDocs from 'docs/src/modules/components/AppLayoutDocs';
 import { useTranslate, useUserLanguage } from 'docs/src/modules/utils/i18n';
-import BrandingProvider from 'docs/src/BrandingProvider';
 
 // TODO: Only import on demand via @mui/markdown/loader
 const markdownComponents = {
@@ -21,22 +19,8 @@ function noComponent(moduleID) {
   };
 }
 
-function JoyModeObserver({ mode }) {
-  const { setMode } = useColorScheme();
-  React.useEffect(() => {
-    setMode(mode);
-  }, [mode, setMode]);
-  return null;
-}
-
-JoyModeObserver.propTypes = {
-  mode: PropTypes.oneOf(['light', 'dark']),
-};
-
 function MarkdownDocs(props) {
   const theme = useTheme();
-  const router = useRouter();
-  const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
   const { disableAd = true, disableToc = false, demos = {}, docs, demoComponents } = props;
 
   const userLanguage = useUserLanguage();
