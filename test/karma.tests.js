@@ -22,9 +22,6 @@ const materialUnitContext = require.context(
 );
 materialUnitContext.keys().forEach(materialUnitContext);
 
-const labUnitContext = require.context('../packages/mui-lab/src/', true, /\.test\.(js|ts|tsx)$/);
-labUnitContext.keys().forEach(labUnitContext);
-
 const styledEngineContext = require.context(
   '../packages/mui-styled-engine/src/',
   true,

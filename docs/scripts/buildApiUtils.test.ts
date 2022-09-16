@@ -1,12 +1,10 @@
-import path from 'path';
-import fs from 'fs';
 import { expect } from 'chai';
+import fs from 'fs';
+import path from 'path';
 import sinon from 'sinon';
+
 import {
-  extractApiPage,
-  extractPackageFile,
-  getMaterialComponentInfo,
-  getBaseComponentInfo,
+    extractApiPage, extractPackageFile, getBaseComponentInfo, getMaterialComponentInfo
 } from './buildApiUtils';
 
 describe('buildApiUtils', () => {
@@ -27,17 +25,6 @@ describe('buildApiUtils', () => {
         packagePath: 'mui-material',
         muiPackage: 'mui-material',
         name: 'Button',
-      });
-    });
-
-    it('return info if path is a package (lab)', () => {
-      const result = extractPackageFile(
-        '/material-ui/packages/mui-lab/src/LoadingButton/LoadingButton.js',
-      );
-      sinon.assert.match(result, {
-        packagePath: 'mui-lab',
-        muiPackage: 'mui-lab',
-        name: 'LoadingButton',
       });
     });
 

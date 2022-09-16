@@ -230,12 +230,6 @@ jobs:
           name: '`yarn docs:api` changes committed?'
           command: git diff --exit-code
       - run:
-          name: Update the navigation translations
-          command: yarn docs:i18n
-      - run:
-          name: '`yarn docs:i18n` changes committed?'
-          command: git diff --exit-code
-      - run:
           name: '`yarn extract-error-codes` changes committed?'
           command: |
             yarn extract-error-codes
@@ -275,7 +269,6 @@ jobs:
           name: Diff declaration files
           command: |
             git add -f packages/mui-material/build || echo '/material declarations do not exist'
-            git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/utils declarations do not exist'
             git add -f packages/ui-components/build || echo '/utils declarations do not exist'
@@ -291,7 +284,6 @@ jobs:
           paths:
             # packages with generated declaration files
             - packages/mui-material/build
-            - packages/mui-lab/build
             - packages/mui-utils/build
             - packages/ui-core/build
             - packages/ui-components/build
@@ -330,7 +322,6 @@ jobs:
           name: Diff declaration files
           command: |
             git add -f packages/mui-material/build || echo '/core declarations do not exist'
-            git add -f packages/mui-lab/build || echo '/lab declarations do not exist'
             git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/ui-core declarations do not exist'
             git add -f packages/ui-components/build || echo '/ui-components declarations do not exist'
