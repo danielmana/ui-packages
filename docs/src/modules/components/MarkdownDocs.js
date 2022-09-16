@@ -92,7 +92,6 @@ function MarkdownDocs(props) {
           return (
             <Demo
               key={index}
-              mode={theme.palette.mode}
               demo={{
                 raw: demo.raw,
                 js: demoComponents[demo.module] ?? noComponent(demo.module),
