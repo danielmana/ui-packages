@@ -106,7 +106,6 @@ export default function SandboxDependencies(
       '@mui/private-classnames': getMuiPackageVersion('classnames'),
       '@mui/base': getMuiPackageVersion('base'),
       '@mui/utils': getMuiPackageVersion('utils'),
-      '@mui/material-next': getMuiPackageVersion('material-next'),
       '@danielmana/ui-core': 'latest',
       '@danielmana/ui-components': 'latest',
     };

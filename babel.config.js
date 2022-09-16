@@ -19,7 +19,6 @@ const defaultAlias = {
   '@mui/private-theming': resolveAliasPath('./packages/mui-private-theming/src'),
   '@mui/base': resolveAliasPath('./packages/mui-base/src'),
   '@mui/utils': resolveAliasPath('./packages/mui-utils/src'),
-  '@mui/material-next': resolveAliasPath('./packages/mui-material-next/src'),
   '@danielmana/ui-core': resolveAliasPath('./packages/ui-core/src'),
   '@danielmana/ui-components': resolveAliasPath('./packages/ui-components/src'),
 };

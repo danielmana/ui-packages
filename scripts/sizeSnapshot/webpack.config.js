@@ -43,18 +43,6 @@ async function getWebpackEntries() {
     },
   );
 
-  const materialNextPackagePath = path.join(workspaceRoot, 'packages/mui-material-next/build');
-  const materialNextComponents = (
-    await glob(path.join(materialNextPackagePath, '([A-Z])*/index.js'))
-  ).map((componentPath) => {
-    const componentName = path.basename(path.dirname(componentPath));
-
-    return {
-      id: `@mui/material-next/${componentName}`,
-      path: path.relative(workspaceRoot, path.dirname(componentPath)),
-    };
-  });
-
   // ui-core
   const uicorePackagePath = path.join(workspaceRoot, 'packages/ui-core/build');
   const uicoreComponents = (await glob(path.join(uicorePackagePath, '([A-Z])*/index.js'))).map(
@@ -134,22 +122,10 @@ async function getWebpackEntries() {
       id: '@material-ui/utils',
       path: 'packages/mui-utils/build/esm/index.js',
     },
-    // TODO: Requires webpack v5
-    // Resolution of webpack/acorn to 7.x is blocked by nextjs (https://github.com/vercel/next.js/issues/11947)
-    // {
-    //   id: '@material-ui/core.modern',
-    //   webpack: true,
-    //   path: path.join(path.relative(workspaceRoot, materialPackagePath), 'modern/index.js'),
-    // },
     {
       id: '@material-ui/core.legacy',
       path: path.join(path.relative(workspaceRoot, materialPackagePath), 'legacy/index.js'),
     },
-    {
-      id: '@mui/material-next',
-      path: path.join(path.relative(workspaceRoot, materialNextPackagePath), 'index.js'),
-    },
-    ...materialNextComponents,
     {
       id: '@danielmana/ui-core',
       path: path.join(path.relative(workspaceRoot, uicorePackagePath), 'index.js'),
@@ -215,7 +191,6 @@ function createWebpackConfig(entry, environment) {
         '@mui/private-theming': path.join(workspaceRoot, 'packages/mui-private-theming/build'),
         '@mui/utils': path.join(workspaceRoot, 'packages/mui-utils/build'),
         '@mui/base': path.join(workspaceRoot, 'packages/mui-base/build'),
-        '@mui/material-next': path.join(workspaceRoot, 'packages/mui-material-next/build'),
         '@danielmana/ui-core': path.join(workspaceRoot, 'packages/ui-core/build'),
         '@danielmana/ui-components': path.join(workspaceRoot, 'packages/ui-components/build'),
       },

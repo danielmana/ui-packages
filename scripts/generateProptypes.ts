@@ -8,9 +8,7 @@ import * as ttp from 'typescript-to-proptypes';
 import * as yargs from 'yargs';
 
 import {
-  fixBabelGeneratorIssues,
-  fixLineEndings,
-  getUnstyledFilename,
+    fixBabelGeneratorIssues, fixLineEndings, getUnstyledFilename
 } from '../docs/scripts/helpers';
 
 const useExternalPropsFromInputBase = [
@@ -324,7 +322,6 @@ async function run(argv: HandlerArgv) {
       // path.resolve(__dirname, '../packages/mui-system/src'),
       // path.resolve(__dirname, '../packages/mui-base/src'),
       // path.resolve(__dirname, '../packages/mui-material/src'),
-      // path.resolve(__dirname, '../packages/mui-material-next/src'),
       path.resolve(__dirname, '../packages/ui-core/src'),
       path.resolve(__dirname, '../packages/ui-components/src'),
     ].map((folderPath) =>
