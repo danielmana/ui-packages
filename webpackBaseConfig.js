@@ -21,7 +21,6 @@ module.exports = {
       '@mui/base': path.resolve(__dirname, './packages/mui-base/src'),
       '@mui/utils': path.resolve(__dirname, './packages/mui-utils/src'),
       '@mui/material-next': path.resolve(__dirname, './packages/mui-material-next/src'),
-      '@mui/joy': path.resolve(__dirname, './packages/mui-joy/src'),
       '@danielmana/ui-core': path.resolve(__dirname, './packages/ui-core/src'),
       '@danielmana/ui-components': path.resolve(__dirname, './packages/ui-components/src'),
       'typescript-to-proptypes': path.resolve(__dirname, './packages/typescript-to-proptypes/src'),

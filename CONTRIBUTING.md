@@ -52,6 +52,8 @@ yarn start
 You can now access the documentation site [locally](http://localhost:3000).
 Changes to the docs will hot reload the site.
 
+There is also a playground for a fast iteration development cycle. In order to use it, you can copy the `docs/pages/playground.example.tsx` file and access the playground [locally](http://localhost:3000/playground).
+
 ### How to increase the chance of being accepted?
 
 Continuous Integration (CI) runs a series of checks automatically when a Pull Request is opened. If you're not

@@ -21,7 +21,6 @@ const defaultAlias = {
   '@mui/base': resolveAliasPath('./packages/mui-base/src'),
   '@mui/utils': resolveAliasPath('./packages/mui-utils/src'),
   '@mui/material-next': resolveAliasPath('./packages/mui-material-next/src'),
-  '@mui/joy': resolveAliasPath('./packages/mui-joy/src'),
   '@danielmana/ui-core': resolveAliasPath('./packages/ui-core/src'),
   '@danielmana/ui-components': resolveAliasPath('./packages/ui-components/src'),
 };

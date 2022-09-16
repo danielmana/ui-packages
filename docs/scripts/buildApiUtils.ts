@@ -343,9 +343,6 @@ const pathToSystemTitle = (page: PageMarkdown) => {
   if (page.pathname.match(/system\//)) {
     return `${defaultTitle} (MUI System)`;
   }
-  if (page.pathname.match(/joy\//)) {
-    return `${defaultTitle} (Joy UI)`;
-  }
   return defaultTitle;
 };
 

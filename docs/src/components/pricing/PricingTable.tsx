@@ -353,12 +353,6 @@ const rowHeaders: Record<string, React.ReactNode> = {
       tooltip="A library of React UI components that implements Google's Material Design, available in @mui/material."
     />
   ),
-  'Joy UI': (
-    <ColumnHead
-      label="Joy UI"
-      tooltip="A library of beautifully designed React UI components, available in @mui/joy."
-    />
-  ),
   // Advanced
   'data-grid/column-groups': (
     <ColumnHead label="Column groups" nested href="/x/react-data-grid/column-groups/" />

@@ -9,7 +9,7 @@
  * List of demos or folders to ignore when transpiling
  * Example: "app-bar/BottomAppBar.tsx"
  */
-const ignoreList = ['/pages.ts', 'docs/data/joy/getting-started/templates'];
+const ignoreList = ['/pages.ts'];
 
 const fse = require('fs-extra');
 const path = require('path');

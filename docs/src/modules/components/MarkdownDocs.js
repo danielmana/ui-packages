@@ -1,15 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
-import { useTheme } from '@mui/system';
 import Demo from 'docs/src/modules/components/Demo';
 import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
 import { exactProp } from '@mui/utils';
 import ComponentLinkHeader from 'docs/src/modules/components/ComponentLinkHeader';
 import AppLayoutDocs from 'docs/src/modules/components/AppLayoutDocs';
 import { useTranslate, useUserLanguage } from 'docs/src/modules/utils/i18n';
-import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
-import BrandingProvider from 'docs/src/BrandingProvider';
 
 // TODO: Only import on demand via @mui/markdown/loader
 const markdownComponents = {
@@ -22,32 +18,13 @@ function noComponent(moduleID) {
   };
 }
 
-function JoyModeObserver({ mode }) {
-  const { setMode } = useColorScheme();
-  React.useEffect(() => {
-    setMode(mode);
-  }, [mode, setMode]);
-  return null;
-}
-
-JoyModeObserver.propTypes = {
-  mode: PropTypes.oneOf(['light', 'dark']),
-};
-
 function MarkdownDocs(props) {
-  const theme = useTheme();
-  const router = useRouter();
-  const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
   const { disableAd = true, disableToc = false, demos = {}, docs, demoComponents } = props;
 
   const userLanguage = useUserLanguage();
   const t = useTranslate();
 
   const { description, location, rendered, title, toc, headers } = docs[userLanguage] || docs.en;
-
-  const isJoy = asPathWithoutLang.startsWith('/joy-ui');
-  const Provider = isJoy ? CssVarsProvider : React.Fragment;
-  const Wrapper = isJoy ? BrandingProvider : React.Fragment;
 
   return (
     <AppLayoutDocs
@@ -58,23 +35,22 @@ function MarkdownDocs(props) {
       title={title}
       toc={toc}
     >
-      <Provider>
-        {isJoy && <JoyModeObserver mode={theme.palette.mode} />}
+      <React.Fragment>
         {rendered.map((renderedMarkdownOrDemo, index) => {
           if (typeof renderedMarkdownOrDemo === 'string') {
             return (
-              <Wrapper key={index} {...(isJoy && { mode: theme.palette.mode })}>
+              <React.Fragment key={index}>
                 <MarkdownElement renderedMarkdown={renderedMarkdownOrDemo} />
-              </Wrapper>
+              </React.Fragment>
             );
           }
 
           if (renderedMarkdownOrDemo.component) {
             const Component = markdownComponents[renderedMarkdownOrDemo.component];
             return (
-              <Wrapper key={index} {...(isJoy && { mode: theme.palette.mode })}>
+              <React.Fragment key={index}>
                 <Component headers={headers} options={renderedMarkdownOrDemo} />
-              </Wrapper>
+              </React.Fragment>
             );
           }
 
@@ -114,7 +90,6 @@ function MarkdownDocs(props) {
           return (
             <Demo
               key={index}
-              mode={theme.palette.mode}
               demo={{
                 raw: demo.raw,
                 js: demoComponents[demo.module] ?? noComponent(demo.module),
@@ -128,7 +103,7 @@ function MarkdownDocs(props) {
             />
           );
         })}
-      </Provider>
+      </React.Fragment>
     </AppLayoutDocs>
   );
 }

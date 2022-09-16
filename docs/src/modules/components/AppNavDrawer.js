@@ -27,7 +27,6 @@ import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
 import materialPkgJson from '../../../../packages/mui-material/package.json';
 import uiCorePkgJson from '../../../../packages/ui-core/package.json';
 import uiComponentsPkgJson from '../../../../packages/ui-components/package.json';
-import joyPkgJson from '../../../../packages/mui-joy/package.json';
 import basePkgJson from '../../../../packages/mui-base/package.json';
 import systemPkgJson from '../../../../packages/mui-system/package.json';
 
@@ -436,15 +435,6 @@ export default function AppNavDrawer(props) {
                   text: 'View all versions',
                   href: `https://mui.com${languagePrefix}/versions/`,
                 },
-              ])}
-            />
-          )}
-          {canonicalAs.startsWith('/joy-ui/') && (
-            <ProductIdentifier
-              name="Joy UI"
-              metadata="MUI Core"
-              versionSelector={renderVersionSelector([
-                { text: `v${joyPkgJson.version}`, current: true },
               ])}
             />
           )}

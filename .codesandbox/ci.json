@@ -15,8 +15,7 @@
     "packages/mui-base",
     "packages/mui-styled-engine",
     "packages/mui-styled-engine-sc",
-    "packages/mui-material-next",
-    "packages/mui-joy"
+    "packages/mui-material-next"
   ],
   "publishDirectory": {
     "@mui/codemod": "packages/mui-codemod/build",
@@ -32,7 +31,6 @@
     "@mui/utils": "packages/mui-utils/build",
     "@mui/base": "packages/mui-base/build",
     "@mui/material-next": "packages/mui-material-next/build",
-    "@mui/joy": "packages/mui-joy/build",
     "@danielmana/ui-core": "packages/ui-core/build",
     "@danielmana/ui-components": "packages/ui-components/build"
   },
@@ -40,7 +38,6 @@
     "material-ui-issue-latest-s2dsx",
     "github/mui/material-ui/tree/HEAD/examples/create-react-app",
     "github/mui/material-ui/tree/HEAD/examples/create-react-app-with-typescript",
-    "github/mui/material-ui/tree/HEAD/examples/joy-cra-typescript",
     "github/mui/material-ui/tree/HEAD/examples/base-cra-typescript"
   ],
   "silent": true

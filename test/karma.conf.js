@@ -159,7 +159,6 @@ module.exports = function setKarmaConfig(config) {
                         '@mui/utils': './packages/mui-utils/src',
                         '@mui/base': './packages/mui-base/src',
                         '@mui/material-next': './packages/mui-material-next/src',
-                        '@mui/joy': './packages/mui-joy/src',
                         '@danielmana/ui-core': './packages/ui-core/src',
                         '@danielmana/ui-components': './packages/ui-components/src',
                       },

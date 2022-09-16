@@ -260,7 +260,6 @@ jobs:
           command: |
             yarn workspace @mui/material typescript:module-augmentation
             yarn workspace @mui/base typescript:module-augmentation
-            yarn workspace @mui/joy typescript:module-augmentation
             yarn workspace @danielmana/ui-core typescript:module-augmentation
             yarn workspace @danielmana/ui-components typescript:module-augmentation
 
@@ -393,9 +392,6 @@ jobs:
       - run:
           name: Can we generate the @mui/material umd build?
           command: yarn workspace @mui/material build:umd
-      - run:
-          name: Test umd release
-          command: yarn test:umd
   test_e2e_website:
     <<: *defaults
     docker:
