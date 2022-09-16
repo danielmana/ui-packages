@@ -1,8 +1,12 @@
 import generateComponentApi, {
-    ReactApi, writePrettifiedFile
+  ReactApi,
+  writePrettifiedFile,
 } from 'docs/scripts/ApiBuilders/ComponentApiBuilder';
 import {
-    ComponentInfo, extractApiPage, getUIComponentsComponentInfo, getUICoreComponentInfo
+  ComponentInfo,
+  extractApiPage,
+  getUIComponentsComponentInfo,
+  getUICoreComponentInfo,
 } from 'docs/scripts/buildApiUtils';
 import { findComponents } from 'docs/src/modules/utils/find';
 import { mkdirSync } from 'fs';

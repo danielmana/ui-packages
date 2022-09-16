@@ -8,7 +8,9 @@ import * as ttp from 'typescript-to-proptypes';
 import * as yargs from 'yargs';
 
 import {
-    fixBabelGeneratorIssues, fixLineEndings, getUnstyledFilename
+  fixBabelGeneratorIssues,
+  fixLineEndings,
+  getUnstyledFilename,
 } from '../docs/scripts/helpers';
 
 const useExternalPropsFromInputBase = [
