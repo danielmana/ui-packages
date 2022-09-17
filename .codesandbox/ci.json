@@ -13,8 +13,7 @@
     "packages/mui-utils",
     "packages/mui-base",
     "packages/mui-styled-engine",
-    "packages/mui-styled-engine-sc",
-    "packages/mui-material-next"
+    "packages/mui-styled-engine-sc"
   ],
   "publishDirectory": {
     "@mui/codemod": "packages/mui-codemod/build",
@@ -28,7 +27,6 @@
     "@mui/types": "packages/mui-types/build",
     "@mui/utils": "packages/mui-utils/build",
     "@mui/base": "packages/mui-base/build",
-    "@mui/material-next": "packages/mui-material-next/build",
     "@danielmana/ui-core": "packages/ui-core/build",
     "@danielmana/ui-components": "packages/ui-components/build"
   },

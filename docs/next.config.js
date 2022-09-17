@@ -155,7 +155,6 @@ module.exports = {
                         '@mui/private-theming': '../packages/mui-private-theming/src',
                         '@mui/utils': '../packages/mui-utils/src',
                         '@mui/base': '../packages/mui-base/src',
-                        '@mui/material-next': '../packages/mui-material-next/src',
                         '@danielmana/ui-core': '../packages/ui-core/src',
                         '@danielmana/ui-components': '../packages/ui-components/src',
                       },

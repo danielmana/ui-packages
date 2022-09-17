@@ -16,9 +16,8 @@ describe('<Button />', () => {
     render,
     refInstanceof: window.HTMLButtonElement,
     muiName: 'UICoreButton',
-    testDeepOverrides: { slotName: 'startIcon', slotClassName: classes.startIcon },
     testVariantProps: { variant: 'contained', fullWidth: true },
-    testStateOverrides: { prop: 'size', value: 'small', styleKey: 'sizeSmall' },
+    testStateOverrides: { prop: 'size', value: 'small', styleKey: 'root' },
     skip: ['componentsProp'],
   }));
 

@@ -446,7 +446,12 @@ function testThemeStyleOverrides(element, getOptions) {
       const classKeys = Object.keys(classes);
 
       // only test the component that has `root` and other classKey
-      if (!testStateOverrides || !classKeys.includes('root') || classKeys.length === 1) {
+      if (
+        !testStateOverrides ||
+        testStateOverrides.styleKey === 'root' ||
+        !classKeys.includes('root') ||
+        classKeys.length === 1
+      ) {
         return;
       }
 
