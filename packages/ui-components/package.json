@@ -1,6 +1,6 @@
 {
   "name": "@danielmana/ui-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "author": "Daniel M",
   "description": "A library of React UI components.",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@danielmana/ui-core": "^0.1.10",
+    "@danielmana/ui-core": "^0.1.12",
     "clsx": "^1.2.1",
     "prop-types": "^15.8.1"
   },

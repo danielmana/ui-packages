@@ -1,6 +1,6 @@
 {
   "name": "@danielmana/ui-packages",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": true,
   "scripts": {
     "proptypes": "cross-env BABEL_ENV=development babel-node --extensions \".tsx,.ts,.js\" ./scripts/generateProptypes.ts",
@@ -16,7 +16,6 @@
     "docs:api:build": "cross-env BABEL_ENV=development __NEXT_EXPORT_TRAILING_SLASH=true babel-node --extensions \".tsx,.ts,.js\" ./docs/scripts/buildApi.ts",
     "docs:build": "yarn workspace docs build",
     "docs:build-sw": "yarn workspace docs build-sw",
-    "docs:build-color-preview": "babel-node scripts/buildColorTypes",
     "docs:deploy": "yarn workspace docs deploy",
     "docs:dev": "yarn workspace docs dev",
     "docs:export": "yarn workspace docs export",
@@ -213,7 +212,7 @@
   },
   "nyc": {
     "include": [
-      "packages/mui*/src/**/*.{js,ts,tsx}"
+      "packages/ui*/src/**/*.{js,ts,tsx}"
     ],
     "exclude": [
       "**/*.test.{js,ts,tsx}",

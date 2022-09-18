@@ -56,7 +56,7 @@ async function getWebpackSizes(webpackEnvironment) {
 async function run(argv) {
   const { analyze, accurateBundles } = argv;
 
-  const rollupBundles = [path.join(workspaceRoot, 'packages/mui-material/size-snapshot.json')];
+  const rollupBundles = [path.join(workspaceRoot, 'packages/ui-core/size-snapshot.json')];
   const bundleSizes = lodash.fromPairs([
     ...(await getWebpackSizes({ analyze, accurateBundles })),
     ...lodash.flatten(await Promise.all(rollupBundles.map(getRollupSize))),

@@ -3,17 +3,9 @@
 /coverage
 /docs/export
 /docs/pages/playground.tsx
-/examples/create-react-app*/src/serviceWorker.js
 /examples/gatsby/public/
 /examples/preact/config
 /examples/preact/scripts
-/packages/mui-icons-material/fixtures
-/packages/mui-icons-material/legacy
-/packages/mui-icons-material/lib
-/packages/mui-icons-material/material-icons/
-/packages/mui-icons-material/src/*.js
-/packages/mui-icons-material/templateSvgIcon.js
-/packages/mui-utils/macros/__fixtures__/
 # Ignore fixtures
 /packages/typescript-to-proptypes/test/*/*
 /test/bundling/fixtures/**/*.fixture.js

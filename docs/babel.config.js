@@ -4,18 +4,6 @@ const path = require('path');
 const errorCodesPath = path.resolve(__dirname, './public/static/error-codes.json');
 
 const alias = {
-  '@mui/material': '../packages/mui-material/src',
-  '@mui/docs': '../packages/mui-docs/src',
-  '@mui/icons-material': '../packages/mui-icons-material/lib',
-  '@mui/styles': '../packages/mui-styles/src',
-  '@mui/styled-engine-sc': '../packages/mui-styled-engine-sc/src',
-  // Swap the comments on the next two lines for using the styled-components as style engine
-  '@mui/styled-engine': '../packages/mui-styled-engine/src',
-  // '@mui/styled-engine': '../packages/mui-styled-engine-sc/src',
-  '@mui/system': '../packages/mui-system/src',
-  '@mui/private-theming': '../packages/mui-private-theming/src',
-  '@mui/utils': '../packages/mui-utils/src',
-  '@mui/base': '../packages/mui-base/src',
   '@danielmana/ui-core': '../packages/ui-core/src',
   '@danielmana/ui-components': '../packages/ui-components/src',
   docs: './',

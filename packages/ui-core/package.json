@@ -1,6 +1,6 @@
 {
   "name": "@danielmana/ui-core",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": false,
   "author": "Daniel M",
   "description": "A library of React UI core components.",
@@ -25,10 +25,11 @@
     "url": "https://opencollective.com/mui"
   },
   "scripts": {
-    "build": "yarn build:modern && yarn build:node && yarn build:stable && yarn build:types && yarn build:copy-files",
+    "build": "yarn build:modern && yarn build:node && yarn build:stable && yarn build:umd && yarn build:types && yarn build:copy-files",
     "build:modern": "node ../../scripts/build modern",
     "build:node": "node ../../scripts/build node",
     "build:stable": "node ../../scripts/build stable",
+    "build:umd": "cross-env BABEL_ENV=stable rollup -c scripts/rollup.config.js",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "build:types": "node ../../scripts/buildTypes",
     "prebuild": "rimraf build tsconfig.build.tsbuildinfo",

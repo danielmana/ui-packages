@@ -64,29 +64,30 @@ async function run(context) {
 
   const workspaceRoot = new URL('../../../', import.meta.url);
   await Promise.all(
-    [
-      'material',
-      'icons-material',
-      'lab',
-      'private-theming',
-      'styled-engine',
-      'styles',
-      'system',
-      'types',
-      'base',
-      'utils',
-    ].map(async (muiPackageName) => {
-      // clean coyp
-      try {
-        await rmRecursiveForce(new URL(`./node_modules/@mui/${muiPackageName}/`, fixtureUrl));
-      } catch (error) {
-        // already exists
-      }
-      await copyDirectory(
-        new URL(`./packages/mui${`-${muiPackageName}`}/build/`, workspaceRoot),
-        new URL(`./node_modules/@mui/${muiPackageName}/`, fixtureUrl),
-      );
-    }),
+    ['material', 'icons-material', 'system', 'types', 'base', 'ui-core', 'ui-components'].map(
+      async (muiPackageName) => {
+        // clean copy
+        try {
+          await rmRecursiveForce(new URL(`./node_modules/@mui/${muiPackageName}/`, fixtureUrl));
+          await rmRecursiveForce(
+            new URL(`./node_modules/@danielmana/${muiPackageName}/`, fixtureUrl),
+          );
+        } catch (error) {
+          // already exists
+        }
+        if (muiPackageName.startsWith('ui-')) {
+          await copyDirectory(
+            new URL(`./packages/${muiPackageName}/build/`, workspaceRoot),
+            new URL(`./node_modules/@danielmana/${muiPackageName}/`, fixtureUrl),
+          );
+        } else {
+          await copyDirectory(
+            new URL(`./packages/mui${`-${muiPackageName}`}/build/`, workspaceRoot),
+            new URL(`./node_modules/@mui/${muiPackageName}/`, fixtureUrl),
+          );
+        }
+      },
+    ),
   );
 }
 

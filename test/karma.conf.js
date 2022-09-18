@@ -147,16 +147,6 @@ module.exports = function setKarmaConfig(config) {
                     'babel-plugin-module-resolver',
                     {
                       alias: {
-                        // all packages in this monorepo
-                        '@mui/material': './packages/mui-material/src',
-                        '@mui/docs': './packages/mui-docs/src',
-                        '@mui/icons-material': './packages/mui-icons-material/lib',
-                        '@mui/styled-engine': './packages/mui-styled-engine/src',
-                        '@mui/styles': './packages/mui-styles/src',
-                        '@mui/system': './packages/mui-system/src',
-                        '@mui/private-theming': './packages/mui-private-theming/src',
-                        '@mui/utils': './packages/mui-utils/src',
-                        '@mui/base': './packages/mui-base/src',
                         '@danielmana/ui-core': './packages/ui-core/src',
                         '@danielmana/ui-components': './packages/ui-components/src',
                       },

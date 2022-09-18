@@ -117,12 +117,6 @@ build should list which browsers failed. If Chrome failed then `yarn test:karma`
 should<sup>[1](test/README.md#accessibility-tree-exclusion)</sup> fail locally as well. If other browsers failed debugging might be trickier.
 If `yarn test:karma` passes locally, but fails in CI, consider [Accessibility tree exclusion in CI](test/README.md#accessibility-tree-exclusion).
 
-##### ci/circleci: test_regression-1
-
-Renders tests in `test/regressions/tests` and makes screenshots. This step shouldn't
-fail if the others pass. Otherwise, a maintainer will take a look. The screenshots
-are evaluated in another step.
-
 ##### ci/circleci: test_types
 
 Typechecks the repository. The log of the failed build should list all issues.
