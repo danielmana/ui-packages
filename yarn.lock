@@ -2320,6 +2320,15 @@
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.10.5.tgz#be060b633268b124d27474e772e506bb3f39ca51"
   integrity sha512-sZYg85rQdlgDYU3V4WcT2Dl+k+y2wYqN04aUvVkFksRR0j81sj6KmfXx4842HJQcq5rjzcTvh4N+yv66XR/9fA==
 
+"@mui/docs@^5.10.3":
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/@mui/docs/-/docs-5.10.3.tgz#c7c7f057f8a5b8e71ed76542276bdc58b2cf7ff9"
+  integrity sha512-kzUF8VgHoG5P0wMh1qEgmCaNIgyVOfRDmRmedURn29z+wCuPcVkTbeWO8MCUBN9eeLNtIbOEty3MD2Nprw7JTQ==
+  dependencies:
+    "@babel/runtime" "^7.18.9"
+    "@mui/utils" "^5.10.3"
+    nprogress "^0.2.0"
+
 "@mui/lab@5.0.0-alpha.99":
   version "5.0.0-alpha.99"
   resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-5.0.0-alpha.99.tgz#b643b323df4b98b35c36faeb6f06650ed7d23789"

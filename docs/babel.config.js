@@ -5,7 +5,6 @@ const errorCodesPath = path.resolve(__dirname, './public/static/error-codes.json
 
 const alias = {
   '@mui/material': '../packages/mui-material/src',
-  '@mui/docs': '../packages/mui-docs/src',
   '@mui/icons-material': '../packages/mui-icons-material/lib',
   '@mui/styles': '../packages/mui-styles/src',
   '@mui/styled-engine-sc': '../packages/mui-styled-engine-sc/src',

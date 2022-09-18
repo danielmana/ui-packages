@@ -149,7 +149,6 @@ module.exports = function setKarmaConfig(config) {
                       alias: {
                         // all packages in this monorepo
                         '@mui/material': './packages/mui-material/src',
-                        '@mui/docs': './packages/mui-docs/src',
                         '@mui/icons-material': './packages/mui-icons-material/lib',
                         '@mui/styled-engine': './packages/mui-styled-engine/src',
                         '@mui/styles': './packages/mui-styles/src',

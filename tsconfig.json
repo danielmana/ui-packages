@@ -30,8 +30,6 @@
       "@mui/types": ["./packages/mui-types"],
       "@mui/base": ["./packages/mui-base/src"],
       "@mui/base/*": ["./packages/mui-base/src/*"],
-      "@mui/docs": ["./packages/mui-docs/src"],
-      "@mui/docs/*": ["./packages/mui-docs/src/*"],
       "@danielmana/ui-core": ["./packages/ui-core/src"],
       "@danielmana/ui-core/*": ["./packages/ui-core/src/*"],
       "@danielmana/ui-components": ["./packages/ui-components/src"],

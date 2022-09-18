@@ -10,7 +10,6 @@ function resolveAliasPath(relativeToBabelConf) {
 
 const defaultAlias = {
   '@mui/material': resolveAliasPath('./packages/mui-material/src'),
-  '@mui/docs': resolveAliasPath('./packages/mui-docs/src'),
   '@mui/icons-material': resolveAliasPath('./packages/mui-icons-material/lib'),
   '@mui/styled-engine': resolveAliasPath('./packages/mui-styled-engine/src'),
   '@mui/styled-engine-sc': resolveAliasPath('./packages/mui-styled-engine-sc/src'),
