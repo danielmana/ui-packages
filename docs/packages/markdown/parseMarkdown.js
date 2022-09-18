@@ -355,12 +355,6 @@ function resolveComponentApiUrl(product, componentPkg, component) {
   if (!product) {
     return `/api/${kebabCase(component)}/`;
   }
-  if (product === 'date-pickers') {
-    return `/x/api/date-pickers/${kebabCase(component)}/`;
-  }
-  if (componentPkg === 'mui-base') {
-    return `/base/api/${kebabCase(component)}/`;
-  }
   return `/${product}/api/${kebabCase(component)}/`;
 }
 

@@ -9,16 +9,6 @@ module.exports = {
   resolve: {
     modules: [__dirname, 'node_modules'],
     alias: {
-      '@mui/material': path.resolve(__dirname, './packages/mui-material/src'),
-      '@mui/docs': path.resolve(__dirname, './packages/mui-docs/src'),
-      '@mui/icons-material': path.resolve(__dirname, './packages/mui-icons-material/lib'),
-      '@mui/styled-engine': path.resolve(__dirname, './packages/mui-styled-engine/src'),
-      '@mui/styled-engine-sc': path.resolve(__dirname, './packages/mui-styled-engine-sc/src'),
-      '@mui/styles': path.resolve(__dirname, './packages/mui-styles/src'),
-      '@mui/system': path.resolve(__dirname, './packages/mui-system/src'),
-      '@mui/private-theming': path.resolve(__dirname, './packages/mui-private-theming/src'),
-      '@mui/base': path.resolve(__dirname, './packages/mui-base/src'),
-      '@mui/utils': path.resolve(__dirname, './packages/mui-utils/src'),
       '@danielmana/ui-core': path.resolve(__dirname, './packages/ui-core/src'),
       '@danielmana/ui-components': path.resolve(__dirname, './packages/ui-components/src'),
       'typescript-to-proptypes': path.resolve(__dirname, './packages/typescript-to-proptypes/src'),

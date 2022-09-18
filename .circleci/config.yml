@@ -252,8 +252,6 @@ jobs:
       - run:
           name: Test module augmenation
           command: |
-            yarn workspace @mui/material typescript:module-augmentation
-            yarn workspace @mui/base typescript:module-augmentation
             yarn workspace @danielmana/ui-core typescript:module-augmentation
             yarn workspace @danielmana/ui-components typescript:module-augmentation
 
@@ -268,8 +266,6 @@ jobs:
       - run:
           name: Diff declaration files
           command: |
-            git add -f packages/mui-material/build || echo '/material declarations do not exist'
-            git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/utils declarations do not exist'
             git add -f packages/ui-components/build || echo '/utils declarations do not exist'
             yarn lerna run build:types
@@ -283,8 +279,6 @@ jobs:
           key: typescript-declaration-files-{{ .Branch }}-{{ .Revision }}
           paths:
             # packages with generated declaration files
-            - packages/mui-material/build
-            - packages/mui-utils/build
             - packages/ui-core/build
             - packages/ui-components/build
   test_types_next:
@@ -321,8 +315,6 @@ jobs:
       - run:
           name: Diff declaration files
           command: |
-            git add -f packages/mui-material/build || echo '/core declarations do not exist'
-            git add -f packages/mui-utils/build || echo '/utils declarations do not exist'
             git add -f packages/ui-core/build || echo '/ui-core declarations do not exist'
             git add -f packages/ui-components/build || echo '/ui-components declarations do not exist'
             yarn lerna run build:types
@@ -381,8 +373,8 @@ jobs:
           name: yarn test:e2e
           command: yarn test:e2e
       - run:
-          name: Can we generate the @mui/material umd build?
-          command: yarn workspace @mui/material build:umd
+          name: Can we generate the @danielmana/ui-core umd build?
+          command: yarn workspace @danielmana/ui-core build:umd
   test_e2e_website:
     <<: *defaults
     docker:
@@ -425,7 +417,7 @@ jobs:
           # see karma.conf.profile.js reactProfilerReporter.outputDir
           path: tmp/react-profiler-report/karma
           destination: react-profiler-report/karma
-  # TODO danielmana: Enable test_regressions
+  # TODO danielmana: Enable test_regressions?
   # test_regressions:
   #   <<: *defaults
   #   docker:
@@ -662,14 +654,14 @@ jobs:
             DANGER_COMMAND: prepareBundleSizeReport
       - run:
           name: build @mui packages
-          command: yarn lerna run --ignore @mui/icons-material --parallel --scope "@mui/*" --scope "@danielmana/*" build
+          command: yarn lerna run --parallel --scope "@mui/*" --scope "@danielmana/*" build
       - run:
-          name: create @mui/material canary distributable
+          name: create @danielmana/ui-core canary distributable
           command: |
-            cd packages/mui-material/build
+            cd packages/ui-core/build
             npm version 0.0.0-canary.${CIRCLE_SHA1} --no-git-tag-version
             npm pack
-            mv mui-material-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../ui-packages.tgz
+            mv ui-core-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../ui-packages.tgz
       - when:
           # don't run on PRs
           condition:

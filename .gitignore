@@ -23,7 +23,6 @@
 # created by test/bundling/fixtures/gatsby gatsby build
 /test/bundling/fixtures/gatsby/.cache
 /test/bundling/fixtures/gatsby/public
-/test/regressions/screenshots
 /tmp
 .next
 build
