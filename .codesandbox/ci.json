@@ -4,7 +4,6 @@
   "node": "14",
   "packages": [
     "packages/mui-material",
-    "packages/mui-codemod",
     "packages/mui-icons-material",
     "packages/mui-styles",
     "packages/mui-system",
@@ -13,10 +12,11 @@
     "packages/mui-utils",
     "packages/mui-base",
     "packages/mui-styled-engine",
-    "packages/mui-styled-engine-sc"
+    "packages/mui-styled-engine-sc",
+    "packages/ui-core",
+    "packages/ui-components"
   ],
   "publishDirectory": {
-    "@mui/codemod": "packages/mui-codemod/build",
     "@mui/material": "packages/mui-material/build",
     "@mui/icons-material": "packages/mui-icons-material/build",
     "@mui/styles": "packages/mui-styles/build",
