@@ -30,6 +30,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const PRODUCTION_DEPLOYEMENT = !process.env.PULL_REQUEST && process.env.NODE_ENV === 'production';
 
+// TODO danielmana: use a different GOOGLE_ANALYTICS_ID for development
 const GOOGLE_ANALYTICS_ID = PRODUCTION_DEPLOYEMENT ? 'G-7NCKH7SK9X' : 'G-7NCKH7SK9X';
 
 export default class MyDocument extends Document {
@@ -142,14 +143,20 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          {/* Google tag (gtag.js) */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+          />
           <script
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
-                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                window.ga('create','${GOOGLE_ANALYTICS_ID}',{
-                  sampleRate: ${PRODUCTION_DEPLOYEMENT ? 80 : 100},
-                });
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+    
+                gtag('config', '${GOOGLE_ANALYTICS_ID}');
               `,
             }}
           />

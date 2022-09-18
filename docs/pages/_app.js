@@ -11,7 +11,6 @@ import pages from 'docs/src/pages';
 import uiCorePages from 'docs/data/ui-core/pages';
 import uiComponentsPages from 'docs/data/ui-components/pages';
 import PageContext from 'docs/src/modules/components/PageContext';
-import GoogleAnalytics from 'docs/src/modules/components/GoogleAnalytics';
 import { CodeCopyProvider } from 'docs/src/modules/utils/CodeCopy';
 import { ThemeProvider } from 'docs/src/modules/components/ThemeContext';
 import { pathnameToLanguage, getCookie } from 'docs/src/modules/utils/helpers';
@@ -215,7 +214,6 @@ function AppWrapper(props) {
               <ThemeProvider>
                 <DocsStyledEngineProvider cacheLtr={emotionCache}>
                   {children}
-                  <GoogleAnalytics />
                 </DocsStyledEngineProvider>
               </ThemeProvider>
             </PageContext.Provider>
