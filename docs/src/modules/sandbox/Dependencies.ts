@@ -49,17 +49,13 @@ export default function SandboxDependencies(
    * @param packageName - The name of a package living inside this repository.
    * @return string - A valid version for a dependency entry in a package.json
    */
-  function getMuiPackageVersion(packageName: string): string {
-    if (
-      commitRef === undefined ||
-      process.env.SOURCE_CODE_REPO !== 'https://github.com/mui/material-ui'
-    ) {
+  function getUiPackageVersion(packageName: string): string {
+    if (commitRef === undefined) {
       // #default-branch-switch
       return 'latest';
     }
     const shortSha = commitRef.slice(0, 8);
-    // TODO danielmana: getUiPackageVersion `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
-    return `https://pkg.csb.dev/mui/material-ui/commit/${shortSha}/@mui/${packageName}`;
+    return `https://pkg.csb.dev/danielmana/ui-packages/commit/${shortSha}/@danielmana/${packageName}`;
   }
 
   function extractDependencies(raw: string) {
@@ -74,15 +70,6 @@ export default function SandboxDependencies(
         '@emotion/react': versions['@emotion/react'],
         '@emotion/styled': versions['@emotion/styled'],
       };
-
-      if (newDeps['@mui/lab'] || newDeps['@mui/icons-material']) {
-        newDeps['@mui/material'] = versions['@mui/material'];
-      }
-
-      if (newDeps['@mui/x-data-grid']) {
-        newDeps['@mui/material'] = versions['@mui/material'];
-      }
-
       // TODO: consider if this configuration could be injected in a "cleaner" way.
       if ((window as any).muiDocConfig) {
         newDeps = (window as any).muiDocConfig.csbIncludePeerDependencies(newDeps, { versions });
@@ -96,15 +83,8 @@ export default function SandboxDependencies(
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
-      '@mui/material': getMuiPackageVersion('material'),
-      '@mui/icons-material': getMuiPackageVersion('icons-material'),
-      '@mui/lab': getMuiPackageVersion('lab'),
-      '@mui/system': getMuiPackageVersion('system'),
-      '@mui/private-classnames': getMuiPackageVersion('classnames'),
-      '@mui/base': getMuiPackageVersion('base'),
-      '@mui/utils': getMuiPackageVersion('utils'),
-      '@danielmana/ui-core': 'latest',
-      '@danielmana/ui-components': 'latest',
+      '@danielmana/ui-core': getUiPackageVersion('ui-core'),
+      '@danielmana/ui-components': getUiPackageVersion('ui-components'),
     };
 
     // TODO: consider if this configuration could be injected in a "cleaner" way.
@@ -171,11 +151,7 @@ export default function SandboxDependencies(
 
   if (!demo.product && !dependencies['@mui/material']) {
     // The `index.js` imports StyledEngineProvider from '@mui/material', so we need to make sure we have it as a dependency
-    const name = '@mui/material';
-    const versions = {
-      [name]: getMuiPackageVersion('material'),
-    };
-    dependencies[name] = versions[name] ? versions[name] : 'latest';
+    dependencies['@mui/material'] = 'latest';
   }
 
   const devDependencies = {

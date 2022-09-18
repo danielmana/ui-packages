@@ -661,7 +661,7 @@ jobs:
             cd packages/ui-core/build
             npm version 0.0.0-canary.${CIRCLE_SHA1} --no-git-tag-version
             npm pack
-            mv ui-core-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../ui-packages.tgz
+            mv danielmana-ui-core-0.0.0-canary.${CIRCLE_SHA1}.tgz ../../../ui-packages.tgz
       - when:
           # don't run on PRs
           condition:

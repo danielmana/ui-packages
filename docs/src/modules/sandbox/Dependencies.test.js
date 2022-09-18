@@ -207,19 +207,15 @@ import lab from '@mui/lab';
 
   it('can use codesandbox deploys if a commit is given', () => {
     const source = `
-import * as Material from '@mui/material';
-import * as Base from '@mui/base';
-import * as IconsMaterial from '@mui/icons-material';
-import * as Lab from '@mui/lab';
-import * as Styles from '@mui/styles';
-import * as System from '@mui/system';
-import * as Utils from '@mui/utils';
+import * as UICore from '@danielmana/ui-core';
+import * as UIComponents from '@danielmana/ui-components';
     `;
 
     const { dependencies } = SandboxDependencies(
       {
         raw: source,
         codeVariant: 'JS',
+        product: 'ui-components',
       },
       { commitRef: '2d0e8b4daf20b7494c818b6f8c4cc8423bc99d6f' },
     );
@@ -229,14 +225,10 @@ import * as Utils from '@mui/utils';
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
-      '@mui/material': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/material',
-      '@mui/icons-material':
-        'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/icons-material',
-      '@mui/lab': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/lab',
-      '@mui/styles': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/styles',
-      '@mui/system': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/system',
-      '@mui/utils': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/utils',
-      '@mui/base': 'https://pkg.csb.dev/mui/material-ui/commit/2d0e8b4d/@mui/base',
+      '@danielmana/ui-core':
+        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-core',
+      '@danielmana/ui-components':
+        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-components',
     });
   });
 
