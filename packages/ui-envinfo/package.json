@@ -2,7 +2,7 @@
   "name": "@ui/envinfo",
   "version": "2.0.6",
   "private": false,
-  "author": "Daniel M",
+  "author": "danielmana",
   "description": "Logs infos about the environment relevant to @danielmana/*",
   "repository": {
     "type": "git",

@@ -38,13 +38,6 @@ $ npx @ui/envinfo
     @mui/system:  5.10.5
     @mui/types:  7.2.0
     @mui/utils:  5.10.3
-    @mui/x-data-grid:  5.17.2
-    @mui/x-data-grid-generator:  5.17.2
-    @mui/x-data-grid-premium:  5.17.2
-    @mui/x-data-grid-pro:  5.17.2
-    @mui/x-date-pickers:  5.0.1
-    @mui/x-date-pickers-pro:  5.0.1
-    @mui/x-license-pro:  5.17.0
     @types/react: ^18.0.17 => 18.0.20
     react: ^18.2.0 => 18.2.0
     react-dom: ^18.2.0 => 18.2.0
