@@ -14,9 +14,7 @@
 /docs/.env.local
 /docs/export
 /docs/pages/playground.tsx
-/examples/**/.cache
 /packages/mui-envinfo/*.tgz
-/packages/mui-icons-material/src/*.js
 /test/bundling/fixtures/*/yarn.lock
 # created by test/bundling/scripts/createFixture
 /test/bundling/fixtures/**/*.fixture.js

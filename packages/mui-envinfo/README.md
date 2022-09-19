@@ -1,7 +1,7 @@
 # @mui/envinfo
 
-Prints information about the current environment relevant to MUI packages to the console.
-Please use this package if you report [issues to MUI](https://github.com/mui/material-ui/issues).
+Prints information about the current environment relevant to UI Packages to the console.
+Please use this package if you report [issues to UI Packages](https://github.com/danielmana/ui-packages/issues).
 
 ## Usage
 
@@ -9,32 +9,44 @@ Please use this package if you report [issues to MUI](https://github.com/mui/mat
 $ npx @mui/envinfo
 
   System:
-    OS: Linux 5.4 Ubuntu 20.04.1 LTS (Focal Fossa)
+    OS: macOS 12.5.1
   Binaries:
-    Node: 12.20.0 - ~/.nvm/versions/node/v12.20.0/bin/node
-    Yarn: 1.22.4 - /usr/bin/yarn
-    npm: 6.14.8 - ~/.nvm/versions/node/v12.20.0/bin/npm
+    Node: 16.13.1 - /usr/local/bin/node
+    Yarn: 1.22.19 - /usr/local/bin/yarn
+    npm: 8.19.1 - /usr/local/bin/npm
   Browsers:
-    Chrome: 87.0.4280.66
-    Firefox: 83.0
+    Chrome: 105.0.5195.125
+    Edge: Not Found
+    Firefox: 91.6.0
+    Safari: 15.6.1
   npmPackages:
-    @emotion/react: ^11.0.0 => 11.1.1
-    @emotion/styled: ^11.0.0 => 11.0.0
-    @mui/material:  5.0.0-alpha.18
-    @mui/docs:  5.0.0-alpha.1
-    @mui/envinfo:  2.0.0
-    @mui/icons-material:  5.0.0-alpha.15
-    @mui/lab:  5.0.0-alpha.18
-    @mui/styled-engine:  5.0.0-alpha.18
-    @mui/styled-engine-sc:  5.0.0-alpha.18
-    @mui/styles:  5.0.0-alpha.18
-    @mui/system:  5.0.0-alpha.18
-    @mui/types:  5.1.0
-    @mui/base:  5.0.0-alpha.18
-    @mui/utils:  5.0.0-alpha.18
-    @types/react: ^17.0.0 => 17.0.0
-    react: ^16.14.0 => 16.14.0
-    react-dom: ^16.14.0 => 16.14.0
-    styled-components:  5.2.1
-    typescript: ^4.0.2 => 4.0.5
+    @emotion/react: ^11.10.4 => 11.10.4
+    @emotion/styled: ^11.10.4 => 11.10.4
+    @mui/base:  5.0.0-alpha.97
+    @mui/core-downloads-tracker:  5.10.5
+    @mui/docs:  5.10.3
+    @mui/envinfo:  2.0.6
+    @mui/icons-material:  5.10.3
+    @mui/lab:  5.0.0-alpha.99
+    @mui/markdown:  5.0.0
+    @mui/material:  5.10.5
+    @mui/private-theming:  5.10.3
+    @mui/styled-engine:  5.10.5
+    @mui/styled-engine-sc:  5.10.3
+    @mui/styles:  5.10.3
+    @mui/system:  5.10.5
+    @mui/types:  7.2.0
+    @mui/utils:  5.10.3
+    @mui/x-data-grid:  5.17.2
+    @mui/x-data-grid-generator:  5.17.2
+    @mui/x-data-grid-premium:  5.17.2
+    @mui/x-data-grid-pro:  5.17.2
+    @mui/x-date-pickers:  5.0.1
+    @mui/x-date-pickers-pro:  5.0.1
+    @mui/x-license-pro:  5.17.0
+    @types/react: ^18.0.17 => 18.0.20
+    react: ^18.2.0 => 18.2.0
+    react-dom: ^18.2.0 => 18.2.0
+    styled-components:  5.3.5
+    typescript: ^4.8.3 => 4.8.3
 ```
