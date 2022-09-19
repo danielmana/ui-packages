@@ -2,15 +2,20 @@ import { expect } from 'chai';
 import CodeSandbox from './CodeSandbox';
 
 const testCase = `import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
-export default function BasicButtons() {
+import { Button, Stack } from '@danielmana/ui-core';
+
+export default function ButtonColor() {
   return (
-    <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
+    <Stack direction="row" spacing={2}>
+      <Button color="secondary">Secondary</Button>
+      <Button color="tertiary">Tertiary</Button>
+      <Button variant="contained" color="success">
+        Success
+      </Button>
+      <Button variant="outlined" color="error">
+        Error
+      </Button>
     </Stack>
   );
 }
@@ -19,9 +24,9 @@ export default function BasicButtons() {
 describe('CodeSandbox', () => {
   it('generate the correct JavaScript result', () => {
     const result = CodeSandbox.createReactApp({
-      title: 'BasicButtons Material Demo',
+      title: 'ButtonColor Demo',
       githubLocation:
-        'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.js',
+        'https://github.com/danielmana/ui-packages/blob/v0.1.12/docs/data/ui-core/components/button/ButtonColor.js',
       codeVariant: 'JS',
       language: 'en',
       raw: testCase,
@@ -30,14 +35,14 @@ describe('CodeSandbox', () => {
       'package.json': {
         content: {
           description:
-            'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.js',
+            'https://github.com/danielmana/ui-packages/blob/v0.1.12/docs/data/ui-core/components/button/ButtonColor.js',
           dependencies: {
             react: 'latest',
+            'react-dom': 'latest',
             '@danielmana/ui-core': 'latest',
+            '@mui/material': 'latest',
             '@emotion/react': 'latest',
             '@emotion/styled': 'latest',
-            '@mui/material': 'latest',
-            'react-dom': 'latest',
           },
           devDependencies: {
             'react-scripts': 'latest',
@@ -46,11 +51,11 @@ describe('CodeSandbox', () => {
       },
       'public/index.html': {
         content:
-          '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title>BasicButtons Material Demo</title>\n    <!-- Fonts to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"\n    />\n    <!-- Icons to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/icon?family=Material+Icons"\n    />\n  </head>\n  <body>\n    <div id="root"></div>\n  </body>\n</html>',
+          '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title>ButtonColor Demo</title>\n    <!-- Fonts to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"\n    />\n    <!-- Icons to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/icon?family=Material+Icons"\n    />\n  </head>\n  <body>\n    <div id="root"></div>\n  </body>\n</html>',
       },
       'demo.js': {
         content:
-          'import * as React from \'react\';\nimport Stack from \'@mui/material/Stack\';\nimport Button from \'@mui/material/Button\';\n\nexport default function BasicButtons() {\n  return (\n    <Stack spacing={2} direction="row">\n      <Button variant="text">Text</Button>\n      <Button variant="contained">Contained</Button>\n      <Button variant="outlined">Outlined</Button>\n    </Stack>\n  );\n}\n',
+          'import * as React from \'react\';\n\nimport { Button, Stack } from \'@danielmana/ui-core\';\n\nexport default function ButtonColor() {\n  return (\n    <Stack direction="row" spacing={2}>\n      <Button color="secondary">Secondary</Button>\n      <Button color="tertiary">Tertiary</Button>\n      <Button variant="contained" color="success">\n        Success\n      </Button>\n      <Button variant="outlined" color="error">\n        Error\n      </Button>\n    </Stack>\n  );\n}\n',
       },
       'index.js': {
         content:
@@ -61,9 +66,9 @@ describe('CodeSandbox', () => {
 
   it('generate the correct TypeScript result', () => {
     const result = CodeSandbox.createReactApp({
-      title: 'BasicButtons Material Demo',
+      title: 'ButtonColor Demo',
       githubLocation:
-        'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.tsx',
+        'https://github.com/danielmana/ui-packages/blob/v0.1.12/docs/data/ui-core/components/button/ButtonColor.tsx',
       codeVariant: 'TS',
       language: 'en',
       raw: testCase,
@@ -72,7 +77,7 @@ describe('CodeSandbox', () => {
       'package.json': {
         content: {
           description:
-            'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.tsx',
+            'https://github.com/danielmana/ui-packages/blob/v0.1.12/docs/data/ui-core/components/button/ButtonColor.tsx',
           dependencies: {
             react: 'latest',
             'react-dom': 'latest',
@@ -95,11 +100,11 @@ describe('CodeSandbox', () => {
       },
       'public/index.html': {
         content:
-          '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title>BasicButtons Material Demo</title>\n    <!-- Fonts to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"\n    />\n    <!-- Icons to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/icon?family=Material+Icons"\n    />\n  </head>\n  <body>\n    <div id="root"></div>\n  </body>\n</html>',
+          '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title>ButtonColor Demo</title>\n    <!-- Fonts to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"\n    />\n    <!-- Icons to support Material Design -->\n    <link\n      rel="stylesheet"\n      href="https://fonts.googleapis.com/icon?family=Material+Icons"\n    />\n  </head>\n  <body>\n    <div id="root"></div>\n  </body>\n</html>',
       },
       'demo.tsx': {
         content:
-          'import * as React from \'react\';\nimport Stack from \'@mui/material/Stack\';\nimport Button from \'@mui/material/Button\';\n\nexport default function BasicButtons() {\n  return (\n    <Stack spacing={2} direction="row">\n      <Button variant="text">Text</Button>\n      <Button variant="contained">Contained</Button>\n      <Button variant="outlined">Outlined</Button>\n    </Stack>\n  );\n}\n',
+          'import * as React from \'react\';\n\nimport { Button, Stack } from \'@danielmana/ui-core\';\n\nexport default function ButtonColor() {\n  return (\n    <Stack direction="row" spacing={2}>\n      <Button color="secondary">Secondary</Button>\n      <Button color="tertiary">Tertiary</Button>\n      <Button variant="contained" color="success">\n        Success\n      </Button>\n      <Button variant="outlined" color="error">\n        Error\n      </Button>\n    </Stack>\n  );\n}\n',
       },
       'index.tsx': {
         content:
@@ -111,13 +116,14 @@ describe('CodeSandbox', () => {
       },
     });
     expect(result.dependencies).to.deep.equal({
-      '@emotion/react': 'latest',
-      '@emotion/styled': 'latest',
-      '@mui/material': 'latest',
-      '@types/react': 'latest',
-      '@types/react-dom': 'latest',
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
+      '@mui/material': 'latest',
+      '@emotion/react': 'latest',
+      '@emotion/styled': 'latest',
+      '@types/react': 'latest',
+      '@types/react-dom': 'latest',
       typescript: 'latest',
     });
     expect(result.devDependencies).to.deep.equal({
