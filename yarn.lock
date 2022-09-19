@@ -7013,6 +7013,11 @@ eslint-plugin-jsx-a11y@^6.6.1:
     minimatch "^3.1.2"
     semver "^6.3.0"
 
+eslint-plugin-material-ui@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-material-ui/-/eslint-plugin-material-ui-1.0.1.tgz#ef844d41dc756fe1a689e681e12935d8eee48010"
+  integrity sha512-COAp5llD9AzOXsrfuqUPaWN2yQPhtb7Wcz+RDX5EVEZrTJwblvDJKEJcU93nnVsjy6Wg5XrSRPiWwmR+IBjehw==
+
 eslint-plugin-mocha@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-10.1.0.tgz#69325414f875be87fb2cb00b2ef33168d4eb7c8d"
