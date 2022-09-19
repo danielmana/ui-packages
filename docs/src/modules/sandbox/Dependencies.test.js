@@ -37,6 +37,7 @@ const styles = theme => ({
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@foo-bar/bip': 'latest',
@@ -69,6 +70,7 @@ const suggestions = [
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -97,6 +99,7 @@ import { LocalizationProvider as MuiPickersLocalizationProvider, KeyboardTimePic
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       'prop-types': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
@@ -126,6 +129,7 @@ import 'exceljs';
       react: 'latest',
       'react-dom': 'latest',
       'prop-types': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -145,6 +149,7 @@ import 'exceljs';
       react: 'latest',
       'react-dom': 'latest',
       'prop-types': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@foo-bar/bip': 'latest',
@@ -177,6 +182,7 @@ import {
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -198,6 +204,7 @@ import lab from '@mui/lab';
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -252,6 +259,7 @@ import AdapterMoment from '@mui/lab/AdapterMoment';
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',

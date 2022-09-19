@@ -33,10 +33,11 @@ describe('CodeSandbox', () => {
             'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.js',
           dependencies: {
             react: 'latest',
-            '@mui/material': 'latest',
-            'react-dom': 'latest',
+            '@danielmana/ui-core': 'latest',
             '@emotion/react': 'latest',
             '@emotion/styled': 'latest',
+            '@mui/material': 'latest',
+            'react-dom': 'latest',
           },
           devDependencies: {
             'react-scripts': 'latest',
@@ -53,7 +54,7 @@ describe('CodeSandbox', () => {
       },
       'index.js': {
         content:
-          "import * as React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { StyledEngineProvider } from '@mui/material/styles';\nimport Demo from './demo';\n\nReactDOM.createRoot(document.querySelector(\"#root\")).render(\n  <React.StrictMode>\n    <StyledEngineProvider injectFirst>\n      <Demo />\n    </StyledEngineProvider>\n  </React.StrictMode>\n);",
+          "import * as React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { StyledEngineProvider } from '@mui/material/styles';\nimport { ThemeProvider } from '@danielmana/ui-core/styles';\nimport Demo from './demo';\n\nReactDOM.createRoot(document.querySelector(\"#root\")).render(\n  <React.StrictMode>\n    <StyledEngineProvider injectFirst>\n      <ThemeProvider>\n        <Demo />\n      </ThemeProvider>\n    </StyledEngineProvider>\n  </React.StrictMode>\n);",
       },
     });
   });
@@ -74,8 +75,9 @@ describe('CodeSandbox', () => {
             'https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/components/buttons/BasicButtons.tsx',
           dependencies: {
             react: 'latest',
-            '@mui/material': 'latest',
             'react-dom': 'latest',
+            '@danielmana/ui-core': 'latest',
+            '@mui/material': 'latest',
             '@emotion/react': 'latest',
             '@emotion/styled': 'latest',
             '@types/react': 'latest',
@@ -101,7 +103,7 @@ describe('CodeSandbox', () => {
       },
       'index.tsx': {
         content:
-          "import * as React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { StyledEngineProvider } from '@mui/material/styles';\nimport Demo from './demo';\n\nReactDOM.createRoot(document.querySelector(\"#root\")).render(\n  <React.StrictMode>\n    <StyledEngineProvider injectFirst>\n      <Demo />\n    </StyledEngineProvider>\n  </React.StrictMode>\n);",
+          "import * as React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { StyledEngineProvider } from '@mui/material/styles';\nimport { ThemeProvider } from '@danielmana/ui-core/styles';\nimport Demo from './demo';\n\nReactDOM.createRoot(document.querySelector(\"#root\")).render(\n  <React.StrictMode>\n    <StyledEngineProvider injectFirst>\n      <ThemeProvider>\n        <Demo />\n      </ThemeProvider>\n    </StyledEngineProvider>\n  </React.StrictMode>\n);",
       },
       'tsconfig.json': {
         content:
