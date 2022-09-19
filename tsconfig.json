@@ -15,7 +15,6 @@
     "allowJs": true,
     "paths": {
       "@mui/markdown": ["./docs/packages/markdown"],
-      "@mui/types": ["./packages/mui-types"],
       "@danielmana/ui-core": ["./packages/ui-core/src"],
       "@danielmana/ui-core/*": ["./packages/ui-core/src/*"],
       "@danielmana/ui-components": ["./packages/ui-components/src"],

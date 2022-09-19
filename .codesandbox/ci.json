@@ -2,9 +2,8 @@
   "buildCommand": "build:codesandbox",
   "installCommand": "install:codesandbox",
   "node": "14",
-  "packages": ["packages/mui-types", "packages/ui-core", "packages/ui-components"],
+  "packages": ["packages/ui-core", "packages/ui-components"],
   "publishDirectory": {
-    "@mui/types": "packages/mui-types/build",
     "@danielmana/ui-core": "packages/ui-core/build",
     "@danielmana/ui-components": "packages/ui-components/build"
   },
