@@ -1,7 +1,15 @@
 import * as React from 'react';
 
 import { MyComponent } from '@danielmana/ui-components';
-import { Box, Button, Paper, Step, StepContent, StepLabel, Typography } from '@danielmana/ui-core';
+import {
+  Box,
+  Button,
+  Paper,
+  Step,
+  StepContent,
+  StepLabel,
+  Typography,
+} from '@danielmana/ui-core';
 
 const steps = [
   {
