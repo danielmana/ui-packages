@@ -1,4 +1,4 @@
-# @mui/envinfo
+# @ui/envinfo
 
 Prints information about the current environment relevant to UI Packages to the console.
 Please use this package if you report [issues to UI Packages](https://github.com/danielmana/ui-packages/issues).
@@ -6,7 +6,7 @@ Please use this package if you report [issues to UI Packages](https://github.com
 ## Usage
 
 ```bash
-$ npx @mui/envinfo
+$ npx @ui/envinfo
 
   System:
     OS: macOS 12.5.1
@@ -20,12 +20,13 @@ $ npx @mui/envinfo
     Firefox: 91.6.0
     Safari: 15.6.1
   npmPackages:
+    @danielmana/ui-components:  0.1.1
+    @danielmana/ui-core:  0.1.12
     @emotion/react: ^11.10.4 => 11.10.4
     @emotion/styled: ^11.10.4 => 11.10.4
     @mui/base:  5.0.0-alpha.97
     @mui/core-downloads-tracker:  5.10.5
     @mui/docs:  5.10.3
-    @mui/envinfo:  2.0.6
     @mui/icons-material:  5.10.3
     @mui/lab:  5.0.0-alpha.99
     @mui/markdown:  5.0.0
