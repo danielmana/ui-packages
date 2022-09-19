@@ -20,10 +20,10 @@ import AppSettingsDrawer from 'docs/src/modules/components/AppSettingsDrawer';
 import MarkdownLinks from 'docs/src/modules/components/MarkdownLinks';
 import SkipLink from 'docs/src/modules/components/SkipLink';
 import PageContext from 'docs/src/modules/components/PageContext';
+import IconImage from 'docs/src/components/icon/IconImage';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { debounce } from '@mui/material/utils';
 import NextLink from 'next/link';
-import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
 
 const nProgressStart = debounce(() => {
   NProgress.start();
@@ -172,7 +172,7 @@ export default function AppFrame(props) {
               aria-label={t('goToHome')}
               sx={{ display: { md: 'flex', lg: 'none' }, ml: 2 }}
             >
-              <SvgMuiLogo width={30} />
+              <IconImage name="product-core" />
             </Box>
           </NextLink>
           <GrowingDiv />

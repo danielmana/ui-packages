@@ -13,15 +13,13 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
-// import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
 import IconImage from 'docs/src/components/icon/IconImage';
-// import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
+import PackageSelector from 'docs/src/modules/components/PackageSelector';
 import uiCorePkgJson from '../../../../packages/ui-core/package.json';
 import uiComponentsPkgJson from '../../../../packages/ui-components/package.json';
 
@@ -79,7 +77,7 @@ function ProductDrawerButton(props) {
           },
         }}
       >
-        <MuiProductSelector />
+        <PackageSelector />
       </Menu>
     </React.Fragment>
   );
@@ -307,7 +305,6 @@ export default function AppNavDrawer(props) {
               }}
             >
               <IconImage name="product-core" />
-              {/* <SvgMuiLogo width={30} /> */}
             </Box>
           </NextLink>
           {canonicalAs.startsWith('/ui-core/') && (
@@ -346,7 +343,6 @@ export default function AppNavDrawer(props) {
                 : theme.palette.grey[100],
           }}
         />
-        {/* <DiamondSponsors /> */}
         {navItems}
       </React.Fragment>
     );

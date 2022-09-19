@@ -6,12 +6,7 @@ import TextField from '@mui/material/TextField';
 import Collapse from '@mui/material/Collapse';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-// import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// import Tooltip from '@mui/material/Tooltip';
-// import IconButton from '@mui/material/IconButton';
-// import ThumbUpIcon from '@mui/icons-material/ThumbUpAlt';
-// import ThumbDownIcon from '@mui/icons-material/ThumbDownAlt';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Snackbar from '@mui/material/Snackbar';
@@ -266,34 +261,6 @@ export default function AppLayoutDocsFooter() {
               ) : (
                 <div />
               )}
-              {/* <FeedbackGrid
-                container
-                role="group"
-                justifyContent="center"
-                alignItems="center"
-                aria-labelledby="feedback-message"
-              >
-                <FeedbackMessage
-                  align="center"
-                  component="div"
-                  id="feedback-message"
-                  variant="body2"
-                >
-                  {t('feedbackMessage')}
-                </FeedbackMessage>
-                <div>
-                  <Tooltip title={t('feedbackYes')}>
-                    <IconButton onClick={handleClickThumb(1)} aria-pressed={rating === 1}>
-                      <ThumbUpIcon fontSize="small" color={rating === 1 ? 'primary' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title={t('feedbackNo')}>
-                    <IconButton onClick={handleClickThumb(0)} aria-pressed={rating === 0}>
-                      <ThumbDownIcon fontSize="small" color={rating === 0 ? 'error' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                </div>
-              </FeedbackGrid> */}
               {nextPage !== null ? (
                 <PageLinkButton
                   component={Link}

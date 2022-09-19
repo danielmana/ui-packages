@@ -7,7 +7,6 @@ import Collapse from '@mui/material/Collapse';
 import NoSsr from '@mui/material/NoSsr';
 import HighlightedCode from 'docs/src/modules/components/HighlightedCode';
 import DemoSandboxed from 'docs/src/modules/components/DemoSandboxed';
-import { AdCarbonInline } from 'docs/src/modules/components/AdCarbon';
 import { useCodeVariant } from 'docs/src/modules/utils/codeVariant';
 import { CODE_VARIANTS } from 'docs/src/modules/constants';
 import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
@@ -212,7 +211,7 @@ const InitialFocus = styled(IconButton)(({ theme }) => ({
   pointerEvents: 'none',
 }));
 export default function Demo(props) {
-  const { demo, demoOptions, disableAd, githubLocation } = props;
+  const { demo, demoOptions, githubLocation } = props;
   const t = useTranslate();
   const codeVariant = useCodeVariant();
   const demoData = useDemoData(codeVariant, demo, githubLocation);
@@ -264,8 +263,6 @@ export default function Demo(props) {
 
   const initialFocusRef = React.useRef(null);
 
-  const [showAd, setShowAd] = React.useState(false);
-
   return (
     <Root>
       <AnchorLink id={`${demoName}`} />
@@ -309,10 +306,7 @@ export default function Demo(props) {
                 demoOptions={demoOptions}
                 demoSourceId={demoSourceId}
                 initialFocusRef={initialFocusRef}
-                onCodeOpenChange={() => {
-                  setCodeOpen((open) => !open);
-                  setShowAd(true);
-                }}
+                onCodeOpenChange={() => setCodeOpen((open) => !open)}
                 onResetDemoClick={resetDemo}
                 openDemoSource={openDemoSource}
                 showPreview={showPreview}
@@ -332,7 +326,6 @@ export default function Demo(props) {
             }}
           />
         </Collapse>
-        {showAd && !disableAd && !demoOptions.disableAd ? <AdCarbonInline /> : null}
       </React.Fragment>
     </Root>
   );
@@ -341,6 +334,5 @@ export default function Demo(props) {
 Demo.propTypes = {
   demo: PropTypes.object.isRequired,
   demoOptions: PropTypes.object.isRequired,
-  disableAd: PropTypes.bool.isRequired,
   githubLocation: PropTypes.string.isRequired,
 };

@@ -289,7 +289,6 @@ function ApiDocs(props) {
   return (
     <AppLayoutDocs
       description={description}
-      disableAd
       disableToc={false}
       location={apiSourceLocation}
       title={`${componentName} API`}

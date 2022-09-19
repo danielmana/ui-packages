@@ -110,7 +110,7 @@ commands:
           key: v8-yarn-{{ checksum "yarn.lock" }}
           paths:
             # Keep path in sync with "Set yarn cache folder"
-            # Can't use environment variables for `save_cache` paths (tested in https://app.circleci.com/pipelines/github/mui/material-ui/37813/workflows/5b1e207f-ac8b-44e7-9ba4-d0f9a01f5c55/jobs/223370)
+            # Can't use environment variables for `save_cache` paths
             - /tmp/yarn-cache
       - when:
           condition: << parameters.browsers >>
@@ -120,7 +120,7 @@ commands:
                 key: v6-playwright-{{ arch }}-{{ checksum "/tmp/playwright_info.json" }}
                 paths:
                   # Keep path in sync with "PLAYWRIGHT_BROWSERS_PATH"
-                  # Can't use environment variables for `save_cache` paths (tested in https://app.circleci.com/pipelines/github/mui/material-ui/37813/workflows/5b1e207f-ac8b-44e7-9ba4-d0f9a01f5c55/jobs/223370)
+                  # Can't use environment variables for `save_cache` paths
                   - /tmp/pw-browsers
 
 jobs:
@@ -396,11 +396,6 @@ jobs:
             yarn test:karma:profile --browsers chrome,chromeHeadless
             yarn test:karma:profile --browsers chrome,chromeHeadless
             yarn test:karma:profile --browsers chrome,chromeHeadless
-      # Persist reports for inspection in https://mui-dashboard.netlify.app/
-      - store_artifacts:
-          # see karma.conf.profile.js reactProfilerReporter.outputDir
-          path: tmp/react-profiler-report/karma
-          destination: react-profiler-report/karma
   # TODO danielmana: Enable test_regressions?
   # test_regressions:
   #   <<: *defaults
@@ -425,7 +420,7 @@ jobs:
       - install_js
       - run:
           name: Build packages for fixtures
-          command: yarn lerna run --scope "@mui/*" --scope "@danielmana/*" build
+          command: yarn lerna run --scope "@danielmana/*" build
       - persist_to_workspace:
           root: packages
           paths:
@@ -637,8 +632,8 @@ jobs:
           environment:
             DANGER_COMMAND: prepareBundleSizeReport
       - run:
-          name: build @mui packages
-          command: yarn lerna run --parallel --scope "@mui/*" --scope "@danielmana/*" build
+          name: build @danielmana packages
+          command: yarn lerna run --parallel --scope "@danielmana/*" build
       - run:
           name: create @danielmana/ui-core canary distributable
           command: |

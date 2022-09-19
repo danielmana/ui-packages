@@ -1,13 +1,14 @@
-import * as React from 'react';
-import { alpha } from '@mui/material/styles';
-import Box, { BoxProps } from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
 import IconImage from 'docs/src/components/icon/IconImage';
-import ROUTES from 'docs/src/route';
 import Link from 'docs/src/modules/components/Link';
 import useRouterExtra from 'docs/src/modules/utils/useRouterExtra';
+import ROUTES from 'docs/src/route';
+import * as React from 'react';
+
+import Box, { BoxProps } from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import { alpha } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 interface ProductSubMenuProp extends BoxProps {
   icon: React.ReactNode;
@@ -56,7 +57,7 @@ function ProductSubMenu(props: ProductSubMenuProp) {
   );
 }
 
-export default function MuiProductSelector() {
+export default function PackageSelector() {
   const routerExtra = useRouterExtra();
 
   return (

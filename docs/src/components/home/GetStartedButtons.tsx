@@ -1,20 +1,20 @@
-import * as React from 'react';
 import copy from 'clipboard-copy';
+import Link from 'docs/src/modules/components/Link';
+import * as React from 'react';
+
+import CheckRounded from '@mui/icons-material/CheckRounded';
+import ContentCopyRounded from '@mui/icons-material/ContentCopyRounded';
+import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
 import Box, { BoxProps } from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
-import ContentCopyRounded from '@mui/icons-material/ContentCopyRounded';
-import CheckRounded from '@mui/icons-material/CheckRounded';
-import ROUTES from 'docs/src/route';
-import Link from 'docs/src/modules/components/Link';
 
 export default function GetStartedButtons({
-  label = 'Get started',
-  installation = 'npm install @mui/material @emotion/react @emotion/styled',
-  to = ROUTES.documentation,
+  label,
+  installation,
+  to,
   disabled,
   ...props
-}: { label?: string; installation?: string; to?: string; disabled?: boolean } & BoxProps) {
+}: { label: string; installation: string; to: string; disabled?: boolean } & BoxProps) {
   const [copied, setCopied] = React.useState(false);
   const handleCopy = () => {
     setCopied(true);

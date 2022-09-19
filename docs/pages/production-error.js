@@ -7,5 +7,5 @@ import {
 } from 'docs/src/pages/production-error/index.md?@mui/markdown';
 
 export default function Page() {
-  return <MarkdownDocs demos={demos} disableAd docs={docs} demoComponents={demoComponents} />;
+  return <MarkdownDocs demos={demos} docs={docs} demoComponents={demoComponents} />;
 }

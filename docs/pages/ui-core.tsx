@@ -1,21 +1,20 @@
-import * as React from 'react';
+import pages from 'docs/data/ui-core/pages';
+import BrandingProvider from 'docs/src/BrandingProvider';
+import AppHeader from 'docs/src/layouts/AppHeader';
+import Section from 'docs/src/layouts/Section';
 import Head from 'docs/src/modules/components/Head';
+import Link from 'docs/src/modules/components/Link';
+import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
+import { useTranslate } from 'docs/src/modules/utils/i18n';
+import { MuiPage } from 'docs/src/pages';
+import * as React from 'react';
+
+import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
-import AppHeader from 'docs/src/layouts/AppHeader';
-import AppFooter from 'docs/src/layouts/AppFooter';
-import BrandingProvider from 'docs/src/BrandingProvider';
-import Section from 'docs/src/layouts/Section';
-import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
-import { useTranslate } from 'docs/src/modules/utils/i18n';
-import Link from 'docs/src/modules/components/Link';
-import { MuiPage } from 'docs/src/pages';
-import pages from 'docs/data/ui-core/pages';
 
 export default function Components() {
   const t = useTranslate();
@@ -112,8 +111,6 @@ export default function Components() {
           </Box>
         </Section>
       </main>
-      <Divider />
-      <AppFooter />
     </BrandingProvider>
   );
 }
