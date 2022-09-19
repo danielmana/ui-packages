@@ -6,7 +6,6 @@ const ROUTES = {
   productTemplates: '/templates/',
   productDesignKits: '/design-kits/',
   careers: '/careers/',
-  pricing: '/pricing/',
   about: '/about/',
   handbook: 'https://mui-org.notion.site/Handbook-f086d47e10794d5e839aef9dc67f324b',
   baseDocs: '/base/getting-started/overview/',

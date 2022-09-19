@@ -25,10 +25,6 @@ import DocsStyledEngineProvider from 'docs/src/modules/utils/StyledEngineProvide
 import createEmotionCache from 'docs/src/createEmotionCache';
 import findActivePage from 'docs/src/modules/utils/findActivePage';
 import useRouterExtra from 'docs/src/modules/utils/useRouterExtra';
-import { LicenseInfo } from '@mui/x-data-grid-pro';
-
-// Remove the license warning from demonstration purposes
-LicenseInfo.setLicenseKey(process.env.NEXT_PUBLIC_MUI_LICENSE);
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

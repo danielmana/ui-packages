@@ -4,7 +4,7 @@ const path = require('path');
 
 const isRunningOnWindows = process.platform === 'win32';
 
-describe('@mui/envinfo', () => {
+describe('@danielmana/ui-envinfo', () => {
   const packagePath = __dirname;
   before(function beforeHook() {
     // only run in node

@@ -1,0 +1,28 @@
+{
+  "name": "@ui/envinfo",
+  "version": "2.0.6",
+  "private": false,
+  "author": "danielmana",
+  "description": "Logs infos about the environment relevant to @danielmana/*",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielmana/ui-packages",
+    "directory": "packages/ui-envinfo"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielmana/ui-packages/issues"
+  },
+  "homepage": "https://github.com/danielmana/ui-packages/tree/HEAD/packages/ui-envinfo",
+  "scripts": {
+    "build": "node scripts/build"
+  },
+  "bin": "./envinfo.js",
+  "dependencies": {
+    "envinfo": "^7.8.1"
+  },
+  "files": [],
+  "publishConfig": {
+    "access": "public"
+  }
+}

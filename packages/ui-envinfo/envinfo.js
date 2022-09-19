@@ -6,13 +6,14 @@ envinfo
   .run(
     {
       npmPackages: `{${[
-        '@mui/*',
+        '@danielmana/*',
         // Peer dependencies
         'react',
         'react-dom',
         // optional peer deps
         '@emotion/react',
         '@emotion/styled',
+        '@mui/*',
         'styled-components',
         '@types/react',
         // auxiliary libraries

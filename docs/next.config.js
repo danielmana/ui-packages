@@ -78,15 +78,7 @@ module.exports = {
       config.externals = [
         (ctx, callback) => {
           const { request } = ctx;
-          const hasDependencyOnRepoPackages = [
-            'notistack',
-            '@mui/x-data-grid',
-            '@mui/x-data-grid-pro',
-            '@mui/x-date-pickers',
-            '@mui/x-date-pickers-pro',
-            '@mui/x-data-grid-generator',
-            '@mui/x-license-pro',
-          ].some((dep) => request.startsWith(dep));
+          const hasDependencyOnRepoPackages = ['notistack'].some((dep) => request.startsWith(dep));
 
           if (hasDependencyOnRepoPackages) {
             return callback(null);

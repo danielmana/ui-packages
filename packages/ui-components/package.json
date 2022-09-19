@@ -2,7 +2,7 @@
   "name": "@danielmana/ui-components",
   "version": "0.1.1",
   "private": false,
-  "author": "Daniel M",
+  "author": "danielmana",
   "description": "A library of React UI components.",
   "main": "./src/index.ts",
   "keywords": [

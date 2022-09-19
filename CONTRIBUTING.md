@@ -230,11 +230,11 @@ $packages\ui-core> cd ./build
 $packages\ui-core> npm pack
 ```
 
-Navigate to the build folder of your respective package and locate a file with the format `ui-core-x.x.x.tar.gz`.
+Navigate to the build folder of your respective package and locate a file with the format `danielmana-ui-core-x.x.x.tar.gz`.
 Copy this file and move it to the project directory you want to test in, then run:
 
 ```sh
-$test-project> npm i ./path-to-file/ui-core-x.x.x.tar.gz
+$test-project> npm i ./path-to-file/danielmana-ui-core-x.x.x.tar.gz
 ```
 
 :::info

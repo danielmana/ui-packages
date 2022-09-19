@@ -37,6 +37,7 @@ const styles = theme => ({
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@foo-bar/bip': 'latest',
@@ -69,6 +70,7 @@ const suggestions = [
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -97,6 +99,7 @@ import { LocalizationProvider as MuiPickersLocalizationProvider, KeyboardTimePic
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       'prop-types': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
@@ -126,6 +129,7 @@ import 'exceljs';
       react: 'latest',
       'react-dom': 'latest',
       'prop-types': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -145,6 +149,7 @@ import 'exceljs';
       react: 'latest',
       'react-dom': 'latest',
       'prop-types': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@foo-bar/bip': 'latest',
@@ -177,6 +182,7 @@ import {
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -198,6 +204,7 @@ import lab from '@mui/lab';
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
@@ -225,10 +232,13 @@ import * as UIComponents from '@danielmana/ui-components';
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
-      '@danielmana/ui-core':
-        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-core',
-      '@danielmana/ui-components':
-        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-components',
+      // TODO danielmana: return version from `https://pkg.csb.dev` using shortSha
+      //  '@danielmana/ui-core':
+      //   'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-core',
+      // '@danielmana/ui-components':
+      //   'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-components',
+      '@danielmana/ui-core': 'latest',
+      '@danielmana/ui-components': 'latest',
     });
   });
 
@@ -249,40 +259,11 @@ import AdapterMoment from '@mui/lab/AdapterMoment';
     expect(dependencies).to.deep.equal({
       react: 'latest',
       'react-dom': 'latest',
+      '@danielmana/ui-core': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
       '@mui/material': 'latest',
       '@mui/lab': 'latest',
-      'date-fns': 'latest',
-      dayjs: 'latest',
-      luxon: 'latest',
-      moment: 'latest',
-    });
-  });
-
-  it('should handle dependencies for @mui/x-date-pickers', () => {
-    const source = `
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';`;
-
-    const { dependencies } = SandboxDependencies({
-      raw: source,
-      codeVariant: 'JS',
-    });
-
-    expect(dependencies).to.deep.equal({
-      react: 'latest',
-      'react-dom': 'latest',
-      '@emotion/react': 'latest',
-      '@emotion/styled': 'latest',
-      '@mui/material': 'latest',
-      '@mui/x-date-pickers': 'latest',
       'date-fns': 'latest',
       dayjs: 'latest',
       luxon: 'latest',
