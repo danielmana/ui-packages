@@ -225,10 +225,13 @@ import * as UIComponents from '@danielmana/ui-components';
       'react-dom': 'latest',
       '@emotion/react': 'latest',
       '@emotion/styled': 'latest',
-      '@danielmana/ui-core':
-        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-core',
-      '@danielmana/ui-components':
-        'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-components',
+      // TODO danielmana: return version from `https://pkg.csb.dev` using shortSha
+      //  '@danielmana/ui-core':
+      //   'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-core',
+      // '@danielmana/ui-components':
+      //   'https://pkg.csb.dev/danielmana/ui-packages/commit/2d0e8b4d/@danielmana/ui-components',
+      '@danielmana/ui-core': 'latest',
+      '@danielmana/ui-components': 'latest',
     });
   });
 

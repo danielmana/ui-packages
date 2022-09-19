@@ -50,7 +50,13 @@ export default function SandboxDependencies(
    * @return string - A valid version for a dependency entry in a package.json
    */
   function getUiPackageVersion(packageName: string): string {
-    if (commitRef === undefined) {
+    if (
+      commitRef === undefined ||
+      // FIXME danielmana: return version from `https://pkg.csb.dev` using shortSha
+      // once we configure packages to be pushed there. E.g.:
+      // https://pkg.csb.dev/danielmana/ui-packages/commit/371c952b/@danielmana/ui-core
+      !!true
+    ) {
       // #default-branch-switch
       return 'latest';
     }
@@ -149,9 +155,15 @@ export default function SandboxDependencies(
     dependencies.lodash = 'latest';
   }
 
-  if (!demo.product && !dependencies['@mui/material']) {
+  if (!demo.product) {
     // The `index.js` imports StyledEngineProvider from '@mui/material', so we need to make sure we have it as a dependency
-    dependencies['@mui/material'] = 'latest';
+    if (!dependencies['@mui/material']) {
+      dependencies['@mui/material'] = 'latest';
+    }
+    // The `index.js` imports ThemeProvider from '@danielmana/ui-core', so we need to make sure we have it as a dependency
+    if (!dependencies['@danielmana/ui-core']) {
+      dependencies['@danielmana/ui-core'] = 'latest';
+    }
   }
 
   const devDependencies = {

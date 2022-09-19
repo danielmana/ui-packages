@@ -35,12 +35,15 @@ ReactDOM.createRoot(document.querySelector("#root")).render(
   return `import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@danielmana/ui-core/styles';
 import Demo from './demo';
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
-      <Demo />
+      <ThemeProvider>
+        <Demo />
+      </ThemeProvider>
     </StyledEngineProvider>
   </React.StrictMode>
 );`;
