@@ -140,7 +140,7 @@ yargs
         })
         .option('branch', {
           // #default-branch-switch
-          default: 'master',
+          default: 'main',
           describe: 'The branch to diff against',
           type: 'string',
         });

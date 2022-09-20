@@ -20,7 +20,7 @@ async function loadCurrentSnapshot() {
 async function loadSnapshot(commitId, ref) {
   if (ref === undefined) {
     throw new TypeError(
-      `Need a ref for that commit. Did you mean \`loadSnapshot(commitId, 'master')\`?`,
+      `Need a ref for that commit. Did you mean \`loadSnapshot(commitId, 'main')\`?`,
     );
   }
   const url = `${ARTIFACT_SERVER}/artifacts/${ref}/${commitId}/size-snapshot.json`;

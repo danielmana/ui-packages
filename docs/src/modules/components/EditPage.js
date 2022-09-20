@@ -14,7 +14,7 @@ export default function EditPage(props) {
   return (
     <Button
       component="a"
-      href={`https://github.com/danielmana/ui-packages/blob/master${markdownLocation}`}
+      href={`https://github.com/danielmana/ui-packages/blob/main${markdownLocation}`}
       target="_blank"
       rel="noopener nofollow"
       size="small"

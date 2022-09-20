@@ -174,7 +174,7 @@ module.exports = {
     NETLIFY_SITE_NAME: process.env.SITE_NAME || 'material-ui',
     PULL_REQUEST: process.env.PULL_REQUEST === 'true',
     // #default-branch-switch
-    SOURCE_CODE_ROOT_URL: 'https://github.com/danielmana/ui-packages/blob/master',
+    SOURCE_CODE_ROOT_URL: 'https://github.com/danielmana/ui-packages/blob/main',
     SOURCE_CODE_REPO: 'https://github.com/danielmana/ui-packages',
     STAGING: staging,
     BUILD_ONLY_ENGLISH_LOCALE: buildOnlyEnglishLocale,
