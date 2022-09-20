@@ -5,8 +5,12 @@ import { unstable_capitalize as capitalize } from '@mui/utils';
 
 import { MuiRenderResult, RenderOptions } from './createRenderer';
 import {
-    ConformanceOptions, describeRef, randomStringValue, testClassName, testComponentProp,
-    testReactTestRenderer
+  ConformanceOptions,
+  describeRef,
+  randomStringValue,
+  testClassName,
+  testComponentProp,
+  testReactTestRenderer,
 } from './describeConformance';
 
 export interface SlotTestingOptions {
