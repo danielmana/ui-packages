@@ -1,0 +1,8 @@
+{
+  "componentDescription": "",
+  "propDescriptions": {
+    "children": "Two or more <code>&lt;Step /&gt;</code> components.",
+    "foo": "foo field, blah blah"
+  },
+  "classDescriptions": {}
+}

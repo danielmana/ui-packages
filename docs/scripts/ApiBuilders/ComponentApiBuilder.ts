@@ -1,31 +1,33 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
-import path from 'path';
 import * as astTypes from 'ast-types';
-import * as babel from '@babel/core';
-import traverse from '@babel/traverse';
+import { LANGUAGES } from 'docs/src/modules/constants';
+import createDescribeableProp, {
+    DescribeablePropDescriptor
+} from 'docs/src/modules/utils/createDescribeableProp';
+import muiDefaultPropsHandler from 'docs/src/modules/utils/defaultPropsHandler';
+import generatePropDescription from 'docs/src/modules/utils/generatePropDescription';
+import generatePropTypeDescription, {
+    getChained
+} from 'docs/src/modules/utils/generatePropTypeDescription';
+import parseStyles, { Styles } from 'docs/src/modules/utils/parseStyles';
+import parseTest from 'docs/src/modules/utils/parseTest';
+import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import * as _ from 'lodash';
 import kebabCase from 'lodash/kebabCase';
-import * as prettier from 'prettier';
-import remark from 'remark';
-import remarkVisit from 'unist-util-visit';
 import { Link } from 'mdast';
+import path from 'path';
+import * as prettier from 'prettier';
 import { defaultHandlers, parse as docgenParse, ReactDocgenApi } from 'react-docgen';
-import muiDefaultPropsHandler from 'docs/src/modules/utils/defaultPropsHandler';
-import { LANGUAGES } from 'docs/src/modules/constants';
-import parseTest from 'docs/src/modules/utils/parseTest';
-import generatePropTypeDescription, {
-  getChained,
-} from 'docs/src/modules/utils/generatePropTypeDescription';
-import { renderInline as renderMarkdownInline } from '@mui/markdown';
-import createDescribeableProp, {
-  DescribeablePropDescriptor,
-} from 'docs/src/modules/utils/createDescribeableProp';
-import generatePropDescription from 'docs/src/modules/utils/generatePropDescription';
-import parseStyles, { Styles } from 'docs/src/modules/utils/parseStyles';
-import generateUtilityClass from '@mui/base/generateUtilityClass';
+import remark from 'remark';
 import * as ttp from 'typescript-to-proptypes';
-import { getUnstyledFilename } from '../helpers';
+import remarkVisit from 'unist-util-visit';
+
+import * as babel from '@babel/core';
+import traverse from '@babel/traverse';
+import generateUtilityClass from '@mui/base/generateUtilityClass';
+import { renderInline as renderMarkdownInline } from '@mui/markdown';
+
 import { ComponentInfo } from '../buildApiUtils';
+import { getUnstyledFilename } from '../helpers';
 
 const DEFAULT_PRETTIER_CONFIG_PATH = path.join(process.cwd(), 'prettier.config.js');
 
@@ -303,20 +305,20 @@ const generateApiTranslations = (outputDirectory: string, reactApi: ReactApi) =>
     JSON.stringify(reactApi.translations),
   );
 
-  LANGUAGES.forEach((language) => {
-    if (language !== 'en') {
-      try {
-        writePrettifiedFile(
-          resolveApiDocsTranslationsComponentLanguagePath(language),
-          JSON.stringify(reactApi.translations),
-          undefined,
-          { flag: 'wx' },
-        );
-      } catch (error) {
-        // File exists
-      }
-    }
-  });
+  // LANGUAGES.forEach((language) => {
+  //   if (language !== 'en') {
+  //     try {
+  //       writePrettifiedFile(
+  //         resolveApiDocsTranslationsComponentLanguagePath(language),
+  //         JSON.stringify(reactApi.translations),
+  //         undefined,
+  //         { flag: 'wx' },
+  //       );
+  //     } catch (error) {
+  //       // File exists
+  //     }
+  //   }
+  // });
 };
 
 const generateApiPage = (outputDirectory: string, reactApi: ReactApi) => {
