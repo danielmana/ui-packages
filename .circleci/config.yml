@@ -243,9 +243,9 @@ jobs:
           name: Restore generated declaration files
           keys:
             # #default-branch-switch
-            # We assume that the target branch is `master` and that declaration files are persisted in commit order.
+            # We assume that the target branch is `main` and that declaration files are persisted in commit order.
             # "If there are multiple matches, the most recently generated cache will be used."
-            - typescript-declaration-files-master
+            - typescript-declaration-files-main
 
       - run:
           name: Diff declaration files
@@ -782,7 +782,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
     jobs:
       - test_unit:
           react-version: ^17.0.0
@@ -799,7 +799,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
     jobs:
       - test_unit:
           react-version: next
@@ -816,6 +816,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
     jobs:
       - test_types_next

@@ -15,7 +15,7 @@ You don't need to provide any JavaScript polyfill as it manages unsupported brow
 
 <!-- #default-branch-switch -->
 
-An extensive list can be found in our [.browserlistrc](https://github.com/danielmana/ui-packages/blob/master/.browserslistrc#L12-L30) (check the `stable` entry).
+An extensive list can be found in our [.browserlistrc](https://github.com/danielmana/ui-packages/blob/main/.browserslistrc#L12-L30) (check the `stable` entry).
 
 Because Googlebot uses a web rendering service (WRS) to index the page content, it's critical that UI Core supports it.
 [WRS regularly updates the rendering engine it uses](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).

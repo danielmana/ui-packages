@@ -97,7 +97,7 @@ function MarkdownDocs(props) {
                 tsx: demo.moduleTS ? demoComponents[demo.moduleTS] : null,
               }}
               demoOptions={renderedMarkdownOrDemo}
-              githubLocation={`https://github.com/danielmana/ui-packages/blob/master${fileNameWithLocation}`}
+              githubLocation={`https://github.com/danielmana/ui-packages/blob/main${fileNameWithLocation}`}
             />
           );
         })}

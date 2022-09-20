@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![CircleCI](https://circleci.com/gh/danielmana/ui-packages/tree/master.svg?style=shield)](https://app.circleci.com/pipelines/github/danielmana/ui-packages?branch=master)
-[![Coverage Status](https://img.shields.io/codecov/c/github/danielmana/ui-packages/master.svg)](https://codecov.io/gh/danielmana/ui-packages/branch/master)
+[![CircleCI](https://circleci.com/gh/danielmana/ui-packages/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/danielmana/ui-packages?branch=main)
+[![Coverage Status](https://img.shields.io/codecov/c/github/danielmana/ui-packages/main.svg)](https://codecov.io/gh/danielmana/ui-packages/branch/main)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/danielmana/ui-packages/blob/HEAD/LICENSE)
 
 </div>
