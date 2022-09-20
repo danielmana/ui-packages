@@ -1,6 +1,6 @@
 {
-  "name": "@ui/envinfo",
-  "version": "2.0.7",
+  "name": "@danielmana/envinfo",
+  "version": "0.1.0",
   "private": false,
   "author": "danielmana",
   "description": "Logs infos about the environment relevant to @danielmana/*",
@@ -24,5 +24,6 @@
   "files": [],
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "637d597a805bb7a94053a5bb6e24eea2d92be768"
 }

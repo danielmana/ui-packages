@@ -1,4 +1,4 @@
-# @ui/envinfo
+# @danielmana/envinfo
 
 Prints information about the current environment relevant to UI Packages to the console.
 Please use this package if you report [issues to UI Packages](https://github.com/danielmana/ui-packages/issues).
@@ -6,7 +6,7 @@ Please use this package if you report [issues to UI Packages](https://github.com
 ## Usage
 
 ```bash
-$ npx @ui/envinfo
+$ npx @danielmana/envinfo
 
   System:
     OS: macOS 12.5.1
