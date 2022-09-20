@@ -1,10 +1,11 @@
 import chai, { AssertionError } from 'chai';
 import chaiDom from 'chai-dom';
-import _ from 'lodash';
-import { isInaccessible } from '@testing-library/dom';
-import { prettyDOM } from '@testing-library/react/pure';
 import { computeAccessibleDescription, computeAccessibleName } from 'dom-accessibility-api';
 import formatUtil from 'format-util';
+import _ from 'lodash';
+
+import { isInaccessible } from '@testing-library/dom';
+import { prettyDOM } from '@testing-library/react/pure';
 
 chai.use(chaiDom);
 
@@ -495,7 +496,7 @@ chai.use((chaiAPI, utils) => {
         "Looks like the error was not minified. This can happen if the error code hasn't been generated yet. Run `yarn extract-error-codes` and try again.",
       );
       // TODO: Investigate if `as any` can be removed after https://github.com/DefinitelyTyped/DefinitelyTyped/issues/48634 is resolved.
-      (this as any).to.throw('Minified MUI error', 'helper');
+      (this as any).to.throw('Minified UI error', 'helper');
     }
   });
 });
@@ -516,7 +517,7 @@ chai.use((chaiAPI, utils) => {
             ? [expectedMessagesInput]
             : expectedMessagesInput.slice();
         const unexpectedMessages: Error[] = [];
-        // TODO Remove type once MUI X enables noImplicitAny
+        // TODO Remove type once UI X enables noImplicitAny
         let caughtError: unknown | null = null;
 
         this.assert(
@@ -553,7 +554,7 @@ chai.use((chaiAPI, utils) => {
           const expectedMessage = remainingMessages.shift();
           messagesMatched += 1;
 
-          // TODO Remove type once MUI X enables noImplicitAny
+          // TODO Remove type once UI X enables noImplicitAny
           let message: string | null = null;
           if (expectedMessage === undefined) {
             message = `Expected no more error messages but got:\n"${actualMessage}"`;

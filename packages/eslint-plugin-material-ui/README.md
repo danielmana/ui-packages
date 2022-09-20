@@ -1,6 +1,6 @@
 # eslint-plugin-material-ui
 
-Custom eslint rules for MUI.
+Custom eslint rules for UI Packages.
 
 ## List of supported rules
 

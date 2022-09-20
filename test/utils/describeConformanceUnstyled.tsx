@@ -1,14 +1,12 @@
-import * as React from 'react';
 import { expect } from 'chai';
+import * as React from 'react';
+
 import { unstable_capitalize as capitalize } from '@mui/utils';
+
 import { MuiRenderResult, RenderOptions } from './createRenderer';
 import {
-  ConformanceOptions,
-  describeRef,
-  randomStringValue,
-  testClassName,
-  testComponentProp,
-  testReactTestRenderer,
+    ConformanceOptions, describeRef, randomStringValue, testClassName, testComponentProp,
+    testReactTestRenderer
 } from './describeConformance';
 
 export interface SlotTestingOptions {
@@ -356,7 +354,7 @@ export default function describeConformanceUnstyled(
       only.indexOf(testKey) !== -1 && skip.indexOf(testKey as keyof typeof fullSuite) === -1,
   ) as (keyof typeof fullSuite)[];
 
-  describe('MUI unstyled component API', () => {
+  describe('UI unstyled component API', () => {
     after(runAfterHook);
 
     filteredTests.forEach((testKey) => {

@@ -121,7 +121,7 @@ DemoFrame.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-// Use the default MUI theme for the demos
+// Use the default theme for the demos
 const getTheme = (outerTheme) => {
   const brandingDesignTokens = getDesignTokens(outerTheme.palette.mode);
   const isCustomized =

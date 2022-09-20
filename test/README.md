@@ -1,4 +1,4 @@
-# MUI Testing
+# Testing
 
 Thanks for writing tests! Here's a quick run-down on our current setup.
 

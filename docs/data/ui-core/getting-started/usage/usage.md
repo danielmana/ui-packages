@@ -21,7 +21,7 @@ UI Core usage experience can be improved with a handful of important globals tha
 
 ### Responsive meta tag
 
-MUI is developed mobile-first, a strategy in which we first write code for mobile devices, and then scale up components as necessary using CSS media queries.
+UI Core is developed mobile-first, a strategy in which we first write code for mobile devices, and then scale up components as necessary using CSS media queries.
 To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
 
 ```html

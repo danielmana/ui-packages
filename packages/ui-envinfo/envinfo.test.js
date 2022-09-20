@@ -32,7 +32,7 @@ describe('@danielmana/ui-envinfo', () => {
     );
   }
 
-  it('includes info about the environment relevant to MUI', function test() {
+  it('includes info about the environment relevant to UI Packages', function test() {
     // Need more time to download packages
     this.timeout(10000);
 

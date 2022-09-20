@@ -38,14 +38,7 @@ function useDemoData(codeVariant, demo, githubLocation) {
   const router = useRouter();
   const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
   let product;
-  let name = 'Material UI';
-  if (asPathWithoutLang.startsWith('/base/')) {
-    product = 'base';
-    name = 'MUI Base';
-  }
-  if (asPathWithoutLang.startsWith('/x/')) {
-    name = 'MUI X';
-  }
+  let name = 'UI';
   if (asPathWithoutLang.startsWith('/ui-core/')) {
     product = 'ui-core';
     name = 'ui-core';
