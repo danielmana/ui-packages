@@ -1,6 +1,6 @@
 {
   "name": "@danielmana/ui-core",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": false,
   "author": "danielmana",
   "description": "A library of React UI core components.",
