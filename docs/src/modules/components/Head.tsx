@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { LANGUAGES_SSR } from 'docs/src/modules/constants';
+import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
+import { useTranslate, useUserLanguage } from 'docs/src/modules/utils/i18n';
 import NextHead from 'next/head';
 import { useRouter } from 'next/router';
-import { LANGUAGES_SSR } from 'docs/src/modules/constants';
-import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
-import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
+import * as React from 'react';
 
 // #major-version-switch
 const HOST = 'https://verdant-klepon-5d2a5e.netlify.app';
@@ -64,9 +64,7 @@ export default function Head(props: HeadProps) {
             <link
               key={userLanguage2}
               rel="alternate"
-              href={`https://verdant-klepon-5d2a5e.netlify.app${
-                userLanguage2 === 'en' ? '' : `/${userLanguage2}`
-              }${canonicalAs}`}
+              href={`https://verdant-klepon-5d2a5e.netlify.app${canonicalAs}`}
               hrefLang={userLanguage2}
             />
           ))}
