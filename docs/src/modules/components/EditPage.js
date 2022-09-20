@@ -10,22 +10,11 @@ export default function EditPage(props) {
   const { markdownLocation } = props;
   const t = useTranslate();
   const userLanguage = useUserLanguage();
-  const LOCALES = { zh: 'zh-CN', pt: 'pt-BR', es: 'es-ES' };
-  const CROWDIN_ROOT_URL = 'https://translate.mui.com/project/material-ui-docs/';
-  const crowdInLocale = LOCALES[userLanguage] || userLanguage;
-  const crowdInPath = markdownLocation.substring(0, markdownLocation.lastIndexOf('/'));
 
   return (
     <Button
       component="a"
-      href={
-        userLanguage === 'en'
-          ? `https://github.com/danielmana/ui-packages/blob/master${markdownLocation}`
-          : `${CROWDIN_ROOT_URL}${crowdInLocale}#/${process.env.SOURCE_CODE_ROOT_URL.replace(
-              'https://github.com/mui/',
-              '',
-            ).replace('/blob/', '%20%2F%20')}${crowdInPath}`
-      }
+      href={`https://github.com/danielmana/ui-packages/blob/master${markdownLocation}`}
       target="_blank"
       rel="noopener nofollow"
       size="small"

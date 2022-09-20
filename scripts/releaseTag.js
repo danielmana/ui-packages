@@ -18,31 +18,6 @@ function execDry(command, options) {
   console.log(`exec(\`${command}\`, ${JSON.stringify(options)})`);
 }
 
-/**
- * Find the remote pointing to mui/material-ui.
- *
- * Conventionally this should be named `upstream` but some collaborators might've used a different naming scheme.
- */
-// async function findMuiOrgRemote() {
-//   const { stdout } = await execActual(['git', 'remote', '-v'].join(' '));
-//   const remoteLines = stdout.trim().split(/\r?\n/);
-
-//   return remoteLines
-//     .map((remoteLine) => {
-//       const [name, url, method] = remoteLine.split(/\s/);
-//       return { name, url, method };
-//     })
-//     .find((remote) => {
-//       // test: https://regex101.com/r/fBVJUX/1
-//       // matching:
-//       // - https://github.com/mui/material-ui
-//       // - git@github.com:mui/material-ui.git
-//       // but not:
-//       // - git@github.com:mui/material-ui-docs.git
-//       return /mui\/material-ui(\.git)?$/.test(remote.url) && remote.method === '(push)';
-//     });
-// }
-
 async function main(argv) {
   const { dryRun } = argv;
 
@@ -58,21 +33,13 @@ async function main(argv) {
   // eslint-disable-next-line no-console -- verbose logging
   console.log(`Created tag '${tag}'. To remove enter 'git tag -d ${tag}'`);
 
-  const muiOrgRemote = { name: 'origin' };
-  // const muiOrgRemote = await findMuiOrgRemote();
-  // if (muiOrgRemote === undefined) {
-  //   throw new TypeError(
-  //     'Unable to find the upstream remote. It should be a remote pointing to "mui/material-ui". ' +
-  //       'Did you forget to add it via `git remote add upstream git@github.com:mui/material-ui.git`? ' +
-  //       'If you think this is a bug please include `git remote -v` in your report.',
-  //   );
-  // }
+  const remote = 'origin';
 
-  await exec(['git', 'push', muiOrgRemote.name, tag].join(' '));
+  await exec(['git', 'push', remote, tag].join(' '));
 
   // eslint-disable-next-line no-console -- verbose logging
   console.log(
-    `Pushed tag '${tag}' to . This should not be reversed. In case of emergency enter 'git push --delete ${muiOrgRemote.name} ${tag}' to remove.`,
+    `Pushed tag '${tag}' to . This should not be reversed. In case of emergency enter 'git push --delete ${remote} ${tag}' to remove.`,
   );
 }
 

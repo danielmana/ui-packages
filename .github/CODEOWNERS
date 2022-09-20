@@ -1,5 +1,21 @@
 # This file is auto-generated, do not modify it manually.
-
 # run `yarn generate-codeowners` to update it.
 
-/scripts/ @mdanielmana
+
+/scripts/ @danielmana
+
+# Packages
+
+/packages/ui-core/ @danielmana
+/packages/ui-components/ @danielmana
+
+# Components - UI Core
+
+/packages/ui-core/src/Button/ @danielmana
+/packages/ui-core/src/styles/ @danielmana
+/docs/data/ui-core/components/button/ @danielmana
+
+# Components - UI Components
+
+
+

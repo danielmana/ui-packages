@@ -4,6 +4,8 @@ import * as path from 'path';
 import * as url from 'url';
 
 const componentAreas = {
+  styles: 'utils',
+  // other
   accordion: 'surfaces',
   accordionactions: 'surfaces',
   accordiondetails: 'surfaces',
@@ -162,13 +164,13 @@ const componentAreas = {
 };
 
 const areaMaintainers = {
-  inputs: ['michaldudak', 'mnajdova'],
-  dataDisplay: ['siriwatknp', 'michaldudak'],
-  feedback: ['siriwatknp', 'hbjORbj'],
-  surfaces: ['siriwatknp', 'hbjORbj'],
-  navigation: ['mnajdova', 'michaldudak'],
-  layout: ['siriwatknp', 'hbjORbj'],
-  utils: ['mnajdova', 'michaldudak'],
+  inputs: ['danielmana'],
+  dataDisplay: ['danielmana'],
+  feedback: ['danielmana'],
+  surfaces: ['danielmana'],
+  navigation: ['danielmana'],
+  layout: ['danielmana'],
+  utils: ['danielmana'],
 };
 
 const packageOwners = {
@@ -182,7 +184,7 @@ const packageMaintainers = {
 };
 
 const additionalRules = {
-  '/scripts/': ['michaldudak', 'm4theushw'],
+  '/scripts/': ['danielmana'],
 };
 
 const thisDirectory = url.fileURLToPath(new URL('.', import.meta.url));

@@ -23,7 +23,7 @@ Enforce correct usage of `@ignore` in the prop-types block comments.
 ### no-hardcoded-labels
 
 Prevent the usage of hardcoded labels.
-The docs are translated via crowdin, we prefer to use `t` from the redux store.
+The docs are prepared to be translated via crowdin, we prefer to use `t` from the redux store.
 
 ### rules-of-use-theme-variants
 

@@ -19,7 +19,7 @@ function noComponent(moduleID) {
 }
 
 function MarkdownDocs(props) {
-  const { disableAd = true, disableToc = false, demos = {}, docs, demoComponents } = props;
+  const { disableToc = false, demos = {}, docs, demoComponents } = props;
 
   const userLanguage = useUserLanguage();
   const t = useTranslate();
@@ -29,7 +29,6 @@ function MarkdownDocs(props) {
   return (
     <AppLayoutDocs
       description={description}
-      disableAd={disableAd}
       disableToc={disableToc}
       location={location}
       title={title}
@@ -97,7 +96,6 @@ function MarkdownDocs(props) {
                 rawTS: demo.rawTS,
                 tsx: demo.moduleTS ? demoComponents[demo.moduleTS] : null,
               }}
-              disableAd={disableAd}
               demoOptions={renderedMarkdownOrDemo}
               githubLocation={`https://github.com/danielmana/ui-packages/blob/master${fileNameWithLocation}`}
             />
@@ -111,7 +109,6 @@ function MarkdownDocs(props) {
 MarkdownDocs.propTypes = {
   demoComponents: PropTypes.object,
   demos: PropTypes.object,
-  disableAd: PropTypes.bool,
   disableToc: PropTypes.bool,
   docs: PropTypes.object.isRequired,
 };
