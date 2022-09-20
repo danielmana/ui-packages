@@ -1,12 +1,12 @@
 import * as astTypes from 'ast-types';
 import { LANGUAGES } from 'docs/src/modules/constants';
 import createDescribeableProp, {
-    DescribeablePropDescriptor
+  DescribeablePropDescriptor,
 } from 'docs/src/modules/utils/createDescribeableProp';
 import muiDefaultPropsHandler from 'docs/src/modules/utils/defaultPropsHandler';
 import generatePropDescription from 'docs/src/modules/utils/generatePropDescription';
 import generatePropTypeDescription, {
-    getChained
+  getChained,
 } from 'docs/src/modules/utils/generatePropTypeDescription';
 import parseStyles, { Styles } from 'docs/src/modules/utils/parseStyles';
 import parseTest from 'docs/src/modules/utils/parseTest';
