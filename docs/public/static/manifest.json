@@ -1,6 +1,6 @@
 {
-  "name": "MUI",
-  "short_name": "MUI",
+  "name": "UI",
+  "short_name": "UI",
   "display": "minimal-ui",
   "start_url": "/",
   "theme_color": "#007FFF",

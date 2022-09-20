@@ -57,7 +57,7 @@ export function randomStringValue() {
 }
 
 /**
- * MUI components have a `className` prop. The `className` is applied to
+ * UI components have a `className` prop. The `className` is applied to
  * the root component.
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -74,7 +74,7 @@ export function testClassName(element, getOptions) {
 }
 
 /**
- * MUI components have a `component` prop that allows rendering a different
+ * UI components have a `component` prop that allows rendering a different
  * Component from @inheritComponent
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -92,7 +92,7 @@ export function testComponentProp(element, getOptions) {
 }
 
 /**
- * MUI components can spread additional props to a documented component.
+ * UI components can spread additional props to a documented component.
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
  */
@@ -225,7 +225,7 @@ function throwMissingPropError(field) {
 }
 
 /**
- * MUI components have a `components` prop that allows rendering a different
+ * UI components have a `components` prop that allows rendering a different
  * Components from @inheritComponent
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -243,7 +243,7 @@ function testComponentsProp(element, getOptions) {
 }
 
 /**
- * MUI theme has a components section that allows specifying default props.
+ * UI theme has a components section that allows specifying default props.
  * Components from @inheritComponent
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -280,7 +280,7 @@ function testThemeDefaultProps(element, getOptions) {
 }
 
 /**
- * MUI theme has a components section that allows specifying style overrides.
+ * UI theme has a components section that allows specifying style overrides.
  * Components from @inheritComponent
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -501,7 +501,7 @@ function testThemeStyleOverrides(element, getOptions) {
 }
 
 /**
- * MUI theme has a components section that allows specifying custom variants.
+ * UI theme has a components section that allows specifying custom variants.
  * Components from @inheritComponent
  * @param {React.ReactElement} element
  * @param {() => ConformanceOptions} getOptions
@@ -605,13 +605,13 @@ const fullSuite = {
 };
 
 /**
- * Tests various aspects of a component that should be equal across MUI
+ * Tests various aspects of a component that should be equal across UI
  * components.
  * @param {React.ReactElement} minimalElement - the component with it's minimal required props
  * @param {() => ConformanceOptions} getOptions
  */
 export default function describeConformance(minimalElement, getOptions) {
-  describe('MUI component API', () => {
+  describe('UI component API', () => {
     const {
       after: runAfterHook = () => {},
       only = Object.keys(fullSuite),
