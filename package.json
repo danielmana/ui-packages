@@ -6,7 +6,7 @@
     "proptypes": "cross-env BABEL_ENV=development babel-node --extensions \".tsx,.ts,.js\" ./scripts/generateProptypes.ts",
     "deduplicate": "node scripts/deduplicate.js",
     "build:codesandbox": "lerna run --parallel --scope \"@danielmana/*\" build",
-    "release:version": "lerna version --no-changelog --no-push --no-git-tag-version --force-publish=@mui/core-downloads-tracker",
+    "release:version": "lerna version --no-changelog --no-push --no-git-tag-version",
     "release:build": "lerna run --parallel --scope \"@danielmana/*\" build",
     "release:changelog": "node scripts/releaseChangelog",
     "release:publish": "lerna publish from-package --dist-tag latest --contents build",
