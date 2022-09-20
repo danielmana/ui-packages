@@ -12,7 +12,10 @@ describe('textToHash', () => {
         'createGenerateClassName([options]) => class name generator',
         'creategenerateclassname-options-class-name-generator',
       ],
-      ['@mui/material/styles vs @mui/styles', 'mui-material-styles-vs-mui-styles'],
+      [
+        '@danielmana/ui-core/styles vs @danielmana/styles',
+        'danielmana-ui-core-styles-vs-danielmana-styles',
+      ],
       ['Blog 📝', 'blog'],
     ];
     table.forEach((entry, index) => {

@@ -36,40 +36,6 @@ const componentPackageMapping = {
   'ui-components': {},
 };
 
-// const packages = [
-//   {
-//     product: 'material-ui',
-//     paths: [
-//       path.join(__dirname, '../../../packages/mui-material/src'),
-//       path.join(__dirname, '../../../packages/mui-base/src'),
-//     ],
-//   },
-//   {
-//     product: 'base',
-//     paths: [path.join(__dirname, '../../../packages/mui-base/src')],
-//   },
-// ];
-
-// packages.forEach((pkg) => {
-//   pkg.paths.forEach((pkgPath) => {
-//     const match = pkgPath.match(/packages(?:\\|\/)([^/\\]+)(?:\\|\/)src/);
-//     const packageName = match ? match[1] : null;
-//     if (!packageName) {
-//       throw new Error(`cannot find package name from path: ${pkgPath}`);
-//     }
-//     const filePaths = readdirSync(pkgPath);
-//     filePaths.forEach((folder) => {
-//       if (folder.match(/^[A-Z]/)) {
-//         if (!componentPackageMapping[pkg.product]) {
-//           throw new Error(`componentPackageMapping must have "${pkg.product}" as a key`);
-//         }
-//         // filename starts with Uppercase = component
-//         componentPackageMapping[pkg.product][folder] = packageName;
-//       }
-//     });
-//   });
-// });
-
 /**
  * @type {import('webpack').loader.Loader}
  */

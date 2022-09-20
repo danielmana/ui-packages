@@ -2,7 +2,7 @@ const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const pkg = require('../package.json');
 const { findPages } = require('./src/modules/utils/find');
-const { LANGUAGES, LANGUAGES_SSR, LANGUAGES_IGNORE_PAGES } = require('./src/modules/constants');
+const { LANGUAGES } = require('./src/modules/constants');
 
 const workspaceRoot = path.join(__dirname, '../');
 
@@ -173,7 +173,6 @@ module.exports = {
     NETLIFY_DEPLOY_URL: process.env.DEPLOY_URL || 'http://localhost:3000',
     NETLIFY_SITE_NAME: process.env.SITE_NAME || 'material-ui',
     PULL_REQUEST: process.env.PULL_REQUEST === 'true',
-    FEEDBACK_URL: process.env.FEEDBACK_URL,
     // #default-branch-switch
     SOURCE_CODE_ROOT_URL: 'https://github.com/danielmana/ui-packages/blob/master',
     SOURCE_CODE_REPO: 'https://github.com/danielmana/ui-packages',
@@ -193,10 +192,6 @@ module.exports = {
         if (page.pathname.startsWith('/experiments') && !staging) {
           return;
         }
-        // The blog is not translated
-        if (userLanguage !== 'en' && LANGUAGES_IGNORE_PAGES(page.pathname)) {
-          return;
-        }
         if (!page.children) {
           // map api-docs to api
           // i: /api-docs/* > /api/* (old structure)
@@ -214,19 +209,9 @@ module.exports = {
       });
     }
 
-    // We want to speed-up the build of pull requests.
-    // For this, consider only English language on deploy previews, except for crowdin PRs.
-    if (buildOnlyEnglishLocale) {
-      // eslint-disable-next-line no-console
-      console.log('Considering only English for SSR');
-      traverse(pages, 'en');
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('Considering various locales for SSR');
-      LANGUAGES_SSR.forEach((userLanguage) => {
-        traverse(pages, userLanguage);
-      });
-    }
+    // eslint-disable-next-line no-console
+    console.log('Considering only English for SSR');
+    traverse(pages, 'en');
 
     return map;
   },
