@@ -55,13 +55,13 @@ function createComparisonFilter(parsedThreshold, gzipThreshold) {
 }
 
 /**
- * checks if the bundle is of a package e.b. `@mui/material` but not
- * `@mui/material/Paper`
+ * checks if the bundle is of a package e.b. `@danielmana/ui-core` but not
+ * `@danielmana/ui-core/Button`
  * @param {[string, any]} comparisonEntry
  */
 function isPackageComparison(comparisonEntry) {
   const [bundleKey] = comparisonEntry;
-  return /^@[\w-]+\/[\w-]+$/.test(bundleKey);
+  return /^@danielmana\/[\w-]+$/.test(bundleKey);
 }
 
 /**
